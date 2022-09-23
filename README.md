@@ -10,7 +10,7 @@
 - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 - <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
--
+
 
 ## ✅ 요구사항
 
@@ -35,10 +35,13 @@
 
 ### 필수 요구사항 -
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ]  여행 상품 추천 페이지 ☞ 태그의 다중 선택이 가능해야 합니다.
+- [ ]  여행 상품 검색 페이지 ☞ 키워드 검색이나 미리 정해놓은 태그로 검색이 가능해야 합니다.
+- [ ] 여행 상품 상세 페이지 ☞ 예약하기 버튼 클릭 시 예약하기 페이지로 이동해야 합니다.
+
+- [ ] 마이페이지 <br/>비로그인 시 로그인 버튼이 활성화 돼야 합니다.<br/>로그인 시 회원의 이름을 보여주고, 로그아웃 버튼이 활성화돼야 합니다.
+- [ ] 예약하기 페이지 ☞ 예약자의 정보, 주문요약 정보를 보여주고 결제수단을 선택해 결제를 진행 할 수 있도록 합니다.
+
 
 ### 기타 요구사항
 
@@ -52,7 +55,7 @@
 
 |                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |                                 윤한솔                                 |
 | :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
+|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@jiaero](https://github.com/jiaero)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
 |                                                                           |
 | <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | <img src="https://avatars.githubusercontent.com/1sol2sol" width="100"> |
 
