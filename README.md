@@ -1,4 +1,4 @@
-# 🔍 
+# 🔍
 
 🪄 개요
 고투게더 사이트 리뉴얼 프로젝트입니다. 현재 운영하는 사이트를 직접 리뉴얼하는 작업이며
@@ -10,42 +10,42 @@
 - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 - <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-- 
+-
 
 ## ✅ 요구사항
 
-### 필수 요구사항 - 
+### 필수 요구사항 -
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
 
-### 필수 요구사항 - 
+### 필수 요구사항 -
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
 
-### 필수 요구사항 - 
+### 필수 요구사항 -
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
-### 필수 요구사항 - 
+### 필수 요구사항 -
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 
 ### 기타 요구사항
 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ]
+- [ ]
+- [ ]
+- [ ]
 - [ ]
 
 ## 🤼‍♀️ 팀 구성
@@ -62,9 +62,9 @@
 
 - 노지애
 
-- 강이조
+- 강이조 파이널 프로젝트에 몸을 불사르겠습니다! 약속드립니다! 화이팅!!
 
-- 김민지 
+- 김민지
 
 - (BE)최성욱
 
@@ -79,6 +79,3 @@
 ## 주의사항
 
 - .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다
-
-
-  
