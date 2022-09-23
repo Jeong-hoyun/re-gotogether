@@ -28,10 +28,9 @@
 
 ### 필수 요구사항 -
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ] 회원가입 페이지 - 회원가입 기능을 구현 해야한다.
+- [ ] 위시리스트 페이지 - 여행 상품 게시판 페이지에서 하트 버튼 클릭 시 위시리스트에 해당 항목이 추가돼야한다, 위시리스트에 담겨있는 상품들의 목록 > 상품 클릭 시 해당 상품 상세페이지로 이동해야한다, 위시리스트 > 하트버튼 클릭 시 해당 상품 위시리스트 목록에서 삭제 돼야 한다.
+- [ ] 여행상품 게시판 페이지 - 여행상품 추천, 검색 페이지에서 상품 검색 시 결과물을 보여주는 페이지가 있어야 한다, 여행상품들의 목록에서 상품 클릭 시 상세페이지로 이동해야 한다, 해당상품의 하트 버튼 클릭 시 위시리스트에 반영돼야 한다, 예약하기 페이지로 이동 가능 해야 한다.
 
 ### 필수 요구사항 -
 
@@ -50,11 +49,11 @@
 
 ## 🤼‍♀️ 팀 구성
 
-|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |                                 윤한솔                                 |
-| :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
+|                                  정호윤                                   |                                노지애                                 |                                강이조                                 |                                김민지                                |                                 윤한솔                                 |
+| :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------: |
+|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                [@Kang-IJ](https://github.com/Kang-IJ)                 |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
 |                                                                           |
-| <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | <img src="https://avatars.githubusercontent.com/1sol2sol" width="100"> |
+| <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/Kang-IJ" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | <img src="https://avatars.githubusercontent.com/1sol2sol" width="100"> |
 
 ## 🤼‍♀️ 조원 한마디
 
@@ -62,7 +61,7 @@
 
 - 노지애 아자자자!☺︎
 
-- 강이조 파이널 프로젝트에 몸을 불사르겠습니다! 약속드립니다! 화이팅!!
+- 강이조 파이널 프로젝트에 몸을 불사르겠습니다! 화이팅!!
 
 - 김민지 파이널 프로젝트 화이팅!!
 
