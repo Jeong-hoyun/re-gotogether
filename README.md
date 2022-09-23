@@ -82,4 +82,32 @@
 
 
 
+## Script
+```
+$ yarn run dev
+```
+
+## test
+
+```
+$ npm run test
+```
+
+## Naming Convertion
+
+​​Directory : lower case
+``` footer.jsx ```
+Components : PascalCase
+``` export default function Footer{} ```
+ClassName : use - (lower case)
+``` class  usedata{} ```
+Etc File (svg img …) :  PascalCase 
+``` svg File "SvgImg" ```
+Variable : PascalCase
+``` let TargetOfGreeting = "world"; ```
+constant :Upper case & use '_' 
+```const COMMENT_LIST = [{  id: 1, userName: 'wecode' isLiked: true } ]```
+
+
+
   
