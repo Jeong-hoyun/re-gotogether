@@ -50,9 +50,9 @@
 
 ## 🤼‍♀️ 팀 구성
 
-|                                  정호윤                                   |                                이보룡                                 |                                   박소예                                   |                                김민지                                |                                 윤한솔                                 |
+|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |                                 윤한솔                                 |
 | :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |              [@stardust6653](https://github.com/stardust6653)              |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
+|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
 |                                                                           |
 | <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | <img src="https://avatars.githubusercontent.com/1sol2sol" width="100"> |
 
@@ -60,11 +60,11 @@
 
 - 정호윤 미니프로젝트 파이팅!
 
-- 노지애
+- 노지애 아자자자!☺︎
 
 - 강이조 파이널 프로젝트에 몸을 불사르겠습니다! 약속드립니다! 화이팅!!
 
-- 김민지
+- 김민지 파이널 프로젝트 화이팅!!
 
 - (BE)최성욱
 
