@@ -1,4 +1,4 @@
-# 🔍
+# 🔍고투게더 사이트 리뉴얼 프로젝트 J C<>DERS
 
 🪄 개요
 고투게더 사이트 리뉴얼 프로젝트입니다. 현재 운영하는 사이트를 직접 리뉴얼하는 작업이며
@@ -10,15 +10,16 @@
 - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 - <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
--
+- <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
 
 ## ✅ 요구사항
 
 ### 필수 요구사항 -
 
-- [ ]
-- [ ]
-- [ ]
+- [ ] 메인 페이지 수정
+- [ ] 위시리스트 -최근 본 상품 기능 구현을 해야한다
+(선호도 확인을 통한 고객 재유치 용 기능)- 상품 후기 기능 구현을 해야한다
+- [ ] 마이페이지를 구현한다 (최근 본 패키지 확인 구현을 해야한다 -선호도 확인을 통한 고객 재유치용 기능-)
 
 ### 필수 요구사항 -
 
@@ -40,25 +41,33 @@
 - [ ]
 - [ ]
 
-### 기타 요구사항
+### 필수 요구사항 -
+
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+
+### 필수 요구사항 -
 
 - [ ]
 - [ ]
 - [ ]
 - [ ]
 - [ ]
+
 
 ## 🤼‍♀️ 팀 구성
 
-|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |                                 윤한솔                                 |
+|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |                                                                  |
 | :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                [@1sol2sol](https://github.com/1sol2sol)                |
+|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                                |
 |                                                                           |
-| <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | <img src="https://avatars.githubusercontent.com/1sol2sol" width="100"> |
+ <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | 
 
 ## 🤼‍♀️ 조원 한마디
 
-- 정호윤 미니프로젝트 파이팅!
+- 정호윤 파이팅!
 
 - 노지애 아자자자!☺︎
 
