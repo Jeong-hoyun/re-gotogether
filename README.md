@@ -1,16 +1,40 @@
-# 🔍고투게더 사이트 리뉴얼 프로젝트 J C<>DERS
+# 🔍고투게더 사이트 리뉴얼 팀 프로젝트 J C<>DERS
 
 🪄 개요
 고투게더 사이트 리뉴얼 프로젝트입니다. 현재 운영하는 사이트를 직접 리뉴얼하는 작업이며
 좀 더 유저친화적이고 현재 방식과는 다르게 유저들의 성향에 맞춰서
 여행을 추천해주는 방식으로 개발을 진행할 예정입니다
 
-## 📚 메인 기술
+## 🤼‍♀️ Contributor(FE)
+
+|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |         
+| :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | 
+|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                          
+
+|                                                                           |
+ <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | 
+
+
+
+## 📚 Tech Requiremenet (tech stack)
 
 - <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 - <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 - <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 - <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white">
+
+
+## Script
+```
+$ npm run dev
+```
+
+## test
+
+```
+$ npm run test
+```
+
 
 
 ## ✅ 요구사항
@@ -59,15 +83,10 @@
 - [ ]
 - [ ]
 
+## 주의사항
 
-## 🤼‍♀️ 팀 구성
+- .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
 
-|                                  정호윤                                   |                                노지애                                 |                                   강이조                                   |                                김민지                                |         
-| :-----------------------------------------------------------------------: | :-------------------------------------------------------------------: | :------------------------------------------------------------------------: | :------------------------------------------------------------------: | 
-|              [@Jeong-hoyun](https://github.com/Jeong-hoyun)               |                [@roroism](https://github.com/roroism)                 |                   [@Kang-IJ](https://github.com/Kang-IJ)                   |                 [@MinJ33](https://github.com/MinJ33)                 |                          
-
-|                                                                           |
- <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> | 
 
 
 ## 🤼‍♀️ 조원 한마디
@@ -90,6 +109,3 @@
 
 - (UI/UX)서형우
 
-## 주의사항
-
-- .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
