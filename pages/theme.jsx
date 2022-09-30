@@ -22,9 +22,6 @@ export default function Theme() {
       }, []);
 
 
-
-
-
   return (
     <>
       <Head>
@@ -41,8 +38,7 @@ export default function Theme() {
             {list.map((item) => <div key={item.current}>{item.title}</div>)}
             </div>		
        </div>
-
-     <Footer/>  
+  
     </>
   )
 }
