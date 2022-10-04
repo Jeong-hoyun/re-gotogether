@@ -12,6 +12,15 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
+<<<<<<< HEAD
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@table-library/react-table-library": "^4.0.18",
+    "axios": "^0.27.2",
+    "faker": "^6.6.6",
+    "next": "^12.3.1",
+=======
     "@emotion/styled": "^11.10.4",
     "@fontsource/roboto": "^4.5.8",
     "@mui/joy": "^5.0.0-alpha.47",
@@ -20,6 +29,7 @@
     "axios": "^0.27.2",
     "formik": "^2.2.9",
     "next": "12.3.1",
+>>>>>>> 3c2af08c4cd8dcd8ecb7907f32eb181795412cbd
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "redux-persist": "^6.0.0",
