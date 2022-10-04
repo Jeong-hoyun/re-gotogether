@@ -1,27 +1,27 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const motion = props => keyframes`
+const motion = (props) => keyframes`
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
   }
-`
+`;
 
 const RippleSpinner = styled.div`
   color: official;
   display: inline-block;
   position: relative;
-  width: ${p => `${p.size}${p.sizeUnit}`};
-  height: ${p => `${p.size}${p.sizeUnit}`};
+  width: ${(p) => `${p.size}${p.sizeUnit}`};
+  height: ${(p) => `${p.size}${p.sizeUnit}`};
   div {
     transform-origin: 32px 32px;
-    animation: ${p => motion(p)} 1.2s linear infinite;
+    animation: ${(p) => motion(p)} 1.2s linear infinite;
   }
   div:after {
-    content: ' ';
+    content: " ";
     display: block;
     position: absolute;
     top: 3px;
@@ -29,7 +29,7 @@ const RippleSpinner = styled.div`
     width: 5px;
     height: 14px;
     border-radius: 20%;
-    background: ${p => p.color};
+    background: ${(p) => p.color};
   }
   div:nth-child(1) {
     transform: rotate(0deg);
@@ -79,7 +79,7 @@ const RippleSpinner = styled.div`
     transform: rotate(330deg);
     animation-delay: 0s;
   }
-`
+`;
 
 const Ripple = ({ color, size, sizeUnit }) => (
   <RippleSpinner color={color} size={size} sizeUnit={sizeUnit}>
@@ -96,12 +96,12 @@ const Ripple = ({ color, size, sizeUnit }) => (
     <div />
     <div />
   </RippleSpinner>
-)
+);
 
 Ripple.defaultProps = {
   size: 64,
-  color: '#00bfff',
-  sizeUnit: 'px'
-}
+  color: "#00bfff",
+  sizeUnit: "px",
+};
 
-export default Ripple
+export default Ripple;

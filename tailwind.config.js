@@ -6,14 +6,14 @@ module.exports = {
   ],
   theme: {
     theme: {
-    fontSize: {
-      xs:'0.5rem',
-      sm: '0.7rem',
-      base: '0.9rem',
-      xl: '1.2rem'   
-    }
-  },
+      fontSize: {
+        xs: "0.5rem",
+        sm: "0.7rem",
+        base: "0.9rem",
+        xl: "1.2rem",
+      },
+    },
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/forms")],
+};
