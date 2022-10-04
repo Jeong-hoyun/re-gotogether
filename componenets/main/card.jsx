@@ -1,36 +1,35 @@
-import {useRef,useEffect} from "react";
+import { useRef, useEffect } from "react";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import themeData from "../../basic/maintheme.json";
 
+function Cards(props) {
+  const { loading = false } = props;
 
-function Card(props) {
-	const imgRef = useRef(null);
-	console.log(props.image.src)
-
-	useEffect(() => {
-	  const options = {};
-	  const callback = (entries, observer) => {
-		entries.forEach(entry => {
-		  if(entry.isIntersecting) {
-			console.log('is intersecting', entry.target.dataset.src);
-			entry.target.src = entry.target.dataset.src;
-			observer.unobserve(entry.target);
-		  }
-		});
-	  };
-	  const observer = new IntersectionObserver(callback, options);
-  
-	  observer.observe(imgRef.current);
-	}, [])
-  
-
-
-	return (
-		<div className="Card text-center">
-			<img src={props.image.src}  ref={imgRef}  alt="img"  />
-			<div className="p-5 font-semibold text-gray-700 text-xl md:text-lg lg:text-xl keep-all">
-				{props.children}
-			</div>
-		</div>
-	)
+  return (
+    <Grid container wrap="nowrap">
+      {(loading ? Array.from(new Array(3)) : themeData).map((item, index) => (
+        <Card sx={{ minWidth: 275 }}>
+          <CardContent>
+            <Typography
+              sx={{ fontSize: 14 }}
+              color="text.secondary"
+              gutterBottom
+            >
+              Word of the Day
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+      ))}
+    </Grid>
+  );
 }
 
-export default Card
+export default Cards;

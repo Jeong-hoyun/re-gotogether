@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "theme": "culture",
+    "img": "https://cdn.imweb.me/thumbnail/20220630/982f0e673642b.png"
+  },
+  {
+    "id": 2,
+    "theme": "golf",
+    "img": "https://cdn.imweb.me/thumbnail/20220630/080a4d7520ab1.png"
+  },
+  {
+    "id": 3,
+    "theme": "withchild",
+    "img": "https://cdn.imweb.me/thumbnail/20220630/8cd65db601995.png"
+  },
+  {
+    "id": 4,
+    "theme": "senior",
+    "img": "https://cdn.imweb.me/thumbnail/20220630/49fd5083613c9.png"
+  },
+  {
+    "id": 5,
+    "theme": "vacationspot",
+    "img": "https://cdn.imweb.me/thumbnail/20220222/177a6c088ab54.png"
+  }
+]

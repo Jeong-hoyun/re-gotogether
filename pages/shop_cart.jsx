@@ -1,9 +1,5 @@
 const ShopCart = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-}
+  return <div></div>;
+};
 
 export default ShopCart;
