@@ -1,0 +1,61 @@
+{
+    "group": [
+      {
+        "title": "with 5070",
+        "path": "/5070",
+        "img":  "https://cdn.imweb.me/thumbnail/20220213/5a0b08a2f0e44.png"     
+      },
+      {
+        "title": "남자끼리 여행",
+        "path": "/gentlemen",
+        "img":  "https://cdn.imweb.me/thumbnail/20220213/d07aa63aad86b.png"      
+      },
+      {
+        "title": "여자끼리 여행",
+        "path": "/ladies",
+        "img":  "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png"      
+      },
+      {
+        "title": "자녀 동반 여행",
+        "path": "/withchild",
+        "img":  "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png"      
+      },
+      {
+        "title": "with 2040",
+        "path": "/2040",
+        "img":  "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png"    
+      }
+    ],
+    "country": [
+      {
+        "title": "동남아시아 여행",
+        "path": "/Thailand",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/26d9817d53bdb.png"     
+      },
+      {
+        "title": "유럽",
+        "path": "/Europe",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/ed01494d69e88.png"      
+      },
+      {
+        "title": "중남미 여행",
+        "path": "/LatinAmerica",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png"      
+      },
+      {
+        "title": "아프리카",
+        "path": "/Africa",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/d567d8a7177f6.png"      
+      },
+      {
+        "title": "코카서스",
+        "path": "/Caucasus",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/90b39c880066f.png"      
+      },
+      {
+        "title": "인도&주변국",
+        "path": "/india",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/3ae2e94d2ff18.png"      
+      }
+    ]
+  }

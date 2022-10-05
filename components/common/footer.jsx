@@ -48,8 +48,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="bg-gray-100">
+        <div className="bg-gray-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">
             상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕
@@ -75,6 +74,8 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      </div>
+    
     </footer>
   );
 }

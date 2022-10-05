@@ -21,13 +21,13 @@
 ## Script
 
 ```
-$ npm run dev
+$ yarn run dev
 ```
 
-## test
+## format
 
 ```
-$ npm run test
+$ yarn run format:fix
 ```
 
 ## ✅ 요구사항
