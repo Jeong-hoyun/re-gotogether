@@ -2,60 +2,87 @@
     "group": [
       {
         "title": "with 5070",
-        "path": "/5070",
+        "path": "/view/5070",
         "img":  "https://cdn.imweb.me/thumbnail/20220213/5a0b08a2f0e44.png"     
       },
       {
         "title": "남자끼리 여행",
-        "path": "/gentlemen",
+        "path": "/view/gentlemen",
         "img":  "https://cdn.imweb.me/thumbnail/20220213/d07aa63aad86b.png"      
       },
       {
         "title": "여자끼리 여행",
-        "path": "/ladies",
+        "path": "/view/ladies",
         "img":  "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png"      
       },
       {
         "title": "자녀 동반 여행",
-        "path": "/withchild",
+        "path": "/view/withchild",
         "img":  "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png"      
       },
       {
         "title": "with 2040",
-        "path": "/2040",
+        "path": "/view/2040",
         "img":  "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png"    
       }
     ],
     "country": [
       {
         "title": "동남아시아 여행",
-        "path": "/Thailand",
+        "path": "/view/Thailand",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/26d9817d53bdb.png"     
       },
       {
         "title": "유럽",
-        "path": "/Europe",
+        "path": "/view/Europe",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/ed01494d69e88.png"      
       },
       {
         "title": "중남미 여행",
-        "path": "/LatinAmerica",
+        "path": "/view/LatinAmerica",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png"      
       },
       {
         "title": "아프리카",
-        "path": "/Africa",
+        "path": "/view/Africa",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/d567d8a7177f6.png"      
       },
       {
         "title": "코카서스",
-        "path": "/Caucasus",
+        "path": "/view/Caucasus",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/90b39c880066f.png"      
       },
       {
         "title": "인도&주변국",
-        "path": "/india",
+        "path": "/view/india",
         "img":  "https://cdn.imweb.me/thumbnail/20220803/3ae2e94d2ff18.png"      
+      }
+    ],
+    "theme": [
+      {
+        "title": "문화 탐방",
+        "path": "/view/culture",
+        "img":  "https://cdn.imweb.me/thumbnail/20220804/33061bd51dba5.png"     
+      },
+      {
+        "title": "골프 여행",
+        "path": "/view/golf",
+        "img":  "https://cdn.imweb.me/thumbnail/20220804/91789f0c8b6ba.png"      
+      },
+      {
+        "title": "휴양지 힐링",
+        "path": "/view/vacation",
+        "img":  "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png"      
+      },
+      {
+        "title": "트레킹",
+        "path": "/view/trekking",
+        "img":  "https://cdn.imweb.me/thumbnail/20220804/c8f21cd63b1fd.png"      
+      },
+      {
+        "title": "성지순례",
+        "path": "/view/pilgrimage",
+        "img":  "https://cdn.imweb.me/thumbnail/20220804/7bdb36a14ff1d.png"      
       }
     ]
   }

@@ -9,7 +9,7 @@ export default function Home() {
       <Head />
       <main className="max-w-7xl mx-auto">
        <Mainsearch />
-       <Maintheme country={content.country} group={content.group}/>
+       <Maintheme country={content.country} group={content.group} theme={content.theme}/>
        <Maincarousel/>        
       </main>
     </>

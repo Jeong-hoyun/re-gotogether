@@ -8,7 +8,7 @@ const Maincarousel = () => {
             className="relative"
             data-carousel="static"
           >
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div className="relative h-56 overflow-hidden rounded-lg md:h-96 mb-10">
               {/* <!-- Item 1 --> */}
               <div
                 className="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20"
