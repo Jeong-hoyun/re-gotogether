@@ -3,6 +3,53 @@ import React from "react";
 const Maincarousel = () => {
   return (
     <div>
+      <div className="left-20">
+        <h1 className="mt-24 mb-6 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
+          ✬ Best 여행 그룹
+        </h1>
+      </div>
+
+      <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-16">
+        <li className="mr-1">
+          <a
+            href="#"
+            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
+            aria-current="page"
+          >
+            Women
+          </a>
+        </li>
+        <li className="mr-1">
+          <a
+            href="#"
+            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
+          >
+            Men
+          </a>
+        </li>
+        <li className="mr-1">
+          <a
+            href="#"
+            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
+          >
+            Child
+          </a>
+        </li>
+        <li className="mr-1">
+          <a
+            href="#"
+            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
+          >
+            2040
+          </a>
+        </li>
+        <li>
+          <a className="inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active">
+            5070
+          </a>
+        </li>
+      </ul>
+
       <div id="indicators-carousel" className="relative" data-carousel="static">
         <div className="relative h-56 overflow-hidden rounded-lg md:h-96 mb-10">
           {/* <!-- Item 1 --> */}

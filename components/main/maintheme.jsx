@@ -65,28 +65,21 @@ const Maintheme = ({ country, group, theme }) => {
                 <Link href={path}>
                   <a alt={title}>
                     <Image
-                      className="rounded-t-lg object-cover w-64 h-44"
+                      className="rounded-t-lg object-cover"
                       src={img}
                       alt={title}
-                      width={350}
-                      height={197}
+                      width={500}
+                      height={300}
                     />
                   </a>
                 </Link>
                 <div className="p-5">
-                  <p className="text-sm mb-1 font-normal text-gray-700">
-                    {title}
-                  </p>
+                  <p className="text-sm mb-1 font-sm text-gray-700">{title}</p>
                   <Link href={path}>
                     <a href="#">
-                      <p className="mb-2 text-xl font-bold tracking-tight text-gray-900">
+                      <p className="mb-2 text-sm font-bold tracking-tight text-gray-900">
                         {title}
                       </p>
-                    </a>
-                  </Link>
-                  <Link href={path}>
-                    <a className="inline-flex items-center py-2 px-3 text-sx italic text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                      go ⇀
                     </a>
                   </Link>
                 </div>
@@ -94,55 +87,6 @@ const Maintheme = ({ country, group, theme }) => {
             );
           })}
       </div>
-
-      <div className="left-20">
-        <h1 className="mt-24 mb-6 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
-          ✬ Best 여행 그룹
-        </h1>
-      </div>
-
-      {/* tab menu */}
-
-      <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-16">
-        <li className="mr-1">
-          <a
-            href="#"
-            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
-            aria-current="page"
-          >
-            Women
-          </a>
-        </li>
-        <li className="mr-1">
-          <a
-            href="#"
-            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
-          >
-            Men
-          </a>
-        </li>
-        <li className="mr-1">
-          <a
-            href="#"
-            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
-          >
-            Child
-          </a>
-        </li>
-        <li className="mr-1">
-          <a
-            href="#"
-            className="mr-3 inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active"
-          >
-            2040
-          </a>
-        </li>
-        <li>
-          <a className="inline-block border-slate-500 py-3 px-4 text-black text-xs font-light border rounded-3xl active">
-            5070
-          </a>
-        </li>
-      </ul>
     </>
   );
 };

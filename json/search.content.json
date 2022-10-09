@@ -43,7 +43,7 @@
       "key": "Europe"
     },
     {
-      "title": "중남미 여LatinAmerica행",
+      "title": "중남미 여행",
       "path": "/view/",
       "img": "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png",
       "key": "LatinAmerica"
@@ -65,6 +65,12 @@
       "path": "/view/India",
       "img": "https://cdn.imweb.me/thumbnail/20220803/3ae2e94d2ff18.png",
       "key": "India"
+    },
+    {
+      "title": "이집트",
+      "path": "/view/MiddleEast",
+      "img": "https://cdn.imweb.me/thumbnail/20220726/45b4e1c4eb2ef.jpg",
+      "key": "MiddleEast"
     },
     {
       "title": "문화 탐방",
@@ -95,6 +101,12 @@
       "path": "/view/pilgrimage",
       "img": "https://cdn.imweb.me/thumbnail/20220804/7bdb36a14ff1d.png",
       "key": "pilgrimage"
+    },
+    {
+      "title": "모든 여행",
+      "path": "/view/all",
+      "img": "https://cdn.imweb.me/thumbnail/20220725/476611bc5c5d8.jpg",
+      "key": "all"
     }
   ]
 }

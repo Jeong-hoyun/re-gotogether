@@ -1,15 +1,15 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import Avatar from '@material-ui/core/Avatar';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import { useLayoutEffect,useState } from 'react';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import Avatar from "@material-ui/core/Avatar";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import { useLayoutEffect, useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,20 +27,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-
-
 export default function Profile() {
   const classes = useStyles();
   const [user, setUser] = useState();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  
+
   useLayoutEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('user')))   
-    console.log(user)
-  }, [])
+    setUser(JSON.parse(localStorage.getItem("user")));
+    console.log(user);
+  }, []);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -56,19 +52,20 @@ export default function Profile() {
     window.location.href = "/";
   };
 
- return (    
+  return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Profile
           </Typography>
-            <div>
+          <div>
             <IconButton onClick={handleMenu} color="inherit">
               <Avatar src={user.avatar} />
             </IconButton>
-            <Menu id="menu-appbar" 
-              anchorEl={anchorEl} 
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
             >
@@ -81,11 +78,10 @@ export default function Profile() {
         <CardContent>
           <Avatar src={user.avatar} className={classes.large} />
           <Typography variant="h5">
-          Welcome {user.fname} {user.lname}
+            Welcome {user.fname} {user.lname}
           </Typography>
         </CardContent>
       </Card>
     </div>
   );
-
 }
