@@ -1,5 +1,19 @@
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useState, useEffect } from "react";
 export default function Header() {
+  const [jwt, setJwt] = useState();
+
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("jwt")) {
+        setJwt(localStorage.getItem("jwt"));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <>
       <header className="header">
@@ -28,16 +42,21 @@ export default function Header() {
                 </button>
                 <div className="hidden lg:flex lg:items-center lg:justify-between px-6">
                   <div className="flex justify-start items-center text-gray-500">
-                    <Link href="/">
+                    <Link href="/wishlist">
                       <a className="block flex items-center hover:text-gray-700 mr-5">
                         위시리스트
                       </a>
                     </Link>
-                    <Link href="/">
-                      <a className="block flex items-center hover:text-gray-700 mr-5">
-                        로그인
-                      </a>
-                    </Link>
+                    {jwt ? (
+                      <button className="block flex items-center hover:text-gray-700 mr-5">
+                        Sign out
+                      </button>
+                    ) : (
+                      <button className="block flex items-center hover:text-gray-700 mr-5">
+                        Sign in
+                      </button>
+                    )}
+
                     <Link href="/">
                       <a className="block flex items-center hover:text-gray-700 mr-5">
                         마이페이지
