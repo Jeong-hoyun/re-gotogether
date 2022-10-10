@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { API_URL } from './../config/index';
 
 const MySwal = withReactContent(Swal);
 const Login = () => {
@@ -15,16 +16,14 @@ const Login = () => {
   } = useForm();
   const onSubmit = async (data) => {
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://www.melivecode.com/api/login");
+    xhttp.open("POST", `${API_URL}/login`);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send(JSON.stringify(data));
     xhttp.onreadystatechange = function () {
+      console.log(this);
       if (this.readyState == 4) {
-        const objects = JSON.parse(this.responseText);
-        console.log(objects);
-        if (objects["status"] == "ok") {
-          localStorage.setItem("jwt", objects["accessToken"]);
-          localStorage.setItem("user", { username: objects["user"].username });
+        const objects = JSON.parse(this.responseText);       
+        if (objects["status"] == 200) { 
           MySwal.fire({
             text: objects["message"],
             icon: "success",
@@ -60,10 +59,10 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-6">
                 <input
-                  type="text"
+                  type="email"
                   className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Email address"
-                  {...register("username", {
+                  {...register("email", {
                     required: "Please enter your email.",
                   })}
                 />
@@ -82,8 +81,7 @@ const Login = () => {
 
               <div className="flex justify-between items-center mb-6">
                 <div className="form-group form-check"></div>
-                <a
-                  href="#!"
+                <a href="#!"
                   className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                 >
                   Forgot password?

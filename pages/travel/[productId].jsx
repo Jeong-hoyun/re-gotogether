@@ -4,10 +4,8 @@ import Head from "next/head";
 import { API_URL } from "./../../config/index";
 
 export const getStaticPaths = async () => {
-  try {
-    const posts = await axios
-      .get(`${API_URL}/api/products`)
-      .then((e) => e.data);
+    const post = await axios.get(`${API_URL}/api/products?&pageSize=100`)
+    const posts =await post.data 
     return {
       paths: posts.products.map((item) => {
         return {
@@ -17,14 +15,11 @@ export const getStaticPaths = async () => {
         };
       }),
       fallback: false,
-    };
-  } catch (error) {
-    console.error(error);
-  }
+    }; 
 };
 
 export const getStaticProps = async ({ params }) => {
-  try {
+
     const response = await axios.get(
       `${API_URL}/api/products/${params.productId}`,
     );
@@ -32,18 +27,15 @@ export const getStaticProps = async ({ params }) => {
     return {
       props: { post },
     };
-  } catch (error) {
-    console.log(error);
-    return;
-  }
 };
 
 const ProductId = ({ post }) => {
-  const HeroImage = post.images[0];
+     
+  const HeroImage = post?.images[0];
   return (
     <>
       <Head>
-        <title>{post.title}</title>
+        <title>{post?.title}</title>
       </Head>
 
       <section className="relative">

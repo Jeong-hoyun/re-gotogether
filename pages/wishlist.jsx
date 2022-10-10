@@ -4,11 +4,8 @@ import { useSelector } from "react-redux";
 
 const Wishlist = () => {
     const wish = useSelector((state) => state.wish.wish);
-    console.log(wish)
     return (
-        <div className='mt-10'>         
-  
- 
+     <div className='mt-10'>
         <section className="py-1 bg-blueGray-50">
           <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
