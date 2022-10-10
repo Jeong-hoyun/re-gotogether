@@ -39,9 +39,9 @@ const Keyword = ({ searchData }) => {
         .filter((e) => e.key === location.query.keyword)
         .map((e) => e.title)[0],
   );
-  const wish = useSelector((state) => state.wish.wish);
+  const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.map((e) => e.id));
+  const wishItem = useMemo(() =>wish.map((e) => e.id));
 
   if (searchData?.products.length === 0)
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
@@ -79,15 +79,15 @@ const Keyword = ({ searchData }) => {
                     </p>
                   </div>
                   <button
-                    onClick={
-                      wishItem.includes(productId)
+                    className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
+                    type="button"
+                    aria-label="Like"
+                    onClick={wishItem.includes(productId)
                         ? () => dispatch(delwish(productId))
                         : () =>
                             dispatch(addwish({ id: productId, title: title,img:image1}))
                     }
-                    className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
-                    type="button"
-                    aria-label="Like"
+                 
                   >
                     <svg
                       width="20"

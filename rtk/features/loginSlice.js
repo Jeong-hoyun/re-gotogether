@@ -10,7 +10,7 @@ const loginSlice = createSlice({
       state.login=action.payload
     },
     logout(state, action) {
-      state.wish = state.wish.filter((item) => item.email !== action.payload);
+      state.login = state.login.filter((item) => item.email !== action.payload);
     },
   },
 });
