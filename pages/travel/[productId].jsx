@@ -3,6 +3,7 @@ import axios from "axios";
 import Head from "next/head";
 import { API_URL } from "./../../config/index";
 
+
 export const getStaticPaths = async () => {
     const post = await axios.get(`${API_URL}/api/products?&pageSize=100`)
     const posts =await post.data 

@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 
 const Wishlist = () => {
-    const wish = useSelector((state) => state.wish.wish);
+    const wish = useSelector((state) => state.wish);
     return (
      <div className='mt-10'>
         <section className="py-1 bg-blueGray-50">

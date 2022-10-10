@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { wish: [] }; // 처음에는 빈 배열로 시작
+const initialState = { wish: [{id:1}] }; // 처음에는 빈 배열로 시작
 
 const wishSlice = createSlice({
   name: "wish",
