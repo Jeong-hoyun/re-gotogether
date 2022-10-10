@@ -1,45 +1,46 @@
 import Link from "next/link";
+
 export default function Header() {
   return (
     <>
       <header className="header">
-        <section className="flex bg-white border-b border-gray-200 fixed top-0 inset-x-0 z-30 h-16 items-center">
-          <div className="w-full max-w-screen-xl relative mx-auto px-6">
+        <section className="fixed inset-x-0 top-0 z-10 flex items-center h-16 bg-white border-b border-gray-200">
+          <div className="relative w-full max-w-screen-xl px-6 mx-auto">
             <div className="flex items-center -mx-6">
-              <div className="lg:w-1/4 xl:w-1/5 pl-6 pr-6 lg:pr-8">
+              <div className="pl-6 pr-6 lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="flex items-center">
                   <Link href="/">
-                    <a className="block lg:mr-4 flex-shrink-0">
+                    <a className="flex-shrink-0 block lg:mr-4">
                       <img src="/img/logo.png" className="w-20" alt="logo" />
                     </a>
                   </Link>
                 </div>
               </div>
 
-              <div className="flex flex-grow lg:w-3/4 xl:w-4/5 justify-end">
-                <button className="flex px-6 items-center lg:hidden text-gray-500 focus:outline-none focus:text-gray-700">
+              <div className="flex justify-end flex-grow lg:w-3/4 xl:w-4/5">
+                <button className="flex items-center px-6 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700">
                   <svg
-                    className="fill-current w-4 h-4"
+                    className="w-4 h-4 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                   </svg>
                 </button>
-                <div className="hidden lg:flex lg:items-center lg:justify-between px-6">
-                  <div className="flex justify-start items-center text-gray-500">
+                <div className="hidden px-6 lg:flex lg:items-center lg:justify-between">
+                  <div className="flex items-center justify-start text-gray-500">
                     <Link href="/">
-                      <a className="block flex items-center hover:text-gray-700 mr-5">
+                      <a className="flex items-center mr-5 hover:text-gray-700">
                         위시리스트
                       </a>
                     </Link>
                     <Link href="/">
-                      <a className="block flex items-center hover:text-gray-700 mr-5">
+                      <a className="flex items-center mr-5 hover:text-gray-700">
                         로그인
                       </a>
                     </Link>
                     <Link href="/">
-                      <a className="block flex items-center hover:text-gray-700 mr-5">
+                      <a className="flex items-center mr-5 hover:text-gray-700">
                         마이페이지
                       </a>
                     </Link>
@@ -53,3 +54,4 @@ export default function Header() {
     </>
   );
 }
+ 

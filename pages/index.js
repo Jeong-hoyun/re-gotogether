@@ -3,6 +3,7 @@ import Maincarousel from "../components/main/maincarousel";
 import Maintheme from "../components/main/maintheme";
 import Mainsearch from './../components/main/mainsearch';
 import content from '../json/mainpage.content.json';
+
 export default function Home() {
   return (
     <>
