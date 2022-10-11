@@ -30,6 +30,7 @@ const Mainsearch = () => {
             </h1>
           </div>
         </div>
+
         <div className="left-20">
           <h1 className="mt-12 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
             테마별로 여행을 찾아보세요
@@ -42,6 +43,5 @@ const Mainsearch = () => {
     </>
   );
 };
-
 
 export default Mainsearch;

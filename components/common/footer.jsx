@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-            <Image src={company_logo} alt="company_logo" />
+            {/* <Image src={company_logo} alt="company_logo" /> */}
           </a>
         </div>
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
