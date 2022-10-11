@@ -9,21 +9,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
 
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
     return { params: { keyword: item.key } };
   });
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const [{ data: searchData }] = await Promise.all([
-    axios.get(`${API_URL}/api/products/?keyword=${keyword}`),
-  ]);
+  const { data: searchData } = await axios.get(`${API_URL}/api/products/?keyword=${keyword}`).then(sleep(200));
   return {
     props: {
       searchData,
