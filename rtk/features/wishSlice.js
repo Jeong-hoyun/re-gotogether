@@ -13,9 +13,6 @@ const wishSlice = createSlice({
       state.wish = state.wish.filter((item) => item.id !== action.payload);
     },
   },
-  extraReducers: builder => {
-    builder.removall(PURGE, () => initialState);
-  },
 });
 
 const { actions, reducer } = wishSlice;
