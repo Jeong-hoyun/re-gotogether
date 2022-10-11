@@ -1,32 +1,30 @@
 import "../styles/style.css";
 import Layout from "@/components/common/layout";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { useRouter } from 'next/router'
-function MyApp({ Component, pageProps }) {
-  const location = useRouter();
+import { store,persistor } from "./../rtk/store";
+import { Provider } from "react-redux";
+import { PersistGate } from 'redux-persist/integration/react';
 
+function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
       once: true,
-      disable: 'phone',
+      disable: "phone",
       duration: 700,
-      easing: 'ease-out-cubic',
+      easing: "ease-out-cubic",
     });
   });
 
-  useEffect(() => {
-    document.querySelector('html').style.scrollBehavior = 'auto'
-    window.scroll({ top: 0 })
-    document.querySelector('html').style.scrollBehavior = ''
-  }, [location.pathname]); 
-
-
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      </PersistGate>  
+    </Provider>
   );
 }
 

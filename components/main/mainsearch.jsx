@@ -18,23 +18,22 @@ const Mainsearch = () => {
               혹시,
               <br />
               여행 좋아하세요?
-              <p className="mt-8 text-sm text-white dark:text-slate-400">
+              <p className="mt-8 text-white text-sm">
                 당신에게 딱 맞는 여행을 찾아드려요!
               </p>
               <button
                 type="button"
-                className="px-3 py-2 mt-3 text-sm font-medium text-white bg-blue-500 rounded-lg"
+                className="mt-3 bg-blue-500 text-white text-sm font-medium py-2 px-3 rounded-lg"
               >
                 내 여행 찾기
               </button>
             </h1>
           </div>
         </div>
-
         <div className="left-20">
           <h1 className="mt-12 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
             테마별로 여행을 찾아보세요
-            <p className="mt-1 mb-10 text-xs font-normal text-neutral-400">
+            <p className="mt-1 mb-10 font-normal text-neutral-400 text-xs">
               당신에게 딱 맞는 여행이 준비되어 있어요:D
             </p>
           </h1>
@@ -43,5 +42,6 @@ const Mainsearch = () => {
     </>
   );
 };
+
 
 export default Mainsearch;

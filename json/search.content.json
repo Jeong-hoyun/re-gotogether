@@ -1,100 +1,112 @@
 {
-    "search": [
-      {
-        "title": "with 5070",
-        "path": "/view/5070",
-        "img":  "https://cdn.imweb.me/thumbnail/20220213/5a0b08a2f0e44.png",
-        "key": "5070"   
-      },
-      {
-        "title": "남자끼리 여행",
-        "path": "/view/gentlemen",
-        "img":  "https://cdn.imweb.me/thumbnail/20220213/d07aa63aad86b.png",
-        "key": "gentlemen"     
-      },
-      {
-        "title": "여자끼리 여행",
-        "path": "/view/ladies",
-        "img":  "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png",
-        "key": "ladies"      
-      },
-      {
-        "title": "자녀 동반 여행",
-        "path": "/view/withchild",
-        "img":  "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png",
-        "key": "withchild"      
-      },
-      {
-        "title": "with 2040",
-        "path": "/view/2040",
-        "img":  "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png",
-        "key": "2040"   
-      },    
-      {
-        "title": "동남아시아 여행",
-        "path": "/view/Thailand",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/26d9817d53bdb.png",
-        "key": "Thailand"     
-      },
-      {
-        "title": "유럽",
-        "path": "/view/Europe",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/ed01494d69e88.png",
-        "key": "Europe"      
-      },
-      {
-        "title": "중남미 여LatinAmerica행",
-        "path": "/view/",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png",
-        "key": "LatinAmerica"     
-      },
-      {
-        "title": "아프리카",
-        "path": "/view/Africa",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/d567d8a7177f6.png",
-        "key": "Africa"     
-      },
-      {
-        "title": "코카서스",
-        "path": "/view/Caucasus",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/90b39c880066f.png",
-        "key": "Caucasus"      
-      },
-      {
-        "title": "인도&주변국",
-        "path": "/view/India",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/3ae2e94d2ff18.png",
-        "key": "India"     
-      },   
-      {
-        "title": "문화 탐방",
-        "path": "/view/culture",
-        "img":  "https://cdn.imweb.me/thumbnail/20220804/33061bd51dba5.png",
-        "key": "culture"   
-      },
-      {
-        "title": "골프 여행",
-        "path": "/view/golf",
-        "img":  "https://cdn.imweb.me/thumbnail/20220804/91789f0c8b6ba.png",
-        "key": "golf"      
-      },
-      {
-        "title": "휴양지 힐링",
-        "path": "/view/vacation",
-        "img":  "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png",
-        "key": "vacation"       
-      },
-      {
-        "title": "트레킹",
-        "path": "/view/trekking",
-        "img":  "https://cdn.imweb.me/thumbnail/20220804/c8f21cd63b1fd.png",
-        "key": "trekking"      
-      },
-      {
-        "title": "성지순례",
-        "path": "/view/pilgrimage",
-        "img":  "https://cdn.imweb.me/thumbnail/20220804/7bdb36a14ff1d.png",
-        "key": "pilgrimage"     
-      }
-    ]
-  }
+  "search": [
+    {
+      "title": "with 5070",
+      "path": "/view/5070",
+      "img": "https://cdn.imweb.me/thumbnail/20220213/5a0b08a2f0e44.png",
+      "key": "5070"
+    },
+    {
+      "title": "남자끼리 여행",
+      "path": "/view/gentlemen",
+      "img": "https://cdn.imweb.me/thumbnail/20220213/d07aa63aad86b.png",
+      "key": "gentlemen"
+    },
+    {
+      "title": "여자끼리 여행",
+      "path": "/view/ladies",
+      "img": "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png",
+      "key": "ladies"
+    },
+    {
+      "title": "자녀 동반 여행",
+      "path": "/view/withchild",
+      "img": "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png",
+      "key": "withchild"
+    },
+    {
+      "title": "with 2040",
+      "path": "/view/2040",
+      "img": "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png",
+      "key": "2040"
+    },
+    {
+      "title": "동남아시아 여행",
+      "path": "/view/Thailand",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/26d9817d53bdb.png",
+      "key": "Thailand"
+    },
+    {
+      "title": "유럽",
+      "path": "/view/Europe",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/ed01494d69e88.png",
+      "key": "Europe"
+    },
+    {
+      "title": "중남미 여행",
+      "path": "/view/",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png",
+      "key": "LatinAmerica"
+    },
+    {
+      "title": "아프리카",
+      "path": "/view/Africa",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/d567d8a7177f6.png",
+      "key": "Africa"
+    },
+    {
+      "title": "코카서스",
+      "path": "/view/Caucasus",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/90b39c880066f.png",
+      "key": "Caucasus"
+    },
+    {
+      "title": "인도&주변국",
+      "path": "/view/India",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/3ae2e94d2ff18.png",
+      "key": "India"
+    },
+    {
+      "title": "이집트",
+      "path": "/view/MiddleEast",
+      "img": "https://cdn.imweb.me/thumbnail/20220726/45b4e1c4eb2ef.jpg",
+      "key": "MiddleEast"
+    },
+    {
+      "title": "문화 탐방",
+      "path": "/view/culture",
+      "img": "https://cdn.imweb.me/thumbnail/20220804/33061bd51dba5.png",
+      "key": "culture"
+    },
+    {
+      "title": "골프 여행",
+      "path": "/view/golf",
+      "img": "https://cdn.imweb.me/thumbnail/20220804/91789f0c8b6ba.png",
+      "key": "golf"
+    },
+    {
+      "title": "휴양지 힐링",
+      "path": "/view/vacation",
+      "img": "https://cdn.imweb.me/thumbnail/20220803/9c2e3d5d7ff7e.png",
+      "key": "vacation"
+    },
+    {
+      "title": "트레킹",
+      "path": "/view/trekking",
+      "img": "https://cdn.imweb.me/thumbnail/20220804/c8f21cd63b1fd.png",
+      "key": "trekking"
+    },
+    {
+      "title": "성지순례",
+      "path": "/view/pilgrimage",
+      "img": "https://cdn.imweb.me/thumbnail/20220804/7bdb36a14ff1d.png",
+      "key": "pilgrimage"
+    },
+    {
+      "title": "모든 여행",
+      "path": "/view/all",
+      "img": "https://cdn.imweb.me/thumbnail/20220725/476611bc5c5d8.jpg",
+      "key": "all"
+    }
+  ]
+}
