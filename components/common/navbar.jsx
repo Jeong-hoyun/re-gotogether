@@ -10,7 +10,6 @@ export default function navbar() {
   return (
     <>
 <header>           
-     {/* 왜 내꺼는 mt-32해도 언니랑 다르게 스크롤 내릴때 헤더 사라지고 헤더랑 네브바 사이에 이상한 공간이 생기지 */}
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 -mt-16 flex fixed inset-x-0 z-20 ">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <div className="flex items-center lg:order-2">
