@@ -6,6 +6,7 @@ import { useMemo } from 'react';
 
 function Mainsearch() {
   const mainCarousel= useMemo(()=>content.main.map(e=>e))
+  console.log(mainCarousel)
   const settings = {
       dots: true,
       infinite: true,
@@ -44,34 +45,21 @@ function Mainsearch() {
 
 
   return (
-    <div className='max-w-full grow'>
+    <div className='max-w-full mt-20 mb-20'>
       <Slider {...settings}>
       {mainCarousel&&mainCarousel.map((step) => {
         const {title,img,tag}=step
         return(
-         <div key={title}>       
-			  <div className="w-full">
-        <Image src={img} alt={title} width={1296} height={628}/>
-        <div className="absolute top-0 w-full h-full z-10">
-				<div className="table w-full h-full ">
-					<div className="table-row z-5">
-						<div className="table-cell align-middle">
-							<p className="text-white text-3xl text-center">{title}</p>
-						</div>
-            </div>
-           <div className="table-row z-5">
-            <div className="table-cell align-middle">
-							<p className="text-white text-2xl text-center">{tag}</p>
-						</div>
-					</div>
-				 </div>
-			  </div>	
-        </div>			    
-       </div>
+        <div key={title} className="relative">	
+        <div className="absolute items-center justify-center text-white m-24 z-10" >         
+           <h3 className="text-5xl">{title}</h3>
+           <h5 className="text-3xl">{tag}</h5>
+        </div>
+        <Image src={img} alt={title} width={1296} height={648} className="z-5" />         	
+		   	 </div>      
         )     
       })}
-      </Slider>
- 
+      </Slider> 
     </div>
   );
 }
