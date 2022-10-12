@@ -1,7 +1,10 @@
 import "../styles/style.css";
+import "../styles/slick/slick.css"
+import "../styles/slick/slick-theme.css";
+
+import "aos/dist/aos.css";
 import Layout from "@/components/common/layout";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { store,persistor } from "./../rtk/store";
 import { Provider } from "react-redux";

@@ -1,116 +1,78 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import content from '../../json/slick.content.json'
 import Image  from 'next/image';
+import Slider from "react-slick";
+import { useMemo } from 'react';
 
+function Mainsearch() {
+  const mainCarousel= useMemo(()=>content.main.map(e=>e))
+  const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      focusOnSelect: true,
+      speed: 2000,
+      autoplaySpeed: 4000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-function Mainsearch(props) {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  console.log(props)
-  const maxSteps = content.main.length;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
 
   return (
-    <Box sx={{ maxWidth: "100%", flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          height: 50,
-          pl: 2,
-          bgcolor: 'background.default',
-        }}
-      >
-        <Typography>{content.main[activeStep].title}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {content&&content.main.map((step, index) => {
+    <div className='max-w-full grow'>
+      <Slider {...settings}>
+      {mainCarousel&&mainCarousel.map((step) => {
+        const {title,img,tag}=step
         return(
-       <div key={step.title}>
-       {Math.abs(activeStep - index) <= 2 ?             
-       <div >
-			 <div className="w-full">
-         <Image src={step.img} alt={step.title} width={1296} height={628}/>
-        </div>
-			<div className="absolute top-0 w-full h-full">
-				<div className="table w-full h-full">
-					<div className="table-row">
+         <div key={title}>       
+			  <div className="w-full">
+        <Image src={img} alt={title} width={1296} height={628}/>
+        <div className="absolute top-0 w-full h-full z-10">
+				<div className="table w-full h-full ">
+					<div className="table-row z-5">
 						<div className="table-cell align-middle">
-							<p className="text-white text-3xl text-center">{step.title}</p>
+							<p className="text-white text-3xl text-center">{title}</p>
 						</div>
             </div>
-            <div className="table-row">
+           <div className="table-row z-5">
             <div className="table-cell align-middle">
-							<p className="text-white text-2xl text-center	">{step.tag}</p>
+							<p className="text-white text-2xl text-center">{tag}</p>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div> : null}                  
+				 </div>
+			  </div>	
+        </div>			    
        </div>
         )     
       })}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button
-            size="small"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-          >
-            Next
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowLeft />
-            ) : (
-              <KeyboardArrowRight />
-            )}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
-              <KeyboardArrowRight />
-            ) : (
-              <KeyboardArrowLeft />
-            )}
-            Back
-          </Button>
-        }
-      />
-    </Box>
+      </Slider>
+ 
+    </div>
   );
 }
 
