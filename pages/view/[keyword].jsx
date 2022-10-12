@@ -9,21 +9,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
 
+
+
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
     return { params: { keyword: item.key } };
   });
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const [{ data: searchData }] = await Promise.all([
-    axios.get(`${API_URL}/api/products/?keyword=${keyword}`),
-  ]);
+  const { data: searchData } = await axios.get(`${API_URL}/api/products/?keyword=${keyword}`);
   return {
     props: {
       searchData,
@@ -43,9 +43,9 @@ const Keyword = ({ searchData }) => {
   const dispatch = useDispatch();
   const wishItem = useMemo(() =>wish.map((e) => e.id));
 
-  if (searchData?.products.length === 0)
+  if (searchData?.products.length === 0){
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
-
+  }
   return (
     <>
       <Head>

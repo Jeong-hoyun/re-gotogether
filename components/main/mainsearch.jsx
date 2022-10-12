@@ -1,47 +1,117 @@
-import React from "react";
+import * as React from 'react';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import MobileStepper from '@mui/material/MobileStepper';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
+import content from '../../json/slick.content.json'
+import Image  from 'next/image';
 
-const Mainsearch = () => {
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+function Mainsearch(props) {
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  console.log(props)
+  const maxSteps = content.main.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
+
   return (
-    <>
-      <div>
-        <div className="relative">
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2022/09/20/19/13/mountains-7468595_1280.jpg"
-              alt=""
-              className="w-full h-96"
-              loading="lazy"
-            />
-          </div>
-          <div className="absolute left-20 bottom-20">
-            <h1 className="mt-8 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
-              혹시,
-              <br />
-              여행 좋아하세요?
-              <p className="mt-8 text-white text-sm">
-                당신에게 딱 맞는 여행을 찾아드려요!
-              </p>
-              <button
-                type="button"
-                className="mt-3 bg-blue-500 text-white text-sm font-medium py-2 px-3 rounded-lg"
-              >
-                내 여행 찾기
-              </button>
-            </h1>
-          </div>
+    <Box sx={{ maxWidth: "100%", flexGrow: 1 }}>
+      <Paper
+        square
+        elevation={0}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          height: 50,
+          pl: 2,
+          bgcolor: 'background.default',
+        }}
+      >
+        <Typography>{content.main[activeStep].title}</Typography>
+      </Paper>
+      <AutoPlaySwipeableViews
+        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {content&&content.main.map((step, index) => {
+        return(
+       <div key={step.title}>
+       {Math.abs(activeStep - index) <= 2 ?             
+       <div >
+			 <div className="w-full">
+         <Image src={step.img} alt={step.title} width={1296} height={628}/>
         </div>
-
-        <div className="left-20">
-          <h1 className="mt-12 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
-            테마별로 여행을 찾아보세요
-            <p className="mt-1 mb-10 font-normal text-neutral-400 text-xs">
-              당신에게 딱 맞는 여행이 준비되어 있어요:D
-            </p>
-          </h1>
-        </div>
-      </div>
-    </>
+			<div className="absolute top-0 w-full h-full">
+				<div className="table w-full h-full">
+					<div className="table-row">
+						<div className="table-cell align-middle">
+							<p className="text-white text-3xl text-center">{step.title}</p>
+						</div>
+            </div>
+            <div className="table-row">
+            <div className="table-cell align-middle">
+							<p className="text-white text-2xl text-center	">{step.tag}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> : null}                  
+       </div>
+        )     
+      })}
+      </AutoPlaySwipeableViews>
+      <MobileStepper
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        nextButton={
+          <Button
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            Next
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+            {theme.direction === 'rtl' ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </Box>
   );
-};
+}
 
 export default Mainsearch;
