@@ -75,7 +75,14 @@ $ yarn run format:fix
 - [ ]
 - [ ]
 
-## 주의사항
+## 🤼‍♀️ 팀 구성
+
+|                     정호윤                     |                 노지애                 |                 강이조                 |                김민지                |
+| :--------------------------------------------: | :------------------------------------: | :------------------------------------: | :----------------------------------: |
+| [@Jeong-hoyun](https://github.com/Jeong-hoyun) | [@roroism](https://github.com/roroism) | [@Kang-IJ](https://github.com/Kang-IJ) | [@MinJ33](https://github.com/MinJ33) |
+
+| |
+<img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> |
 
 - .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
 
@@ -98,3 +105,7 @@ $ yarn run format:fix
 - (UI/UX)양범철
 
 - (UI/UX)서형우
+
+## 주의사항
+
+- .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
