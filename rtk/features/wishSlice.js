@@ -13,10 +13,7 @@ const wishSlice = createSlice({
       state.wish = state.wish.filter((item) => item.id !== action.payload);
     },
   },
-<<<<<<< HEAD
 
-=======
->>>>>>> f4aff67f34be9c510f185b28abac0a1a506c5cd6
 });
 
 const { actions, reducer } = wishSlice;

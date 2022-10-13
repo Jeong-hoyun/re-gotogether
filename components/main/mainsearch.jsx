@@ -45,7 +45,7 @@ function Mainsearch() {
 
 
   return (
-    <div className='max-w-full mt-20 mb-20'>
+    <div className='max-w-full mt-5 mb-20'>
       <Slider {...settings}>
       {mainCarousel&&mainCarousel.map((step) => {
         const {title,img,tag}=step
