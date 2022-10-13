@@ -1,5 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import wishReducer from "../rtk/features/wishSlice";
+import loginReducer from "../rtk/features/loginSlice";
+
 import {  
   persistStore,
   persistReducer,
@@ -17,8 +19,13 @@ const persistConfig = {
   version: 1,
   storage,
 }
+const rootReducer = combineReducers({ 
+  wish: wishReducer,
+  login: loginReducer
+})
 
-const persistedReducer = persistReducer(persistConfig, wishReducer)
+
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 
 export const store = configureStore({
