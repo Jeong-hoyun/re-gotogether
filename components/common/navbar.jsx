@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Logo1 from "../CustomLogo/여행큐레이션1";
-import Logo3 from "../CustomLogo/그룹별여행3";
-import Logo5 from "../CustomLogo/지역별여행5";
-import Logo7 from "../CustomLogo/테마별여행7";
-import Logo9 from "../CustomLogo/커뮤니티9";
+import Logo1 from "../NavbarLogo/여행큐레이션1";
+import Logo3 from "../NavbarLogo/그룹별여행3";
+import Logo5 from "../NavbarLogo/지역별여행5";
+import Logo7 from "../NavbarLogo/테마별여행7";
+import Logo9 from "../NavbarLogo/커뮤니티9";
 
 export default function navbar() {
   return (
