@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <section className="fixed inset-x-0 top-0 z-10 flex items-center h-16 bg-white border-b border-gray-200">
+        <div className=" flex items-center h-20 bg-white border-b border-gray-200 z-10">
           <div className="relative w-full max-w-screen-xl px-6 mx-auto">
             <div className="flex items-center -mx-6">
               <div className="pl-6 pr-6 lg:w-1/4 xl:w-1/5 lg:pr-8">
@@ -70,7 +70,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </header>
     </>
   );

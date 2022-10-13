@@ -1,19 +1,16 @@
 import Link from "next/link";
-import Logo1 from "../CustomLogo/여행큐레이션1";
-import Logo3 from "../CustomLogo/그룹별여행3";
-import Logo5 from "../CustomLogo/지역별여행5";
-import Logo7 from "../CustomLogo/테마별여행7";
-import Logo9 from "../CustomLogo/커뮤니티9";
+import Logo1 from "../NavbarLogo/여행큐레이션1";
+import Logo3 from "../NavbarLogo/그룹별여행3";
+import Logo5 from "../NavbarLogo/지역별여행5";
+import Logo7 from "../NavbarLogo/테마별여행7";
+import Logo9 from "../NavbarLogo/커뮤니티9";
 
 export default function navbar() {
   return (
     <>
-<header>           
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 -mt-16 flex items-center fixed inset-x-0 z-20">
-            <div className=" flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">     
-
-                                 {/* 모바일 화면 */}
-                    <div data-collapse-toggle="mobile-menu-2" className="visible sm:invisible items-center p-2 ml-1 text-sm text-gray-500 rounded-lg">
+       <nav className="bg-white border-gray-200 lg:px-6 mt-5 flex items-center inset-x-0 z-20">
+            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">     
+                  <div data-collapse-toggle="mobile-menu-2" className="visible sm:invisible items-center p-2 ml-1 text-sm text-gray-500 rounded-lg">
                     <ul className="flex mt-4 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 sm:space-x-5">
                         <li>
                             <Link href="/">
@@ -125,7 +122,5 @@ export default function navbar() {
             </div>
             </div>
         </nav>
-    </header>
-
-</>
+    </>
   )}
