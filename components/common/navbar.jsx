@@ -6,48 +6,123 @@ import Logo7 from "../CustomLogo/테마별여행7";
 import Logo9 from "../CustomLogo/커뮤니티9";
 
 export default function navbar() {
-
   return (
     <>
 <header>           
-        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 -mt-16 flex fixed inset-x-0 z-20 ">
-            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <div className="flex items-center lg:order-2">
-                    <button data-collapse-toggle="mobile-menu-2" type="button" className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-                        <span className="sr-only">Open main menu</span>
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                        <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </button>
+        <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 -mt-16 flex items-center fixed inset-x-0 z-20">
+            <div className=" flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">     
+
+                                 {/* 모바일 화면 */}
+                    <div data-collapse-toggle="mobile-menu-2" className="visible sm:invisible items-center p-2 ml-1 text-sm text-gray-500 rounded-lg">
+                    <ul className="flex mt-4 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 sm:space-x-5">
+                        <li>
+                            <Link href="/">
+                                <a className="block pl-3 lg:p-0"> 
+                                <Logo1/>
+                                <div>큐레이션</div>
+                                </a>
+                            </Link>   
+                        </li>
+                        
+                            
+                        <li>
+                            <Link href="/">
+                                <a className="block pl-3 lg:p-0"> 
+                                <Logo3/>
+                                <div>그룹별</div>
+                                </a>
+                            </Link>   
+                        </li>
+
+                        <li>
+                            <Link href="/">
+                                <a className="block pl-3 lg:p-0"> 
+                                <Logo5/>
+                                <div>지역별</div>
+                                </a>
+                            </Link>   
+                        </li>
+
+
+                        <li>
+                            <Link href="/">
+                                <a className="block pl-3 lg:p-0"> 
+                                <Logo7/>
+                                <div>테마별</div>
+                                </a>
+                            </Link>   
+                        </li>
+
+                        <li>
+                            <Link href="/">
+                                <a className="block pl-3 lg:p-0"> 
+                                <Logo9/>
+                                <div>커뮤니티</div>
+                                </a>
+                            </Link>   
+                        </li>
+                      </ul> 
+
+                    </div>
                 </div>
-                <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-                    <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">
-            
-                        <button>
-                        <li> 
-                            <Logo1 className="hover: <Logo2/>"/>
-                            <Link href="#" className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"> 여행 큐레이션 </Link>    
-                        </li>
-                        </button>
 
-                        <li>
-                            <Logo3/>
-                            <Link href="#" className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">그룹별 여행</Link>
-                        </li>
 
-                        <li>
-                            <Logo5/>
-                            <Link href="#" className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">지역별 여행</Link>
-                        </li>
-                        <li>
-                            <Logo7/>
-                            <Link href="#" className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">테마별 여행</Link>
-                        </li>
-                        <li>
-                            <Logo9/>
-                            <Link href="#" className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">커뮤니티</Link>
-                        </li>
+                                                {/* 큰 화면 */}
+                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">      
+                   <div className="hidden sm:flex lg:items-center lg:justify-between justify-between items-center w-full md:flex md:w-auto p-2 ml-1 text-sm" id="navbar-search">
+                    <div className="mx-[10vw] justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                       <ul className="flex font-medium lg:flex-row space-x-10 lg:mt-0 rounded-lg text-sm ">
+
+                            <li>
+                            <Link href="/">
+                                <a className="block py-2 pr-4 pl-3 border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"> 
+                                <Logo1/>여행 큐레이션
+                                </a>
+                            </Link>   
+                            </li>
+                        
+
+                            <li>
+                            <Link href="/">
+                                <a className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                                <Logo3/>그룹별 여행
+                                </a>
+                            </Link>
+                            </li>
+
+                            <li>
+                            <Link href="/">
+                                <a className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                                <Logo5/>지역별 여행
+                                </a>
+                            </Link>
+                            </li>
+                            
+                            <li>
+                            <Link href="/">
+                                <a className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                                <Logo7/>테마별 여행
+                                </a>
+                            </Link>
+                            </li>
+
+                            <li>
+                            <Link href="/">
+                                <a className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                                <Logo9/>커뮤니티
+                                </a>
+                            </Link>
+                            </li>
+
+                            <li>
+                            <Link href="#" className="block py-2 pr-4 pl-3 border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">더보기</Link>
+                                <svg class=" inline-block ml-2 h-6 w-6 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </li>
                     </ul>
-                </div>
+               </div>
+            </div>
             </div>
         </nav>
     </header>
