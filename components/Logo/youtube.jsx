@@ -7,7 +7,7 @@ function Youtube() {
       enable-background="new 0 0 24 24"
       height="33px"
       viewBox="0 0 24 24"
-      width="33px"
+      width="33px" 
       fill="#e2e2e2"
     >
       <g>

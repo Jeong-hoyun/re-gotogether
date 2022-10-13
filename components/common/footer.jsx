@@ -67,7 +67,7 @@ export default function Footer() {
           </h2>
           <ul className="mb-6 text-lg list-none ">
             <li className="text-base text-gray-200">
-              영업시간 : 09:00 ~ 18:00
+              영업시간 : 09:00 ~ 18:00 
             </li>
             <li className="mb-1 text-2xl font-medium text-gray-100 text-number-color">
               02-6105-7711
