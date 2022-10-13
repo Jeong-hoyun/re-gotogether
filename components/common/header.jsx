@@ -24,7 +24,8 @@ export default function Header() {
                 <div className="flex items-center">
                   <Link href="/">
                     <a className="flex-shrink-0 block lg:mr-4">
-                      <img src="/img/logo.png" className="w-20" alt="logo" />
+                              {/* 로고 사이즈 20하면 작고 21하면 왜 엄청 커질까*/}
+                      <img src="/img/logo.png" className="w-21" alt="logo" />
                     </a>
                   </Link>
                 </div>
@@ -40,26 +41,28 @@ export default function Header() {
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                   </svg>
                 </button>
+
+
                 <div className="hidden lg:flex lg:items-center lg:justify-between px-6">
-                  <div className="flex justify-start items-center text-gray-500">
+                  <div className="flex justify-start items-center mx-[10vw]">
                     <Link href="/wishlist">
-                      <a className="block flex items-center hover:text-gray-700 mr-5">
-                        위시리스트
+                      <a className="flex items-center hover:text-gray-700 mr-5">
+                        여행
                       </a>
                     </Link>
                     {jwt ? (
-                      <button className="block flex items-center hover:text-gray-700 mr-5">
-                        Sign out
+                      <button className="flex items-center hover:text-gray-700 mr-5">
+                        로그아웃
                       </button>
                     ) : (
-                      <button className="block flex items-center hover:text-gray-700 mr-5">
-                        Sign in
+                      <button className="flex items-center hover:text-gray-700 mr-5">
+                        로그인
                       </button>
                     )}
 
                     <Link href="/">
                       <a className="flex items-center mr-5 hover:text-gray-700">
-                        마이페이지
+                        회원가입
                       </a>
                     </Link>
                   </div>
