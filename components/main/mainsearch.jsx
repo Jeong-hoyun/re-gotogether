@@ -1,47 +1,79 @@
-import React from "react";
+import * as React from 'react';
+import content from '../../json/slick.content.json'
+import Image  from 'next/image';
+import Slider from "react-slick";
+import { useMemo } from 'react';
 
-const Mainsearch = () => {
+function Mainsearch() {
+  const mainCarousel= useMemo(()=>content.main.map(e=>e))
+  const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      focusOnSelect: true,
+      speed: 2000,
+      autoplaySpeed: 4000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
+
+
   return (
-    <>
-      <div>
-        <div className="relative mt-32">
-          <div>
-            <img
-              src="https://cdn.pixabay.com/photo/2022/09/20/19/13/mountains-7468595_1280.jpg"
-              alt=""
-              className="w-full h-96"
-              loading="lazy"
-            />
-          </div>
-          <div className="absolute left-20 bottom-20">
-            <h1 className="mt-8 text-lg font-semibold text-white sm:text-slate-900 md:text-2xl dark:sm:text-white">
-              혹시,
-              <br />
-              여행 좋아하세요?
-              <p className="mt-8 text-white text-sm">
-                당신에게 딱 맞는 여행을 찾아드려요!
-              </p>
-              <button
-                type="button"
-                className="mt-3 bg-blue-500 text-white text-sm font-medium py-2 px-3 rounded-lg"
-              >
-                내 여행 찾기
-              </button>
-            </h1>
-          </div>
-        </div>
-
-        <div className="left-20">
-          <h1 className="mt-12 text-lg font-semibold text-black sm:text-slate-900 dark:sm:text-white">
-            테마별로 여행을 찾아보세요
-            <p className="mt-1 mb-10 font-normal text-neutral-400 text-xs">
-              당신에게 딱 맞는 여행이 준비되어 있어요:D
-            </p>
-          </h1>
-        </div>
-      </div>
-    </>
+    <div className='max-w-full grow'>
+      <Slider {...settings}>
+      {mainCarousel&&mainCarousel.map((step) => {
+        const {title,img,tag}=step
+        return(
+         <div key={title}>       
+			  <div className="w-full">
+        <Image src={img} alt={title} width={1296} height={628}/>
+        <div className="absolute top-0 w-full h-full z-10">
+				<div className="table w-full h-full ">
+					<div className="table-row z-5">
+						<div className="table-cell align-middle">
+							<p className="text-white text-3xl text-center">{title}</p>
+						</div>
+            </div>
+           <div className="table-row z-5">
+            <div className="table-cell align-middle">
+							<p className="text-white text-2xl text-center">{tag}</p>
+						</div>
+					</div>
+				 </div>
+			  </div>	
+        </div>			    
+       </div>
+        )     
+      })}
+      </Slider>
+ 
+    </div>
   );
-};
+}
 
 export default Mainsearch;

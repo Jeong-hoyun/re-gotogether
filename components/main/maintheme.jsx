@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+
 const Maintheme = ({ country, group, theme }) => {
   const [value, setValue] = useState(group);
   return (
@@ -37,17 +38,7 @@ const Maintheme = ({ country, group, theme }) => {
               일정별
             </button>
           </li>
-          <li role="presentation">
-            <button className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">
-              무격리 여행
-            </button>
-          </li>
-          <li role="presentation">
-            <button className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">
-              마감 임박
-            </button>
-          </li>
-        </ul>
+         </ul>
       </div>
 
       <div className="flex">
@@ -57,10 +48,7 @@ const Maintheme = ({ country, group, theme }) => {
             return (
               <div
                 className="mr-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
-                key={title}
-                data-aos="flip-left"
-                data-aos-duration="2000"
-                data-aos-easing="ease-out-cubic"
+                key={title}            
               >
                 <Link href={path}>
                   <a alt={title}>
