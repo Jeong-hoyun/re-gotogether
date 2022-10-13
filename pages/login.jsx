@@ -1,20 +1,32 @@
 import { useForm, Controller } from "react-hook-form";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import axios from "axios";
 import { useRouter } from "next/router";
 import { API_URL } from './../config/index';
+import { useDispatch,useSelector } from 'react-redux';
+import { login } from "rtk/features/loginSlice";
+import { useEffect } from 'react';
+
 
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const router = useRouter();
+  const loginUser = useSelector((state) => state.login.login);
+  const dispatch= useDispatch()
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+
+ useEffect(()=>{
+    loginUser.username?router.push("./mypage"):null
+ },[])
+
+
   const onSubmit = async (data) => {
+
     const xhttp = new XMLHttpRequest();
     xhttp.open("POST", `${API_URL}/login`);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -22,20 +34,21 @@ const Login = () => {
     xhttp.onreadystatechange = function () {
       console.log(this);
       if (this.readyState == 4) {
-        const objects = JSON.parse(this.responseText);       
-        if (objects["status"] == 200) { 
+        const objects = JSON.parse(this.response);        
+        if (this.status == 200&&objects.username) { 
           MySwal.fire({
-            text: objects["message"],
+            text: `${objects.username}님 로그인 감사합니다`,
             icon: "success",
             confirmButtonText: "OK",
           }).then((result) => {
             if (result.isConfirmed) {
-              router.push("./");
+              dispatch(login(objects))        
+               router.push("./");
             }
           });
         } else {
           MySwal.fire({
-            text: objects["message"],
+            text: "아이디와 비밀번호를 다시확인해주세요",
             icon: "error",
             confirmButtonText: "OK",
           });
