@@ -44,7 +44,7 @@ const Maintheme = ({ country, group, theme }) => {
       <div className="flex">
         {value &&
           value.map((item) => {
-            const { title, path, img } = item;
+            const { title, path, img,subtitle } = item;
             return (
               <div
                 className="mr-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
@@ -66,7 +66,7 @@ const Maintheme = ({ country, group, theme }) => {
                   <Link href={path}>
                     <a href="#">
                       <p className="mb-2 text-sm font-bold tracking-tight text-gray-900">
-                        {title}
+                        {subtitle?subtitle:title}
                       </p>
                     </a>
                   </Link>

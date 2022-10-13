@@ -34,7 +34,11 @@ export default function Header() {
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                   </svg>
                 </button>
+<<<<<<< HEAD
                 <div className="hidden px-6 lg:flex lg:items-center lg:justify-between">
+=======
+                <div className="hidden lg:flex lg:items-center lg:justify-between px-6">
+>>>>>>> 1639ff5c67af662c9ab004a3c69027ea62332fd5
                   <div className="flex justify-start items-center mx-[10vw]">
                     <Link href="/wishlist">
                       <a className="flex items-center mr-5 hover:text-gray-700">
@@ -42,7 +46,11 @@ export default function Header() {
                       </a>
                     </Link>
                     {loginUser.username ? (
+<<<<<<< HEAD
                       <button  onClick={()=>dispatch(logout(loginUser.email))}  className="flex items-center mr-5 hover:text-gray-700">
+=======
+                      <button  onClick={()=>dispatch(logout(loginUser.email))}  className="flex items-center hover:text-gray-700 mr-5">
+>>>>>>> 1639ff5c67af662c9ab004a3c69027ea62332fd5
                         로그아웃
                       </button>
                     ) : (

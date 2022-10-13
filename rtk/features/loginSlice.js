@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = { login: [] }; // 처음에는 빈 배열로 시작
 
@@ -10,7 +10,8 @@ const loginSlice = createSlice({
       state.login=action.payload
     },
     logout(state, action) {
-      state.login = state.login.filter((item) => item.email !== action.payload);
+      console.log(current(state)) 
+      state.login={ login: []}
     },
   },
 });
