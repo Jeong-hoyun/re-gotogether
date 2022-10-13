@@ -9,6 +9,7 @@ import Mail from "../Logo/Mail.jsx";
 
 export default function Footer() {
   return (
+
     <footer class="bg-gray-800 mt-24 pb-10 relative">
       {/* logo */}
       <div className="mb-2 bg-footer-color">
