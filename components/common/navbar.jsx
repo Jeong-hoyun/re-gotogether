@@ -67,7 +67,7 @@ export default function navbar() {
         id="navbar-search"
       >
         <div
-          className="items-center justify-between w-full mx-auto lg:flex lg:w-auto lg:order-1"
+          className="items-center justify-between w-full mx-auto mb-2 lg:flex lg:w-auto lg:order-1"
           id="mobile-menu-2"
         >
           <ul className="flex space-x-10 text-sm lg:flex-row mb-20px ">
