@@ -13,7 +13,6 @@ const wishSlice = createSlice({
       state.wish = state.wish.filter((item) => item.id !== action.payload);
     },
   },
-
 });
 
 const { actions, reducer } = wishSlice;
