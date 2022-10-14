@@ -4,6 +4,8 @@ import Logo3 from "../NavbarLogo/group3";
 import Logo5 from "../NavbarLogo/region5";
 import Logo7 from "../NavbarLogo/theme7";
 import Logo9 from "../NavbarLogo/community9";
+import DownArrow from "../NavbarLogo/downArrow";
+import ModalBtn from "./modalBtn";
 
 export default function navbar() {
   return (
@@ -110,33 +112,21 @@ export default function navbar() {
             <li>
               <Link href="/">
                 <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
-                  <Logo9 />
-                  커뮤니티
+                <Logo9 />
+                커뮤니티
                 </a>
               </Link>
             </li>
 
             <li>
-              <Link
-                href="#"
-                className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-              >
-                더보기
-                </Link>
-              <svg
-                class=" inline-block ml-2 h-6 w-6 group-hover:text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
-                />
-                
-              </svg>
+              <Link href="/">
+                <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+
+                {/* 더보기 */}
+                <ModalBtn/>
+
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
