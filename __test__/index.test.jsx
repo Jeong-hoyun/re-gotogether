@@ -5,10 +5,7 @@ import '@testing-library/jest-dom'
 describe('Home', () => {
   it('renders a heading', () => {
     render(<Home />)
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
-
-    expect(heading).toBeInTheDocument()
+    const heading = screen.getByTitle('메인페이지|고투게더')
+    expect(heading).toBeChecked()
   })
 })
