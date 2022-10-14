@@ -8,7 +8,7 @@ export function OneForm({ one, updateFields }) {
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
       >
         <img
-          src="/img/sunscreen.jpg"
+          src="/img/1_sunscreen.jpg"
           alt="sunscreen"
           data-img="선크림"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
@@ -21,7 +21,7 @@ export function OneForm({ one, updateFields }) {
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
       >
         <img
-          src="/img/camera.jpg"
+          src="/img/1_camera.jpg"
           alt="camera"
           data-img="카메라"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
@@ -34,7 +34,7 @@ export function OneForm({ one, updateFields }) {
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
       >
         <img
-          src="/img/hiking_shoes.jpg"
+          src="/img/1_hiking_shoes.jpg"
           alt="hiking_shoes"
           data-img="등산화"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
@@ -47,7 +47,7 @@ export function OneForm({ one, updateFields }) {
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
       >
         <img
-          src="/img/golf_club.jpg"
+          src="/img/1_golf_club.jpg"
           alt="golf_club"
           data-img="골프채"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
