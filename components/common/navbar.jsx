@@ -10,12 +10,10 @@ import ModalBtn from "./modalBtn";
 export default function navbar() {
   return (
     <>
-
-    <nav
+      <nav
         data-collapse-toggle="mobile-menu-2"
         className="items-center visible ml-1 text-sm text-gray-500 rounded-lg sm:invisible p-0 m-0"
       >
-
         <ul className="flex mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-auto sm:space-x-5 ">
           <li>
             <Link href="/">

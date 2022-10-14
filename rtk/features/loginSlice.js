@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = { login: [] }; // 처음에는 빈 배열로 시작
 
@@ -7,11 +7,10 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     login(state, action) {
-      state.login=action.payload
+      state.login = action.payload;
     },
     logout(state, action) {
-      console.log(current(state)) 
-      state.login={ login: []}
+      state.login = { login: [] };
     },
   },
 });

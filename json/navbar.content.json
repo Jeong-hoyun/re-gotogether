@@ -1,0 +1,92 @@
+{
+  "curation": [
+    {
+      "title": "여행 그룹 추천 받기",
+      "path": "/recommendations"
+    },    
+    {
+      "title": "나의 여행 유형 테스트",
+      "path": "/test"
+    }
+  ],
+  "group": [
+    {
+      "title": "with 5070",
+      "path": "/view/5070"
+    },    
+    {
+      "title": "여자끼리 여행",
+      "path": "/view/ladies"
+    },
+    {
+      "title": "자녀 동반 여행",
+      "path": "/view/withchild"
+    },
+    {
+      "title": "with 2040",
+      "path": "/view/2040"
+    }
+  ],
+  "country": [
+    {
+      "title": "동남아시아 여행",
+      "path": "/view/Thailand"
+    },
+    {
+      "title": "유럽",
+      "path": "/view/Europe"
+    },
+    {
+      "title": "중남미 여행",
+      "path": "/view/LatinAmerica"
+    },
+    {
+      "title": "아프리카",
+      "path": "/view/Africa"
+    },
+    {
+      "title": "코카서스",
+      "path": "/view/Caucasus"
+    },
+    {
+      "title": "인도&주변국",
+      "path": "/view/india"
+    }
+  ],
+  "theme": [
+    {
+      "title": "문화 탐방",
+      "path": "/view/culture"
+    },
+    {
+      "title": "골프 여행",
+      "path": "/view/golf"
+    },
+    {
+      "title": "휴양지 힐링",
+      "path": "/view/vacation"
+    },
+    {
+      "title": "트레킹",
+      "path": "/view/trekking"
+    },
+    {
+      "title": "성지순례",
+      "path": "/view/pilgrimage"
+    }
+  ],
+  "community": [
+    {
+      "title": "여행후기",
+      "path": "/community/review"
+    },
+    {
+      "title": "게시판",
+      "path": "/community/bulletinboard"
+    },
+    {
+      "title": "자료실",
+      "path": "/community/library"
+    }
+  ]
+}

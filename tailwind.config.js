@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       colors: {
         "footer-color": "#242424",
-        "number-color": "#00A3FF", 
+        "number-color": "#00A3FF",
         gray: {
           100: "#FBFBFB",
           200: "#EAEAEA",
@@ -42,8 +42,8 @@ module.exports = {
           900: "#234E52",
         },
         mycolor: {
-         myColor: "#242424",
-        }
+          myColor: "#242424",
+        },
       },
       boxShadow: {
         xs: "0 0 0 1px rgba(0, 0, 0, 0.16)",
