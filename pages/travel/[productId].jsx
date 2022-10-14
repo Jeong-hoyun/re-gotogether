@@ -3,35 +3,32 @@ import axios from "axios";
 import Head from "next/head";
 import { API_URL } from "./../../config/index";
 
-
 export const getStaticPaths = async () => {
-    const post = await axios.get(`${API_URL}/api/products?&pageSize=100`)
-    const posts =await post.data 
-    return {
-      paths: posts.products.map((item) => {
-        return {
-          params: {
-            productId: item.productId.toString(),
-          },
-        };
-      }),
-      fallback: false,
-    }; 
+  const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
+  const posts = await post.data;
+  return {
+    paths: posts.products.map((item) => {
+      return {
+        params: {
+          productId: item.productId.toString(),
+        },
+      };
+    }),
+    fallback: false,
+  };
 };
 
 export const getStaticProps = async ({ params }) => {
-
-    const response = await axios.get(
-      `${API_URL}/api/products/${params.productId}`,
-    );
-    const post = await response.data;
-    return {
-      props: { post },
-    };
+  const response = await axios.get(
+    `${API_URL}/api/products/${params.productId}`,
+  );
+  const post = await response.data;
+  return {
+    props: { post },
+  };
 };
 
 const ProductId = ({ post }) => {
-     
   const HeroImage = post?.images[0];
   return (
     <>
