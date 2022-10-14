@@ -1,21 +1,66 @@
-import { FormWrapper } from "./formwrapper"
+import { FormWrapper } from "./formwrapper";
 
-export function TwoForm({two, updateFields,}) {
+export function TwoForm({ two, updateFields }) {
   return (
-    <FormWrapper title="어떤 것을 좋아하시나요">
-      <div  className="active:shadow-xl text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 "  onClick={e => updateFields({ two: e.target.dataset.img })}>
-       <img src="/img/women.png" alt="women" data-img='women' className="rounded-lg"  />      
+    <FormWrapper title="Q2. 어디론가 떠나고 싶은 날, 어떤 여행을 떠나고 싶으세요?">
+      <div
+        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        onClick={(e) => updateFields({ two: e.target.dataset.img })}
+      >
+        <img
+          src="/img/2_golf.jpg"
+          alt="golf"
+          data-img="golf"
+          className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
+          width={300}
+          height={200}
+        />
       </div>
-      <div className="active:shadow-xl text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1" onClick={e => updateFields({ two: e.target.dataset.img })}>
-       <img src="/img/men.png" alt="men" data-img='men' className="rounded-lg"/>      
+      <div
+        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
+        onClick={(e) => updateFields({ two: e.target.dataset.img })}
+      >
+        <img
+          src="/img/2_hiking.jpg"
+          alt="hiking"
+          data-img="자연 탐방"
+          className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
+          width={300}
+          height={200}
+        />
       </div>
-      <div className="active:shadow-xl text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 " onClick={e => updateFields({ two: e.target.dataset.img })}>
-       <img src="/img/men.png" alt="men" data-img='men' className="rounded-lg"/>      
+      <div
+        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        onClick={(e) => updateFields({ two: e.target.dataset.img })}
+      >
+        <img
+          src="/img/2_cultural_site.jpg"
+          alt="cultural_site"
+          data-img="유적지 탐방"
+          className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
+          width={300}
+          height={200}
+        />
       </div>
-        
-      <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <p className="text-gray-400 text-xl">{two&&`${two}를 선택하셨습니다`}</p>  
-      </div>  
+      <div
+        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        onClick={(e) => updateFields({ two: e.target.dataset.img })}
+      >
+        <img
+          src="/img/2_volunteer.jpg"
+          alt="volunteer"
+          data-img="봉사활동"
+          className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
+          width={300}
+          height={200}
+        />
+      </div>
+
+      <div className="flex flex-wrap w-full  w-full mt-5 mb-10flex-col items-center text-center">
+        <p className="text-black-400 text-xl">
+          {two && `${two}를 선택하셨습니다`}
+        </p>
+      </div>
     </FormWrapper>
-  )
+  );
 }
