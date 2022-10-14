@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
+import Search from "./search";
 
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -17,14 +19,19 @@ export default function Header() {
                 <div className="flex items-center">
                   <Link href="/">
                     <a className="flex-shrink-0 block lg:mr-4">
-                              {/* 로고 사이즈 20하면 작고 21하면 왜 엄청 커질까*/}
-                      <img src="/img/logo.png" className="w-21" alt="logo" />
+                      <Image
+                        src="/img/logo.png"
+                        className="w-21"
+                        alt="logo"
+                        width={250}
+                        height={41}
+                      />
                     </a>
                   </Link>
                 </div>
               </div>
-
-              <div className="flex justify-end flex-grow lg:w-3/4 xl:w-4/5">
+              <Search />
+              <div className="flex flex-grow justify-end flex-wrap items-center">
                 <button className="flex items-center px-6 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700">
                   <svg
                     className="w-4 h-4 fill-current"
@@ -34,42 +41,40 @@ export default function Header() {
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                   </svg>
                 </button>
-                <div className="hidden lg:flex lg:items-center lg:justify-between px-6">
-                  <div className="flex justify-start items-center mx-[10vw]">
+                <div className="hidden lg:flex lg:items-center ">
+                  <div className="flex ">
                     <Link href="/wishlist">
                       <a className="flex items-center hover:text-gray-700 mr-5">
                         여행
                       </a>
                     </Link>
                     {loginUser.username ? (
-                      <button  onClick={()=>dispatch(logout(loginUser.email))}  className="flex items-center hover:text-gray-700 mr-5">
+                      <button
+                        onClick={() => dispatch(logout(loginUser.email))}
+                        className="flex items-center hover:text-gray-700 mr-5"
+                      >
                         로그아웃
                       </button>
                     ) : (
                       <Link href="/login">
-                      <a className="flex items-center mr-5 hover:text-gray-700">
-                        로그인
+                        <a className="flex items-center mr-5 hover:text-gray-700">
+                          로그인
                         </a>
                       </Link>
-                    )}                 
+                    )}
                     {loginUser.username ? (
                       <Link href="/mypage">
-                      <a className="flex items-center mr-5 hover:text-gray-700">
-                        마이페이지
-                      </a>
-                    </Link>
+                        <a className="flex items-center mr-5 hover:text-gray-700">
+                          마이페이지
+                        </a>
+                      </Link>
                     ) : (
                       <Link href="/signup">
-                      <a className="flex items-center mr-5 hover:text-gray-700">
-                        회원가입
-                      </a>
-                    </Link>
+                        <a className="flex items-center mr-5 hover:text-gray-700">
+                          회원가입
+                        </a>
+                      </Link>
                     )}
-
-
-
-
-
                   </div>
                 </div>
               </div>
@@ -80,4 +85,3 @@ export default function Header() {
     </>
   );
 }
- 

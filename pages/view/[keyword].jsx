@@ -9,8 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
 
-
-
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
     return { params: { keyword: item.key } };
@@ -23,7 +21,9 @@ export function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const { data: searchData } = await axios.get(`${API_URL}/api/products/?keyword=${keyword}`);
+  const { data: searchData } = await axios.get(
+    `${API_URL}/api/products/?keyword=${keyword}`,
+  );
   return {
     props: {
       searchData,
@@ -41,9 +41,9 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() =>wish.wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
-  if (searchData?.products.length === 0){
+  if (searchData?.products.length === 0) {
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
   }
   return (
@@ -82,12 +82,18 @@ const Keyword = ({ searchData }) => {
                     className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
                     type="button"
                     aria-label="Like"
-                    onClick={wishItem.includes(productId)
+                    onClick={
+                      wishItem.includes(productId)
                         ? () => dispatch(delwish(productId))
                         : () =>
-                            dispatch(addwish({ id: productId, title: title,img:image1}))
+                            dispatch(
+                              addwish({
+                                id: productId,
+                                title: title,
+                                img: image1,
+                              }),
+                            )
                     }
-                 
                   >
                     <svg
                       width="20"

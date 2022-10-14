@@ -8,12 +8,10 @@ import Logo9 from "../NavbarLogo/community9";
 export default function navbar() {
   return (
     <>
-
-    <nav
+      <nav
         data-collapse-toggle="mobile-menu-2"
         className="items-center visible ml-1 text-sm text-gray-500 rounded-lg sm:invisible p-0 m-0"
       >
-
         <ul className="flex mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-auto sm:space-x-5 ">
           <li>
             <Link href="/">
@@ -122,20 +120,19 @@ export default function navbar() {
                 className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
               >
                 더보기
-                </Link>
+              </Link>
               <svg
-                class=" inline-block ml-2 h-6 w-6 group-hover:text-gray-500"
+                className=" inline-block ml-2 h-6 w-6 group-hover:text-gray-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 aria-hidden="true"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
-                
               </svg>
             </li>
           </ul>
