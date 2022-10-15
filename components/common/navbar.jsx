@@ -6,12 +6,13 @@ import Logo7 from "../NavbarLogo/theme7";
 import Logo9 from "../NavbarLogo/community9";
 import DownArrow from "../NavbarLogo/downArrow";
 import ModalBtn from "./modalBtn";
+import { navMenus } from "config/navMenus";
 
-export default function navbar() {
+export default function navbar({}) {
   return (
     <>
       <nav
-        data-collapse-toggle="mobile-menu-2"
+        data-collapse-toggle="mobile-menu"
         className="items-center visible ml-1 text-sm text-gray-500 rounded-lg sm:invisible p-0 m-0"
       >
         <ul className="flex mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-auto sm:space-x-5 ">
@@ -116,19 +117,24 @@ export default function navbar() {
               </Link>
             </li>
 
+
+
             <li>
               <Link href="/">
                 <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
-
-                {/* 더보기 */}
-                <ModalBtn/>
+                
+                더보기 너 어디가
+                <ModalBtn menus={navMenus.menus}  group={navMenus.group}/>   
 
                 </a>
               </Link>
             </li>
+            
+
           </ul>
         </div>
       </nav>
     </>
   );
 }
+

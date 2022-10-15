@@ -1,4 +1,4 @@
-{ 
+export const navMenus = { 
   "menus" : [
     { 
       "id":1,

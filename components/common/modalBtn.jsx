@@ -1,35 +1,60 @@
-import React,{ useEffect, useState, useRef} from 'react'
+import React,{useState} from 'react'
 import DownArrow from '../NavbarLogo/downArrow'
+import { navMenus } from 'config/navMenus'
 
-function ModalBtn() {
-  // const outside = useRef()
+
+function ModalBtn({ menus, group }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className='ModalBtn inline-block'> 
- 
-      <button onClick={() => setIsOpen(!isOpen)}>   <DownArrow /> </button>
+
+      {/* <button>  <DownArrow/> </button> 왜 아래꺼가 하나하나 클릭이 안되는지 알아보자 */}
+      <button onClick={() => setIsOpen(!isOpen)}> 
+        <DownArrow/>
+         </button>
+
       {isOpen ? (
         <div className='modal'>
-          <div>Modal is open</div>
-            {/* <!-- Dropdown menu --> */}
-            <div id="dropdownNavbar" class="hidden z-10 w-44 font-normal bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                  <li>
-                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                  </li>
-                </ul>
-                <div class="py-1">
-                  <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
-                </div>
-            </div>
+
+          <div>
+                        {/* <!-- Dropdown menu --> */}
+                <div id="dropdownNavbar" className=" w-44 font-normal rounded divide-y">
+              
+          {/* {menus && ( */}
+          {menus?.length > 0 && (
+            <ul className="py-1 text-sm "> 
           
+                  착한 사람 눈에만 보이는 목록들
+
+              {menus.map((menu) => ( 
+                <li key={menu.id}>
+                    <a href="#" id="첫번째 목록" className="block py-2 px-4 bg-gray">{menu.text}</a>
+                </li>
+                ))}
+
+              </ul>
+
+                )}
+
+          {/* {group && ( */}
+          {group?.length > 0 && (
+            <ul className="py-1 text-sm "> 
+          
+                  two coloumns plz
+              {group.map((group) => ( 
+                <li key={group.id}>
+                    <a href={group.link} id="첫번째 목록" className="block py-2 px-4 bg-gray">{group.text}</a>
+                </li>
+                ))}
+
+              </ul>
+
+              )}
+
+
+            </div>
+          </div>
         </div>
       ): null}
     </div>
