@@ -1,4 +1,3 @@
-// navbar    와 잠시만 나 한번에 여러가지 해결한거같아 목록 column여러개, json사용 방법 
 import React,{useState} from 'react'
 import Link from "next/link";
 import Logo1 from "../NavbarLogo/travelQ1";

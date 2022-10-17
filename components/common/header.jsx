@@ -4,6 +4,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
 import Search from "./search";
+import PageLogo from "../HeaderLogo/pageLogo";
+import Wishlist from "../HeaderLogo/wishlist";
+import Login from "../HeaderLogo/login";
+import Signup from "../HeaderLogo/signup";
 
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
@@ -19,13 +23,14 @@ export default function Header() {
                 <div className="flex items-center">
                   <Link href="/">
                     <a className="flex-shrink-0 block lg:mr-4">
-                      <Image
+                      {/* <Image
                         src="/img/logo.png"
                         className="w-21"
                         alt="logo"
                         width={250}
                         height={41}
-                      />
+                      /> */}
+                      <PageLogo/>
                     </a>
                   </Link>
                 </div>
@@ -45,7 +50,8 @@ export default function Header() {
                   <div className="flex ">
                     <Link href="/wishlist">
                       <a className="flex items-center mr-5 hover:text-gray-700">
-                        여행
+                        <Wishlist/>
+                        <div>관심상품</div>
                       </a>
                     </Link>
                     {loginUser.username ? (
@@ -53,11 +59,13 @@ export default function Header() {
                         onClick={() => dispatch(logout(loginUser.email))}
                         className="flex items-center mr-5 hover:text-gray-700"
                       >
+                      <Login/>
                         로그아웃
                       </button>
                     ) : (
                       <Link href="/login">
                         <a className="flex items-center mr-5 hover:text-gray-700">
+                        <Login/>
                           로그인
                         </a>
                       </Link>
@@ -71,6 +79,7 @@ export default function Header() {
                     ) : (
                       <Link href="/signup">
                         <a className="flex items-center mr-5 hover:text-gray-700">
+                          <Signup/>
                           회원가입
                         </a>
                       </Link>
