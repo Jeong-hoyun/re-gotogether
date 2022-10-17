@@ -43,16 +43,16 @@ function Mainsearch() {
   };
 
   return (
-    <div className="max-w-full mt-5 mb-20">
+    <div className="flex flex-col mt-5 mb-20">
       <Slider {...settings}>
         {mainCarousel &&
           mainCarousel.map((step) => {
             const { title, img, tag } = step;
             return (
               <div key={title} className="relative">
-                <div className="absolute items-center justify-center text-white m-24 z-10">
-                  <h3 className="text-5xl">{title}</h3>
-                  <h5 className="text-3xl">{tag}</h5>
+                <div className="absolute text-white sm:m-45 lg:m-40 z-10">
+                  <h3 className="sm:text-3xl lg:text-5xl">{title}</h3>
+                  <h5 className="sm:text-xl lg:text-3xl">{tag}</h5>
                 </div>
                 <Image
                   src={img}

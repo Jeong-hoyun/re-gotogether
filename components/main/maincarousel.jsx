@@ -2,43 +2,74 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import content from "../../json/best.content.json";
 import Image from "next/image";
+import Link from "next/link";
 
 export default class Maincarousel extends Component {
-  render() {
-    console.log("content", content.main);
+  render() {  
     const settings = {
       dots: true,
       infinite: true,
       speed: 300,
       slidesToShow: 4,
       slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     };
     return (
-      <div>
+      <div >
         <h2 className="mt-20 mb-6 text-lg font-semibold text-black sm:text-slate-900">
           여행 그룹 Best
         </h2>
         <Slider {...settings}>
           {content.main &&
             content.main.map((item) => {
-              const { title, tag, price, img } = item;
+              const { title, tag, price, img,key } = item;
               return (
                 <div
                   key={title}
                   className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
                 >
+                <Link href={key}>
+                <a>
                   <Image
                     src={img}
                     alt={title}
                     width={1296}
                     height={648}
-                    className="rounded-t-lg object-cover cursor-pointer hover:opacity-75 transition-all z-5"
+                    className="rounded-lg object-cover cursor-pointer hover:opacity-75 transition-all z-5"
                   />
+                  </a>
+                  </Link>
                   <div className="p-5">
-                    <p className="text-sm mb-1 font-sm text-gray-700">
+                    <p className="text-sm mb-1  font-sm text-gray-700">
                       {title}
                     </p>
-                    <a href="#">
+                    <Link href={key}>
+                    <a>
                       <p className="mb-2 text-sm font-bold text-gray-900">
                         {tag ? tag : title}
                       </p>
@@ -46,47 +77,14 @@ export default class Maincarousel extends Component {
                         {price}
                       </p>
                     </a>
+                    </Link>
                   </div>
                 </div>
               );
             })}
         </Slider>
       </div>
-      // <div>
-      //   <h2 className="mt-24 mb-6 text-lg font-semibold text-black sm:text-slate-900">
-      //     여행 그룹 Best
-      //   </h2>
-      //   <Slider {...settings}>
-      //     <div>
-      //       <h3>1</h3>
-
-      //       <Image
-      //         src={content.main[0].img}
-      //         alt="sunscreen"
-      //         data-img="선크림"
-      //         className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
-      //         width={300}
-      //         height={200}
-      //       />
-      //     </div>
-      //     <div>
-      //       <h3>2</h3>
-      //       <img src={content.main.img} />
-      //     </div>
-      //     <div>
-      //       <h3>3</h3>
-      //     </div>
-      //     <div>
-      //       <h3>4</h3>
-      //     </div>
-      //     <div>
-      //       <h3>5</h3>
-      //     </div>
-      //     <div>
-      //       <h3>6</h3>
-      //     </div>
-      //   </Slider>
-      // </div>
+    
     );
   }
 }
