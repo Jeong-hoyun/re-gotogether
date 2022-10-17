@@ -1,5 +1,5 @@
 { 
-  "menus" : [
+  "curations" : [
     { 
       "id":1,
       "text": "나의 유형 추천받기",
@@ -12,7 +12,7 @@
         } 
   ],
 
-    "group": [
+    "groups": [
       { 
         "id":3,
         "text": "with 5070",
@@ -33,6 +33,71 @@
         "text": "with 2040",
         "link": "/view/2040"
       }
-    ]
+    ],
+    
+    "countries": [
+      {
+        "text": "동남아시아 여행",
+        "link": "/view/Thailand"
+      },
+      {
+        "text": "유럽",
+        "link": "/view/Europe"
+      },
+      {
+        "text": "중남미 여행",
+        "link": "/view/LatinAmerica"
+      },
+      {
+        "text": "아프리카",
+        "link": "/view/Africa"
+      },
+      {
+        "text": "코카서스",
+        "link": "/view/Caucasus"
+      },
+      {
+        "text": "인도&주변국",
+        "link": "/view/india"
+      }
+    ],
 
+    "themes": [
+      {
+        "text": "문화 탐방",
+        "link": "/view/culture"
+      },
+      {
+        "text": "골프 여행",
+        "link": "/view/golf"
+      },
+      {
+        "text": "휴양지 힐링",
+        "link": "/view/vacation"
+      },
+      {
+        "text": "트레킹",
+        "link": "/view/trekking"
+      },
+      {
+        "text": "성지순례",
+        "link": "/view/pilgrimage"
+      }
+    ],
+
+    "communities": [
+      {
+        "text": "여행후기",
+        "link": "/community/review"
+      },
+      {
+        "text": "게시판",
+        "link": "/community/bulletinboard"
+      },
+      {
+        "text": "자료실",
+        "link": "/community/library"
+      }
+      ]
+  
 }

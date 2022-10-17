@@ -1,14 +1,17 @@
+// navbar    와 잠시만 나 한번에 여러가지 해결한거같아 목록 column여러개, json사용 방법 
+import React,{useState} from 'react'
 import Link from "next/link";
 import Logo1 from "../NavbarLogo/travelQ1";
 import Logo3 from "../NavbarLogo/group3";
 import Logo5 from "../NavbarLogo/region5";
 import Logo7 from "../NavbarLogo/theme7";
 import Logo9 from "../NavbarLogo/community9";
+import navMenus from "../../json/navbar.content.json"
 import DownArrow from "../NavbarLogo/downArrow";
-import ModalBtn from "./modalBtn";
-import { navMenus } from "config/navMenus";
 
-export default function navbar({}) {
+export default function navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
       <nav
@@ -120,21 +123,109 @@ export default function navbar({}) {
 
 
             <li>
-              <Link href="/">
-                <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+              {/* <Link href="/"> */}
+              <button>
+                <a onClick={() => setIsOpen(!isOpen)}
+                className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
                 
-                더보기 너 어디가
-                <ModalBtn menus={navMenus.menus}  group={navMenus.group}/>   
-
+                더보기 <DownArrow/>
+                
                 </a>
-              </Link>
+                </button>
+              {/* </Link> */}
             </li>
             
+            {isOpen ? (
+            <div id="dropdown-bg" className='h-[30vh] w-[65vw] absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40 shadow-md '>
+            
+            <ul className="py-1 text-sm "> 
+              { navMenus.curations.map(curation => {
+                return(
+                  <li>
+                    <Link href={curation.link}>
+                    <a
+                      id={curation.id} 
+                      className="flex py-2 px-4 bg-gray">
+                        {curation.text}
+                    </a>
+                    </Link>
+                  </li>
+                )
+              })}
+              </ul>
 
-          </ul>
+              <ul className="py-1 text-sm "> 
+                { navMenus.groups.map(group => {
+                  return(
+                    <li>
+                    <Link href={group.link}>
+                    <a
+                      id={group.id} 
+                      className="flex py-2 px-4 bg-gray">
+                      {group.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.countries.map(country => {
+                  return(
+                    <li>
+                    <Link href={country.link}>
+                    <a
+                      id={country.id} 
+                      className="flex py-2 px-4 bg-gray">
+                      {country.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.themes.map(theme => {
+                  return(
+                    <li>
+                    <Link href={theme.link}>
+                    <a
+                      id={theme.id} 
+                      className="flex py-2 px-4 bg-gray">
+                      {theme.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 px-0 text-sm "> 
+                { navMenus.communities.map(community => {
+                  return(
+                    <li>
+                    <Link href={community.link}>
+                    <a
+                      id={community.id} 
+                      className="flex py-2 px-4 bg-gray">
+                      {community.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+
+            </div>
+              ): null}
+        </ul>
         </div>
       </nav>
     </>
-  );
+  )
 }
+
 
