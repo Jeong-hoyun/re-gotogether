@@ -1,4 +1,5 @@
 import { FormWrapper } from "./formwrapper";
+import Image from "next/image";
 
 export function OneForm({ one, updateFields }) {
   return (
@@ -7,7 +8,7 @@ export function OneForm({ one, updateFields }) {
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
       >
-        <img
+        <Image
           src="/img/1_sunscreen.jpg"
           alt="sunscreen"
           data-img="선크림"
@@ -20,7 +21,7 @@ export function OneForm({ one, updateFields }) {
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
       >
-        <img
+        <Image
           src="/img/1_camera.jpg"
           alt="camera"
           data-img="카메라"
@@ -33,7 +34,7 @@ export function OneForm({ one, updateFields }) {
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
       >
-        <img
+        <Image
           src="/img/1_hiking_shoes.jpg"
           alt="hiking_shoes"
           data-img="등산화"
@@ -46,7 +47,7 @@ export function OneForm({ one, updateFields }) {
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
         className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
       >
-        <img
+        <Image
           src="/img/1_golf_club.jpg"
           alt="golf_club"
           data-img="골프채"
@@ -57,7 +58,7 @@ export function OneForm({ one, updateFields }) {
       </div>
       <div className="flex flex-wrap w-full mt-5 mb-10 flex-col items-center text-center">
         <p className="text-black-400 text-xl">
-          {one && `${one}를 선택하셨습니다`}
+          {one && `${one}을 선택하셨습니다`}
         </p>
       </div>
     </FormWrapper>
