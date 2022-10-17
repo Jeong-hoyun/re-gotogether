@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <div className=" flex items-center h-20 bg-white border-b border-gray-200 z-10">
+        <div className="z-10 flex items-center h-20 bg-white border-b border-gray-200 ">
           <div className="relative w-full max-w-screen-xl px-6 mx-auto">
             <div className="flex items-center -mx-6">
               <div className="pl-6 pr-6 lg:w-1/4 xl:w-1/5 lg:pr-8">
@@ -31,7 +31,7 @@ export default function Header() {
                 </div>
               </div>
               <Search />
-              <div className="flex flex-grow justify-end flex-wrap items-center">
+              <div className="flex flex-wrap items-center justify-end flex-grow">
                 <button className="flex items-center px-6 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700">
                   <svg
                     className="w-4 h-4 fill-current"
@@ -44,14 +44,14 @@ export default function Header() {
                 <div className="hidden lg:flex lg:items-center ">
                   <div className="flex ">
                     <Link href="/wishlist">
-                      <a className="flex items-center hover:text-gray-700 mr-5">
+                      <a className="flex items-center mr-5 hover:text-gray-700">
                         여행
                       </a>
                     </Link>
                     {loginUser.username ? (
                       <button
                         onClick={() => dispatch(logout(loginUser.email))}
-                        className="flex items-center hover:text-gray-700 mr-5"
+                        className="flex items-center mr-5 hover:text-gray-700"
                       >
                         로그아웃
                       </button>

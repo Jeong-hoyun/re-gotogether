@@ -10,9 +10,9 @@ export default function navbar() {
     <>
       <nav
         data-collapse-toggle="mobile-menu-2"
-        className="items-center visible ml-1 text-sm text-gray-500 rounded-lg sm:invisible p-0 m-0"
+        className="items-center visible p-0 m-0 ml-1 text-sm text-gray-500 rounded-lg sm:invisible"
       >
-        <ul className="flex mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 rounded-lg text-sm px-auto sm:space-x-5 ">
+        <ul className="flex mt-1 text-sm font-medium rounded-lg lg:flex-row lg:space-x-5 lg:mt-0 px-auto sm:space-x-5 ">
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
@@ -71,7 +71,7 @@ export default function navbar() {
           <ul className="flex space-x-10 text-sm lg:flex-row mb-20px ">
             <li>
               <Link href="/">
-                <a className="block  border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700">
+                <a className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700">
                   <Logo1 />
                   여행 큐레이션
                 </a>
@@ -122,7 +122,7 @@ export default function navbar() {
                 더보기
               </Link>
               <svg
-                className=" inline-block ml-2 h-6 w-6 group-hover:text-gray-500"
+                className="inline-block w-6 h-6 ml-2 group-hover:text-gray-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
