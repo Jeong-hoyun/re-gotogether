@@ -40,13 +40,13 @@ const Maintheme = ({ country, group, theme }) => {
         </ul>
       </div>
 
-      <div className="flex">
+      <div className="flex flex-wrap">
         {value &&
           value.map((item) => {
             const { title, path, img, subtitle } = item;
             return (
               <div
-                className="mr-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
+                className="mr-5 mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
                 key={title}
               >
                 <Link href={path}>
