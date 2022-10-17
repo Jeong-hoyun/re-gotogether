@@ -82,7 +82,7 @@ $ yarn run format:fix
 | [@Jeong-hoyun](https://github.com/Jeong-hoyun) | [@roroism](https://github.com/roroism) | [@Kang-IJ](https://github.com/Kang-IJ) | [@MinJ33](https://github.com/MinJ33) |
 
 | |
-<img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/stardust6653" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> |
+<img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/Kang-IJ" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> |
 
 - .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
 

@@ -24,7 +24,7 @@ const Wishlist = () => {
               <table className="items-center bg-transparent w-full border-collapse">
                 <tbody>
                   <tr className="text-center">
-                    {wish.length <= 0 ? (
+                    {wish.length <= 1 ? (
                       <td className="border-t-0 text-neutral-400 pt-12 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
                         위시리스트가 없습니다 🫥
                       </td>

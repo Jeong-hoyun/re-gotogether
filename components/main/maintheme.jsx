@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-
 const Maintheme = ({ country, group, theme }) => {
   const [value, setValue] = useState(group);
   return (
@@ -38,17 +37,17 @@ const Maintheme = ({ country, group, theme }) => {
               일정별
             </button>
           </li>
-         </ul>
+        </ul>
       </div>
 
       <div className="flex">
         {value &&
           value.map((item) => {
-            const { title, path, img,subtitle } = item;
+            const { title, path, img, subtitle } = item;
             return (
               <div
                 className="mr-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
-                key={title}            
+                key={title}
               >
                 <Link href={path}>
                   <a alt={title}>
@@ -66,7 +65,7 @@ const Maintheme = ({ country, group, theme }) => {
                   <Link href={path}>
                     <a href="#">
                       <p className="mb-2 text-sm font-bold tracking-tight text-gray-900">
-                        {subtitle?subtitle:title}
+                        {subtitle ? subtitle : title}
                       </p>
                     </a>
                   </Link>

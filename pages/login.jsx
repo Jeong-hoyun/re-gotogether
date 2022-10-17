@@ -1,18 +1,17 @@
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
-import { API_URL } from './../config/index';
-import { useDispatch,useSelector } from 'react-redux';
+import { API_URL } from "./../config/index";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "rtk/features/loginSlice";
-import { useEffect } from 'react';
-
+import { useEffect } from "react";
 
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const router = useRouter();
   const loginUser = useSelector((state) => state.login.login);
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -20,13 +19,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
- useEffect(()=>{
-    loginUser.username?router.push("./mypage"):null
- },[])
-
+  useEffect(() => {
+    loginUser.username ? router.push("./mypage") : null;
+    return () => {}; // cleanUp Function
+  }, []);
 
   const onSubmit = async (data) => {
-
     const xhttp = new XMLHttpRequest();
     xhttp.open("POST", `${API_URL}/login`);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -34,16 +32,16 @@ const Login = () => {
     xhttp.onreadystatechange = function () {
       console.log(this);
       if (this.readyState == 4) {
-        const objects = JSON.parse(this.response);        
-        if (this.status == 200&&objects.username) { 
+        const objects = JSON.parse(this.response);
+        if (this.status == 200 && objects.username) {
           MySwal.fire({
             text: `${objects.username}님 로그인 감사합니다`,
             icon: "success",
             confirmButtonText: "OK",
           }).then((result) => {
             if (result.isConfirmed) {
-              dispatch(login(objects))        
-               router.push("./");
+              dispatch(login(objects));
+              router.push("./");
             }
           });
         } else {
@@ -94,7 +92,8 @@ const Login = () => {
 
               <div className="flex justify-between items-center mb-6">
                 <div className="form-group form-check"></div>
-                <a href="#!"
+                <a
+                  href="#!"
                   className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                 >
                   Forgot password?

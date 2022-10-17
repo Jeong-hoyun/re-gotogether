@@ -9,16 +9,15 @@ import Mail from "../Logo/Mail.jsx";
 
 export default function Footer() {
   return (
-
-    <footer class="bg-gray-800 mt-24 pb-10 relative">
+    <footer className="bg-gray-800 mt-24 pb-10 relative">
       {/* logo */}
       <div className="mb-2 bg-footer-color">
-        <div class="mx-44 p-5 w-56 mb-7">
-          <div class="mt-2">
+        <div className="mx-44 p-5 w-56 mb-7">
+          <div className="mt-2">
             <Image src={company_logo2} alt="company_logo" />
           </div>
         </div>
-        
+
         <a href="#" className="absolute w-7 right-[268px] top-8">
           <Youtube />
         </a>
@@ -27,20 +26,27 @@ export default function Footer() {
         </a>
       </div>
 
-
       {/* logo */}
-      
+
       <div className="float-right pr-48 mt-10">
-        <a href="#" className="inline-block p-3 mr-5 border rounded-full divide-double"><Call /></a>
-        <a href="#" className="inline-block p-3 mr-5 border rounded-full"><Location /></a>
-        <a href="#" className="inline-block p-3 mr-5 border rounded-full"><Mail /></a>
+        <a
+          href="#"
+          className="inline-block p-3 mr-5 border rounded-full divide-double"
+        >
+          <Call />
+        </a>
+        <a href="#" className="inline-block p-3 mr-5 border rounded-full">
+          <Location />
+        </a>
+        <a href="#" className="inline-block p-3 mr-5 border rounded-full">
+          <Mail />
+        </a>
       </div>
-      
-      
+
       {/* 안심카드결제 | 이용약관 | 개인정보처리방침 | 여행약관 */}
 
-      <div class="mx-40 mb-5">
-        <div class="md:flex md:justify-between">
+      <div className="mx-40 mb-5">
+        <div className="md:flex md:justify-between">
           <div className="container flex flex-col flex-wrap mx-auto sm:flex-row">
             <span className="mt-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
               안심카드결제
@@ -57,7 +63,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      
 
       {/* 고객센터 | 입금계좌 */}
 
@@ -68,7 +73,7 @@ export default function Footer() {
           </h2>
           <ul className="mb-6 text-lg list-none ">
             <li className="text-base text-gray-200">
-              영업시간 : 09:00 ~ 18:00 
+              영업시간 : 09:00 ~ 18:00
             </li>
             <li className="mb-1 text-2xl font-medium text-gray-100 text-number-color">
               02-6105-7711
@@ -92,8 +97,6 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        
-
         {/* 상호명 | 주소 | 카피라이트 */}
 
         <div className="container flex flex-col flex-wrap ml-48 bg-gray-800 ">
