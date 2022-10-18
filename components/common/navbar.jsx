@@ -139,7 +139,7 @@ export default function navbar() {
                     <Link href={curation.link}>
                     <a
                       id={curation.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                         {curation.text}
                     </a>
                     </Link>
@@ -155,7 +155,7 @@ export default function navbar() {
                     <Link href={group.link}>
                     <a
                       id={group.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {group.text}
                     </a>
                     </Link>
@@ -171,7 +171,7 @@ export default function navbar() {
                     <Link href={country.link}>
                     <a
                       id={country.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {country.text}
                     </a>
                     </Link>
@@ -187,7 +187,7 @@ export default function navbar() {
                     <Link href={theme.link}>
                     <a
                       id={theme.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {theme.text}
                     </a>
                     </Link>
@@ -196,14 +196,14 @@ export default function navbar() {
                 })}
                 </ul>
 
-                <ul className="py-1 px-0 text-sm "> 
+                <ul className="px-0 py-1 text-sm "> 
                 { navMenus.communities.map(community => {
                   return(
                     <li>
                     <Link href={community.link}>
                     <a
                       id={community.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {community.text}
                     </a>
                     </Link>

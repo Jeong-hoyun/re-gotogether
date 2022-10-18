@@ -49,7 +49,7 @@ const ProductId = ({ post }) => {
           <div className="pt-1 md:pt-10 md:pb-20 ">
             <div>
               <div
-                className="relative flex mb-8">
+                className="relative flex justify-center mb-8">
                 <div>
                   <img
                     className="mx-auto"

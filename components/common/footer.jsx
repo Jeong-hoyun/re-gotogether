@@ -9,10 +9,10 @@ import Mail from "../Logo/Mail.jsx";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 mt-24 pb-8 relative">
+    <footer className="relative pb-8 mt-24 bg-gray-800">
       {/* logo */}
       <div className="mb-2 bg-footer-color">
-        <div className="md:mx-44 lg:mx-44 xl:px-5 md:px-5 w-56 mb-7 py-3 transition-all">
+        <div className="w-56 py-3 transition-all md:mx-44 lg:mx-44 xl:px-5 md:px-5 mb-7">
           <div className="mt-2">
             <Image src={company_logo2} alt="company_logo" />
           </div>
@@ -38,21 +38,21 @@ export default function Footer() {
       <div className="hidden xl:block xl:float-right xl:pr-48 xl:mt-10">
         <a
           href="tel:+822-6105-7711"
-          className="inline-block p-3 mr-5 hover:opacity-75 transition-all"
+          className="inline-block p-3 mr-5 transition-all hover:opacity-75"
         >
           <Call />
         </a>
         <a
           href="https://goo.gl/maps/7RHLh3qouDBQCDMM8"
           target="blank"
-          className="inline-block p-3 mr-5 hover:opacity-75 transition-all"
+          className="inline-block p-3 mr-5 transition-all hover:opacity-75"
         >
           <Location />
         </a>
         <a
           href="mailto:gotogether@shinytravels.com"
           target="blank"
-          className="inline-block p-3 hover:opacity-75 transition-all"
+          className="inline-block p-3 transition-all hover:opacity-75"
         >
           <Mail />
         </a>
@@ -60,18 +60,18 @@ export default function Footer() {
 
       {/* 안심카드결제 | 이용약관 | 개인정보처리방침 | 여행약관 */}
 
-      <div className="xl:pl-2 xl:mx-48 md:pl-2 md:mx-48 mb-5 mx-2 transition-all">
+      <div className="mx-2 mb-5 transition-all xl:pl-2 xl:mx-48 md:pl-2 md:mx-48">
         <div className="container w-[500px] text-sm text-gray-400">
-          <span className="mr-6 cursor-pointer transition-all hover:text-white hover:opacity-75">
+          <span className="mr-6 transition-all cursor-pointer hover:text-white hover:opacity-75">
             안심카드결제
           </span>
-          <span className="mt-4 mr-6 sm:ml-4 sm:pl-4 cursor-pointer transition-all hover:text-white hover:opacity-75">
+          <span className="mt-4 mr-6 transition-all cursor-pointer sm:ml-4 sm:pl-4 hover:text-white hover:opacity-75">
             이용약관
           </span>
-          <span className="mt-4 mr-6 sm:ml-4 sm:pl-4 cursor-pointer transition-all font-semibold hover:text-white hover:opacity-75">
+          <span className="mt-4 mr-6 font-semibold transition-all cursor-pointer sm:ml-4 sm:pl-4 hover:text-white hover:opacity-75">
             개인정보처리방침
           </span>
-          <span className="mt-4 sm:ml-4 sm:pl-4 cursor-pointer transition-all hover:text-white hover:opacity-75">
+          <span className="mt-4 transition-all cursor-pointer sm:ml-4 sm:pl-4 hover:text-white hover:opacity-75">
             여행약관
           </span>
         </div>
@@ -79,7 +79,7 @@ export default function Footer() {
 
       {/* 고객센터 | 입금계좌 */}
 
-      <div className="flex xl:ml-48 md:ml-48  transition-all">
+      <div className="flex transition-all xl:ml-48 md:ml-48">
         <div className="w-full mx-2 w-[240px]">
           <h2 className="mb-2 text-sm font-medium tracking-wider text-gray-300 title-font">
             고객센터
@@ -88,7 +88,7 @@ export default function Footer() {
             <li className="text-base text-gray-200">
               영업시간 : 09:00 ~ 18:00
             </li>
-            <li className="mb-1 text-xl md:text-2xl xl:text-2xl text-gray-100 font-semibold text-[#00A3FF]">
+            <li className="mb-1 text-xl font-semibold md:text-2xl xl:text-2xl text-number-color">
               02-6105-7711
             </li>
             <li className="mb-1 text-sm text-gray-400">
@@ -102,7 +102,7 @@ export default function Footer() {
           </h2>
           <ul className="mb-6 text-lg list-none">
             <li className="text-base text-gray-200">KEB하나은행</li>
-            <li className="mb-1 text-xl md:text-2xl xl:text-2xl text-gray-100 font-semibold text-[#00A3FF]">
+            <li className="mb-1 text-xl font-semibold md:text-2xl xl:text-2xl text-number-color">
               267-910020-36604
             </li>
             <li className="mb-1 text-sm text-gray-400">(주)더샤이니</li>
@@ -112,7 +112,7 @@ export default function Footer() {
       <div>
         {/* 상호명 | 주소 | 카피라이트 */}
 
-        <div className="container flex flex-col flex-wrap xl:ml-48 md:ml-48 pl-2 bg-gray-800 transition-all">
+        <div className="container flex flex-col flex-wrap pl-2 transition-all bg-gray-800 xl:ml-48 md:ml-48">
           <p className="text-xs text-gray-400">
             상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 |
             주소: 서울특별시 중구 청계천로40(한국관광공사 서울센터) 707호
@@ -129,7 +129,7 @@ export default function Footer() {
             고투게더는 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서
             상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
           </p>
-          <p className="text-xs text-gray-400 mt-3">
+          <p className="mt-3 text-xs text-gray-400">
             Copyright ⓒ 2022 고투게더 All rights reserved.
           </p>
         </div>
