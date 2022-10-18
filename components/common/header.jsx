@@ -8,6 +8,7 @@ import PageLogo from "../HeaderLogo/pageLogo";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import Signup from "../HeaderLogo/signup";
+import SearchBar from "../HeaderLogo/searchBar";
 
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
@@ -23,35 +24,25 @@ export default function Header() {
                 <div className="flex items-center">
                   <Link href="/">
                     <a className="flex-shrink-0 block lg:mr-4">
-                      {/* <Image
-                        src="/img/logo.png"
-                        className="w-21"
-                        alt="logo"
-                        width={250}
-                        height={41}
-                      /> */}
                       <PageLogo/>
                     </a>
                   </Link>
                 </div>
               </div>
-              <Search />
+              {/* <Search /> */}
+              {/* 화면이 작아지면 다음줄로 넘어가게 이것저것해보는중 */}
+              <SearchBar className="lg:flex-row"/>
+
               <div className="flex flex-wrap items-center justify-end flex-grow">
-                <button className="flex items-center px-6 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700">
-                  <svg
-                    className="w-4 h-4 fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                  </svg>
-                </button>
-                <div className="hidden lg:flex lg:items-center ">
+                {/* <button className="flex items-center px-6 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700">Í
+                </button> */}
+                <div className="lg:flex lg:items-center ">
                   <div className="flex ">
                     <Link href="/wishlist">
                       <a className="flex items-center mr-5 hover:text-gray-700">
                         <Wishlist/>
-                        <div>관심상품</div>
+                        
+                        <div className="sm:text-xs md:text-sm lg:text-base">관심상품</div> 
                       </a>
                     </Link>
                     {loginUser.username ? (
@@ -66,7 +57,7 @@ export default function Header() {
                       <Link href="/login">
                         <a className="flex items-center mr-5 hover:text-gray-700">
                         <Login/>
-                          로그인
+                        <div className="sm:text-xs md:text-sm lg:text-base">로그인</div>
                         </a>
                       </Link>
                     )}
@@ -80,7 +71,7 @@ export default function Header() {
                       <Link href="/signup">
                         <a className="flex items-center mr-5 hover:text-gray-700">
                           <Signup/>
-                          회원가입
+                          <div className="sm:text-xs md:text-sm lg:text-base">회원가입</div>
                         </a>
                       </Link>
                     )}
