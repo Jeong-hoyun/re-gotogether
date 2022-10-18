@@ -9,10 +9,10 @@ import Mail from "../Logo/Mail.jsx";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 mt-24 pb-10 relative">
+    <footer className="relative pb-10 mt-24 bg-gray-800">
       {/* logo */}
       <div className="mb-2 bg-footer-color">
-        <div className="mx-44 p-5 w-56 mb-7">
+        <div className="w-56 p-5 mx-44 mb-7">
           <div className="mt-2">
             <Image src={company_logo2} alt="company_logo" />
           </div>
@@ -75,7 +75,7 @@ export default function Footer() {
             <li className="text-base text-gray-200">
               영업시간 : 09:00 ~ 18:00
             </li>
-            <li className="mb-1 text-2xl font-medium text-gray-100 text-number-color">
+            <li className="mb-1 text-2xl font-medium text-number-color">
               02-6105-7711
             </li>
             <li className="mb-1 text-sm text-gray-400">
@@ -89,7 +89,7 @@ export default function Footer() {
           </h2>
           <ul className="mb-6 text-lg list-none">
             <li className="text-base text-gray-200">KEB하나은행</li>
-            <li className="mb-1 text-2xl font-medium text-gray-100 text-number-color">
+            <li className="mb-1 text-2xl font-medium text-number-color">
               267-910020-36604
             </li>
             <li className="mb-1 text-sm text-gray-400">(주)더샤이니</li>

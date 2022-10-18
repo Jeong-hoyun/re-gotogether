@@ -15,13 +15,8 @@ export default function navbar() {
   return (
     <>
       <nav
-<<<<<<< HEAD
-        data-collapse-toggle="mobile-menu"
-        className="items-center visible ml-1 text-sm text-gray-500 rounded-lg sm:invisible p-0 m-0"
-=======
         data-collapse-toggle="mobile-menu-2"
         className="items-center visible p-0 m-0 ml-1 text-sm text-gray-500 rounded-lg sm:invisible"
->>>>>>> 45ca00ba0328c605892a2a6fabb7bba1b3b1f7fd
       >
         <ul className="flex mt-1 text-sm font-medium rounded-lg lg:flex-row lg:space-x-5 lg:mt-0 px-auto sm:space-x-5 ">
           <li>
@@ -153,7 +148,7 @@ export default function navbar() {
                     <Link href={curation.link}>
                     <a
                       id={curation.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                         {curation.text}
                     </a>
                     </Link>
@@ -169,7 +164,7 @@ export default function navbar() {
                     <Link href={group.link}>
                     <a
                       id={group.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {group.text}
                     </a>
                     </Link>
@@ -185,7 +180,7 @@ export default function navbar() {
                     <Link href={country.link}>
                     <a
                       id={country.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {country.text}
                     </a>
                     </Link>
@@ -201,7 +196,7 @@ export default function navbar() {
                     <Link href={theme.link}>
                     <a
                       id={theme.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {theme.text}
                     </a>
                     </Link>
@@ -210,14 +205,14 @@ export default function navbar() {
                 })}
                 </ul>
 
-                <ul className="py-1 px-0 text-sm "> 
+                <ul className="px-0 py-1 text-sm "> 
                 { navMenus.communities.map(community => {
                   return(
                     <li>
                     <Link href={community.link}>
                     <a
                       id={community.id} 
-                      className="flex py-2 px-4 bg-gray">
+                      className="flex px-4 py-2 bg-gray">
                       {community.text}
                     </a>
                     </Link>
