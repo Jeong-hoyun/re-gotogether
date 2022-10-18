@@ -12,23 +12,29 @@ export default function Footer() {
     <footer className="bg-gray-800 mt-24 pb-10 relative">
       {/* logo */}
       <div className="mb-2 bg-footer-color">
-        <div className="mx-44 p-5 w-56 mb-7">
+        <div className="md:mx-44 lg:mx-44 p-2 xl:py-3 xl:px-5 md:py-3 md:px-5 w-56 mb-7 transition-all">
           <div className="mt-2">
             <Image src={company_logo2} alt="company_logo" />
           </div>
         </div>
 
-        <a href="#" className="absolute w-7 right-[268px] top-8">
+        <a
+          href="#"
+          className="hidden xl:block xl:absolute xl:w-7 xl:right-[268px] xl:top-8"
+        >
           <Youtube />
         </a>
-        <a href="#" className="absolute w-7 right-[215px] top-8">
+        <a
+          href="#"
+          className="hidden xl:block xl:absolute xl:w-7 xl:right-[215px] xl:top-8"
+        >
           <Share width="10" height="10" fill="blue" />
         </a>
       </div>
 
       {/* logo */}
 
-      <div className="float-right pr-48 mt-10">
+      <div className="hidden xl:block xl:float-right xl:pr-48 xl:mt-10 ">
         <a
           href="#"
           className="inline-block p-3 mr-5 border rounded-full divide-double"
@@ -45,16 +51,14 @@ export default function Footer() {
 
       {/* 안심카드결제 | 이용약관 | 개인정보처리방침 | 여행약관 */}
 
-      <div className="mx-40 mb-5">
-        <div className="md:flex md:justify-between">
-          <div className="container flex flex-col flex-wrap mx-auto sm:flex-row">
-            <span className="mt-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
-              안심카드결제
-            </span>
-            <span className="mt-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
+      <div className="xl:pl-2 xl:mx-48 md:pl-2 md:mx-48 mb-5 mx-2 transition-all">
+        <div className="md:justify-between">
+          <div className="container w-[500px]">
+            <span className="mr-4 text-sm text-gray-400">안심카드결제</span>
+            <span className="mt-4 mr-4 text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
               이용약관
             </span>
-            <span className="mt-4 text-sm font-semibold text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
+            <span className="mt-4 mr-4 text-sm font-semibold text-gray-400 sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
               개인정보처리방침
             </span>
             <span className="mt-4 text-sm text-gray-400 text-s sm:ml-4 sm:pl-4 sm:py-2 sm:mt-0">
@@ -66,12 +70,12 @@ export default function Footer() {
 
       {/* 고객센터 | 입금계좌 */}
 
-      <div className="flex flex-wrap flex-grow ml-24 text-center md:pl-20 md:mt-0 md:text-left">
-        <div className="w-full px-4 lg:w-1/4 md:w-1/2">
+      <div className="flex xl:ml-48 md:ml-48  transition-all">
+        <div className="w-full mx-2 w-[240px]">
           <h2 className="mb-2 text-sm font-medium tracking-wider text-gray-300 title-font">
             고객센터
           </h2>
-          <ul className="mb-6 text-lg list-none ">
+          <ul className="mb-6 text-lg list-none">
             <li className="text-base text-gray-200">
               영업시간 : 09:00 ~ 18:00
             </li>
@@ -83,7 +87,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="w-full px-4 ml-10 md:w-1/2">
+        <div className="w-full w-[240px]">
           <h2 className="mb-2 text-sm font-medium tracking-wider text-gray-300 title-font">
             입금계좌
           </h2>
@@ -99,16 +103,16 @@ export default function Footer() {
       <div>
         {/* 상호명 | 주소 | 카피라이트 */}
 
-        <div className=" flex flex-wrap justify-center bg-gray-800 ">
-          <p className="text-xs text-center text-gray-400 sm:text-left">
+        <div className="container flex flex-col flex-wrap xl:ml-48 md:ml-48 pl-2 bg-gray-800 transition-all">
+          <p className="text-xs text-gray-400 text-left">
             상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 |
             주소: 서울특별시 중구 청계천로40(한국관광공사 서울센터) 707호
           </p>
-          <p className="text-xs text-center text-gray-400 sm:text-left">
+          <p className="text-xs text-gray-400 text-left">
             사업자등록번호: 495-87-02492ㅣ통신판매업신고번호:
             2021-서울중구-2450ㅣ이메일: gotogether@shinytravels.com
           </p>
-          <p className="text-xs text-center text-gray-400 sm:text-left">
+          <p className="text-xs text-gray-400 text-left">
             고투게더 서비스 내 결제 발생 시 고객상담, 취소, 환불 등의 거래에
             대하여 책임을 집니다.
           </p>
