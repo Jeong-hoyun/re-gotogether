@@ -120,26 +120,17 @@ export default function navbar() {
               </Link>
             </li>
 
-
-
-            <li>
-              <Link href="">
-                <a onClick={() => setIsOpen(!isOpen)}
+            <li>       
+                <button onClick={() => setIsOpen(!isOpen)}
                 className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
-                
-                더보기 <DownArrow/>
-                
-                </a>
-              </Link>
+                전체보기 <DownArrow/>                
+                </button>           
             </li>
-            
-
-
           {/* 버튼 클릭하면 드랍다운메뉴들 보이게  */}
           {/* 해야할거: 버튼 모양이 클릭할때마다 바뀌게하기 */}
-                      {/* 하얀바탕화면이 레프트 훅 맞은거 css 고치기... 하... */}
+          {/* 하얀바탕화면이 레프트 훅 맞은거 css 고치기... 하... */}
             {isOpen ? (
-            <div id="dropdown-bg" className='h-[30vh] w-[65vw] absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
+            <div id="dropdown-bg" className=' absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
             
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {

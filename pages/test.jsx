@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import axios  from 'axios';
 import { API_URL } from './../config/index';
 import Image from "next/image";
+import { Zeroform } from './../components/tendency/zeroform';
+
 
 const MySwal = withReactContent(Swal);
 const INITIAL_DATA = {
@@ -56,6 +58,7 @@ const Test = () => {
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
+      <Zeroform {...data} updateFields={updateFields} />,
       <OneForm {...data} updateFields={updateFields} />,
       <TwoForm {...data} updateFields={updateFields} />,
       <ThreeForm {...data} updateFields={updateFields} />,
@@ -88,12 +91,14 @@ const Test = () => {
     </div>
     {step}
     <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
-      <button
-        type="submit"
-        className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-4 px-8 rounded"
-      >
-        {isLastStep ? "완료" : "다음"}
-      </button>
+
+     <button
+      type="submit"
+      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded ${!isFirstStep? '':'hidden'}`}
+    >
+      {isLastStep ? "완료" : "다음"}
+    </button>
+
       {!isFirstStep && (
         <button
           type="button"

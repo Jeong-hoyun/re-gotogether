@@ -1,16 +1,16 @@
 import React from "react";
 
-function Logo1() {
+function Logo1({color}) {
   return (
     <svg
       className="inline-block"
       width="24"
       height="24"
       viewBox="0 0 24 24"
-      fill="none"
+      fill={color?color:"none"}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="24" height="24" fill="white" />
+      <rect width="24" height="24" fill={color?color:"none"} />
       <path
         d="M16.5017 10.4059C16.5017 13.6454 13.8756 16.2715 10.6361 16.2715C7.39662 16.2715 4.77051 13.6454 4.77051 10.4059C4.77051 7.1664 7.39662 4.54028 10.6361 4.54028C13.8756 4.54028 16.5017 7.1664 16.5017 10.4059Z"
         fill="white"
