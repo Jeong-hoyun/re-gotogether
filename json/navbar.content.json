@@ -3,12 +3,12 @@
     { 
       "id":1,
       "text": "나의 유형 추천받기",
-      "link": "/test"
+      "link": "http://localhost:3000/test"
       },
       { 
         "id":2,
         "text": "나의 여행 유형 테스트",
-        "link": "/test"
+        "link": "http://localhost:3000/test"
         } 
   ],
 
@@ -16,87 +16,87 @@
       { 
         "id":3,
         "text": "with 5070",
-        "link": "/view/5070"
+        "link": "http://localhost:3000/view/5070"
       },    
       {
         "id":4,
         "text": "여자끼리 여행",
-        "link": "/view/ladies"
+        "link": "http://localhost:3000/view/ladies"
       },
       {
         "id":5,
         "text": "자녀 동반 여행",
-        "link": "/view/withchild"
+        "link": "http://localhost:3000/view/withchild"
       },
       {
         "id":6,
         "text": "with 2040",
-        "link": "/view/2040"
+        "link": "http://localhost:3000/view/2040"
       }
     ],
     
     "countries": [
       {
         "text": "동남아시아 여행",
-        "link": "/view/Thailand"
+        "link": "http://localhost:3000/view/Thailand"
       },
       {
         "text": "유럽",
-        "link": "/view/Europe"
+        "link": "http://localhost:3000/view/Europe"
       },
       {
         "text": "중남미 여행",
-        "link": "/view/LatinAmerica"
+        "link": "http://localhost:3000/view/LatinAmerica"
       },
       {
         "text": "아프리카",
-        "link": "/view/Africa"
+        "link": "http://localhost:3000/view/Africa"
       },
       {
         "text": "코카서스",
-        "link": "/view/Caucasus"
+        "link": "http://localhost:3000/view/Caucasus"
       },
       {
         "text": "인도&주변국",
-        "link": "/view/india"
+        "link": "http://localhost:3000/view/india"
       }
     ],
 
     "themes": [
       {
         "text": "문화 탐방",
-        "link": "/view/culture"
+        "link": "http://localhost:3000/view/culture"
       },
       {
         "text": "골프 여행",
-        "link": "/view/golf"
+        "link": "http://localhost:3000/view/golf"
       },
       {
         "text": "휴양지 힐링",
-        "link": "/view/vacation"
+        "link": "http://localhost:3000/view/vacation"
       },
       {
         "text": "트레킹",
-        "link": "/view/trekking"
+        "link": "http://localhost:3000/view/trekking"
       },
       {
         "text": "성지순례",
-        "link": "/view/pilgrimage"
+        "link": "http://localhost:3000/view/pilgrimage"
       }
     ],
 
     "communities": [
       {
         "text": "여행후기",
-        "link": "/community/review"
+        "link": "http://localhost:3000/community/review"
       },
       {
         "text": "게시판",
-        "link": "/community/bulletinboard"
+        "link": "http://localhost:3000/community/bulletinboard"
       },
       {
         "text": "자료실",
-        "link": "/community/library"
+        "link": "http://localhost:3000/community/library"
       }
       ]
   
