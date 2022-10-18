@@ -99,7 +99,7 @@ export default function Footer() {
       <div>
         {/* 상호명 | 주소 | 카피라이트 */}
 
-        <div className="container flex flex-col flex-wrap ml-48 bg-gray-800 ">
+        <div className=" flex flex-wrap justify-center bg-gray-800 ">
           <p className="text-xs text-center text-gray-400 sm:text-left">
             상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 |
             주소: 서울특별시 중구 청계천로40(한국관광공사 서울센터) 707호

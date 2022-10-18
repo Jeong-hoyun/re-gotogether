@@ -41,7 +41,7 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.map((e) => e.id));
 
   if (searchData?.products.length === 0) {
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
@@ -59,7 +59,7 @@ const Keyword = ({ searchData }) => {
               const image1 = item.images[0];
               return (
                 <div
-                  className="w-1/3 mb-10 rounded-lg border border-gray-200 shadow-md "
+                  className="w-1/3 mb-10 rounded-lg border border-gray-200 shadow-md  "
                   key={title}
                 >
                   <Link href={`/travel/${productId}`}>
