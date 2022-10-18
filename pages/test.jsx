@@ -11,6 +11,7 @@ import { API_URL } from './../config/index';
 import Image from "next/image";
 import { Zeroform } from './../components/tendency/zeroform';
 
+
 const MySwal = withReactContent(Swal);
 const INITIAL_DATA = {
   one: "",
@@ -90,13 +91,14 @@ const Test = () => {
     </div>
     {step}
     <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
-     {currentStepIndex===1?  <button
+
+     <button
       type="submit"
-      className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-4 px-8 rounded"
+      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded ${!isFirstStep? '':'hidden'}`}
     >
       {isLastStep ? "완료" : "다음"}
-    </button>:null}
-  
+    </button>
+
       {!isFirstStep && (
         <button
           type="button"
