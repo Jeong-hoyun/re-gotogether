@@ -1,17 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect,useState} from "react";
 import { useSelector } from 'react-redux';
-import ProductId from './travel/[productId]';
 import { useRouter } from 'next/router';
+import  axios  from 'axios';
 
 const Mypage = () => {
   const wish = useSelector((state) => state.wish.wish);
   const login=useSelector((state)=>state.login.login)
+  const [reserve,setReserve]=useState()
   const router =useRouter()
   useEffect(() => {
     login.username==!null?router.push("./"):null
-    return () => {      
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();  
+    (async ()=>{
+      try{     
+      const res=await axios.get(`/ec2/reservations/user`,{ cancelToken: source.token})
+      setReserve(res.data)
+    }catch(e){
+      console.error(e)
+    }
+    })();
+    return () => {     
     };
   }, []);
 
@@ -52,12 +63,32 @@ const Mypage = () => {
                   </thead>
   
                   <tbody className="border-b">
-                    <tr className="text-center">
-                      {/* <img className="object-scale-down h-14" src='../img/cart.png' /> */}
-                      <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
-                        관심상품이 비어있습니다
-                      </td>
-                    </tr>
+                  {reserve?
+                    reserve.reservations.map(item=>{
+                      return(
+                        <tr key={item.productId}>
+                        <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
+                          {item.productId}
+                        </th>
+                        <th className="pl-5 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                        {item.personnel}인
+                        </th>
+                        <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                        {item.paymentState}
+                        </th>
+                        <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                        {item.paymentState}
+                        </th>
+                        </tr>
+                      )
+                    })                        
+                    
+                    : <tr className="text-center">               
+                <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
+                  관심상품이 비어있습니다
+                </td>
+              </tr>}
+                   
                   </tbody>
                 </table>
   

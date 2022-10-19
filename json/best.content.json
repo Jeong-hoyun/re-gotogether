@@ -5,56 +5,56 @@
       "tag": "#골프여행",
       "img": "https://cdn.imweb.me/thumbnail/20220518/5b276d6a39928.png",
       "price": "11,000,000원",
-      "key": "travel/21"
+      "key": "http://localhost:3000/travel/21"
     },
     {
       "title": "추천 여행2",
       "tag": "#동아프리카3개국",
       "img": "https://cdn.imweb.me/thumbnail/20220518/ba3e097881081.png",
       "price": "12,000,000원",
-      "key": "travel/22"
+      "key": "http://localhost:3000/travel/22"
     },
     {
       "title": "추천 여행3",
       "tag": "#링로드일주",
       "img": "https://cdn.imweb.me/thumbnail/20220518/afc3f16b7caa0.png",
       "price": "13,000,000원",
-      "key": "travel/23"
+      "key": "http://localhost:3000/travel/23"
     },
     {
       "title": "추천 여행4",
       "tag": "#조지아",
       "img": "https://cdn.imweb.me/thumbnail/20220518/b76fbc307e765.png",
       "price": "14,000,000원",
-      "key": "travel/24"
+      "key": "http://localhost:3000/travel/24"
     },
     {
       "title": "추천 여행5",
       "tag": "#남미6개국",
       "img": "https://cdn.imweb.me/thumbnail/20220517/989e657d1ef50.png",
       "price": "15,000,000원",
-      "key": "travel/25"
+      "key": "http://localhost:3000/travel/25"
     },
     {
       "title": "추천 여행6",
       "tag": "#모로코",
       "img": "https://cdn.imweb.me/thumbnail/20220518/9e9f65c0d670e.png",
       "price": "16,000,000원",
-      "key": "travel/26"
+      "key": "http://localhost:3000/travel/26"
     },
     {
       "title": "추천 여행7",
       "tag": "#대부",
       "img": "https://cdn.imweb.me/thumbnail/20220517/59cc932ef7b69.png",
       "price": "17,000,000원",
-      "key": "travel/27"
+      "key": "http://localhost:3000/travel/27"
     },
     {
       "title": "추천 여행8",
       "tag": "#링로드일주",
       "img": "https://cdn.imweb.me/thumbnail/20220518/afc3f16b7caa0.png",
       "price": "18,000,000원",
-      "key": "travel/28"
+      "key": "http://localhost:3000/travel/28"
     }
   ]
 }
