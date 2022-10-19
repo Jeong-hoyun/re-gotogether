@@ -13,7 +13,7 @@ const Search = () => {
         <input
           type="search"
           id="default-search"
-          className="block w-96 p-4 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
+          className="block w-96 p-4 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
           placeholder="여행 그룹이나 상품을 검색해보세요"
         />
         <button

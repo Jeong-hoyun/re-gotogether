@@ -4,7 +4,7 @@ function Logo1({color}) {
   return (
     <svg
       className="inline-block"
-      width="24"
+      width="30"
       height="24"
       viewBox="0 0 24 24"
       fill={color?color:"none"}

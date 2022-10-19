@@ -1,4 +1,3 @@
-// navbar    와 잠시만 나 한번에 여러가지 해결한거같아 목록 column여러개, json사용 방법 
 import React,{useState} from 'react'
 import Link from "next/link";
 import Logo1 from "../NavbarLogo/travelQ1";
@@ -16,13 +15,14 @@ export default function navbar() {
     <>
       <nav
         data-collapse-toggle="mobile-menu-2"
-        className="items-center visible p-0 m-0 ml-1 text-sm text-gray-500 rounded-lg sm:invisible"
+        className="flex items-center visible text-xxs sm:invisible"
       >
-        <ul className="flex mt-1 text-sm font-medium rounded-lg lg:flex-row lg:space-x-5 lg:mt-0 px-auto sm:space-x-5 ">
-          <li>
+        <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
+          {/* svg사이즈 어떻게 조절해요... 반응형으로 */}
+          <li className=''>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo1 />
+                <Logo1 className="w-25"/>
                 <div>큐레이션</div>
               </a>
             </Link>
