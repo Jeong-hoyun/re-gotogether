@@ -18,7 +18,6 @@ export default function navbar() {
         className="flex items-center visible text-xxs sm:invisible"
       >
         <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
-          {/* svg사이즈 어떻게 조절해요... 반응형으로 */}
           <li className=''>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
@@ -126,9 +125,7 @@ export default function navbar() {
                 전체보기 <DownArrow/>                
                 </button>           
             </li>
-          {/* 버튼 클릭하면 드랍다운메뉴들 보이게  */}
-          {/* 해야할거: 버튼 모양이 클릭할때마다 바뀌게하기 */}
-          {/* 하얀바탕화면이 레프트 훅 맞은거 css 고치기... 하... */}
+          
             {isOpen ? (
             <div id="dropdown-bg" className=' absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
             

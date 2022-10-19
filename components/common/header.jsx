@@ -40,12 +40,12 @@ export default function Header() {
               <SearchBar/>
               </div>
 
-              <div className="flex flex-wrap items-center justify-end flex-grow">
-                <div className="lg:flex lg:items-center ">
+              <div className="mr-4 flex flex-wrap items-center justify-end flex-grow">
+                <div className="mr-4 lg:flex lg:items-center ">
 
-                  <div className="flex">
+                  <div className="mr-4 flex">
                     <Link href="/wishlist">
-                      <a className="flex shrink-0 items-center hover:text-gray-700">
+                      <a className=" flex shrink-0 items-center hover:text-gray-700">
                         <Wishlist/>
 
                         <div className="mr-2 text-xxs lg:text-base">관심상품</div> 
@@ -70,6 +70,7 @@ export default function Header() {
                     {loginUser.username ? (
                       <Link href="/mypage">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
+                          <Signup/>
                           <div className="text-xxs lg:text-base">마이페이지</div>
                         </a>
                       </Link>
