@@ -41,9 +41,9 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
-  if (searchData?.products.length === 0) {
+  if (searchData.products.length === 0) {
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
   }
   return (

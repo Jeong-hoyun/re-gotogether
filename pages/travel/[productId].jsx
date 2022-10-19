@@ -6,6 +6,9 @@ import PointLogo from "@/components/Logo/pointLogo";
 import { API_URL } from "./../../config/index";
 import { useSelector } from 'react-redux';
 import Maincarousel from './../../components/main/maincarousel';
+import { useForm } from 'react-hook-form';
+import { SetReservation } from './../../config/login';
+import { useRouter } from 'next/router';
 
 export const getStaticPaths = async () => {
   const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
@@ -34,11 +37,27 @@ export const getStaticProps = async ({ params }) => {
 
 const ProductId = ({ post }) => { 
   const loginUser = useSelector((state) => state.login.login);
+  const router=useRouter()
+
    const number2= typeof post.price==="string"?
    `${post.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
    :"가격문의"
   const HeroImage = post.images[0];
+  const { register, handleSubmit  } = useForm();
 
+ const submitForm=async (data)=>{
+  console.log(data)
+  try {
+   const res= await SetReservation(data)
+   console.log(res)
+    if(res.statusText==="OK"){
+      router.push("/mypage")
+    } 
+  } catch (error) {
+    console.error(error)
+  }   
+ }
+  
   return (
     <>
       <Head>
@@ -96,10 +115,39 @@ const ProductId = ({ post }) => {
                     </p>
                   </div>
                   {post.startDates?
-                 <div className="flex justify-center py-4 mx-10 text-xl font-bold mt-7 rounded-2xl text-number-color bg-zinc-100">
-                  예약하기
-                </div>:null}
-                
+                  <form  onSubmit={handleSubmit(submitForm)}>            
+                  <div className="flex justify-center">        
+                  <input type='hidden' value={router.query.productId} 
+                    {...register("productId")} />
+                  <input type='hidden' value={1} 
+                    {...register("paymentState")} />                   
+                  <select    {...register("reservationDate", {
+                    required: true,
+                  })}
+                  name="reservationDate"
+                  className="w-full ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none">
+                    <option>출발일(필수)</option>
+                    <option value={post.startDates[0]}>{post.startDates[0]}</option>
+                    <option value={post.startDates[1]}>{post.startDates[1]}</option>
+                    <option value={post.startDates[2]}>{post.startDates[2]}</option>
+                  </select>
+                    {/* 드롭다운 2 */}
+                  <select  {...register("personnel", {
+                    required: true,
+                  })} 
+                  name="personnel"
+                  className="w-full ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none">
+                      <option>인원수(필수)</option>
+                      <option value={1}>1인</option>
+                      <option value={2}>2인</option>
+                      <option value={3}>3인</option>
+                      <option value={4}>4인</option>
+                    </select>                      
+                    </div>
+                    <button type="submit" className="flex justify-center py-4 mx-10 text-xl font-bold mt-7 rounded-2xl text-number-color bg-zinc-100">
+                    예약하기
+                  </button>
+                  </form> :null}                
                 </div>
               </div>
            {loginUser.username?

@@ -1,95 +1,47 @@
-const loginFields = [
-  {
-    labelText: "Email address",
-    labelFor: "email-address",
-    id: "email-address",
-    name: "email",
-    type: "email",
-    autoComplete: "email",
-    isRequired: true,
-    placeholder: "Email address",
-  },
-  {
-    labelText: "Password",
-    labelFor: "password",
-    id: "password",
-    name: "password",
-    type: "password",
-    autoComplete: "current-password",
-    isRequired: true,
-    placeholder: "Password",
-  },
-];
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
-class signupFieldsNew {
-  constructor(labelText, labelFor, id, name, autoComplete, placeholder) {
-    this.labelText = labelText;
-    this.labelFor = labelText;
-    this.id = labelText;
-    this.name = labelText;
-    this.autoComplete = labelText;
-    this.placeholder = labelText;
-  }
+/** 예약용 함수 MySwal를 통해서 예약 확인 모달창이 뜸  */
+export const SetReservation = async (data) => {  
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+    const url = `/ec2/reservations`;
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json;charset=UTF-8" },
+      data: JSON.stringify(data),
+      withCredentials: true,
+      url,
+    };
+    try {
 
-  set isRequired(isRequired) {
-    return (this.isRequired = isRequired);
-  }
-  set type(type) {
-    return (this.type = type);
-  }
-}
-
-const signupFields = [
-  {
-    labelText: "Username",
-    labelFor: "username",
-    id: "username",
-    name: "username",
-    type: "text",
-    autoComplete: "username",
-    isRequired: true,
-    placeholder: "Username",
-  },
-  {
-    labelText: "Email address",
-    labelFor: "email-address",
-    id: "email-address",
-    name: "email",
-    type: "email",
-    autoComplete: "email",
-    isRequired: true,
-    placeholder: "Email address",
-  },
-  {
-    labelText: "Password",
-    labelFor: "password",
-    id: "password",
-    name: "password",
-    type: "password",
-    autoComplete: "current-password",
-    isRequired: true,
-    placeholder: "Password",
-  },
-  {
-    labelText: "Confirm Password",
-    labelFor: "confirm-password",
-    id: "confirm-password",
-    name: "confirm-password",
-    type: "password",
-    autoComplete: "confirm-password",
-    isRequired: true,
-    placeholder: "Confirm Password",
-  },
-  {
-    labelText: "gender",
-    labelFor: "gender",
-    id: "gender",
-    name: "genderd",
-    type: "checkbox",
-    autoComplete: "confirm-password",
-    isRequired: true,
-    placeholder: "Confirm Password",
-  },
-];
-
-export { loginFields, signupFields, signupFieldsNew };
+      const res = await axios(options);
+      console.log(res)
+      if (res.status == 200) {
+        MySwal.fire({
+          text: `예약 감사합니다`,
+          icon: "success",
+          confirmButtonText: "OK",
+        }).then((result) => {
+          if (result.isConfirmed) {    
+            return "OK"            
+          }
+        }); 
+      }else {
+        MySwal.fire({
+          text: "로그인 뒤 예약해주세요",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      }      
+    } catch (error) {
+      MySwal.fire({
+          text: `출발일과 인원수를 추가해주세요`,
+          icon: "error",
+          confirmButtonText: "OK",
+        })
+      source.cancel("Operation canceled by the user.");
+    }
+  };

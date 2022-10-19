@@ -37,6 +37,7 @@ export default function Signup() {
       method: "POST",
       headers: { "Content-Type": "application/json;charset=UTF-8" },
       data: JSON.stringify(data),
+      withCredentials: true,
       url,
     };
     try {

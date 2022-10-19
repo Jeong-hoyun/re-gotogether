@@ -26,7 +26,7 @@ export default function Footer() {
           <Youtube />
         </a>
         <a
-          href="javascript:void(0);"
+         onClick={e=>e.preventDefault}
           className="hidden xl:block xl:absolute xl:w-7 xl:right-[215px] xl:top-6 hover:opacity-75 transition-all"
         >
           <Share width="10" height="10" fill="blue" />
