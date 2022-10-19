@@ -7,8 +7,8 @@ const Maintheme = ({ country, group, theme }) => {
   return (
     <>
       <div className="mb-8 border-b border-gray-100">
-        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
-          <li className="mr-2">
+        <ul className="flex flex-wrap text-sm font-medium text-center">
+          <li className="mr-2 last:mr-0">
             <button
               className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 transition-all"
               onClick={() => setValue(group)}
@@ -40,13 +40,13 @@ const Maintheme = ({ country, group, theme }) => {
         </ul>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mx-auto">
         {value &&
           value.map((item) => {
             const { title, path, img, subtitle } = item;
             return (
               <div
-                className="mr-5 mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:opacity-75 transition-all"
+                className="mx-auto mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:opacity-75 transition-all justify-items-center c1170:last:mx-0 c1170:last:ml-5"
                 key={title}
               >
                 <Link href={path}>
