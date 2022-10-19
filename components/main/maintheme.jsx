@@ -10,7 +10,7 @@ const Maintheme = ({ country, group, theme }) => {
         <ul className="flex flex-wrap -mb-px text-sm font-medium text-center">
           <li className="mr-2">
             <button
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300"
+              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 transition-all"
               onClick={() => setValue(group)}
             >
               그룹별
@@ -19,7 +19,7 @@ const Maintheme = ({ country, group, theme }) => {
           <li className="mr-2">
             <button
               onClick={() => setValue(theme)}
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300"
+              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 transition-all"
             >
               테마별
             </button>
@@ -27,13 +27,13 @@ const Maintheme = ({ country, group, theme }) => {
           <li className="mr-2">
             <button
               onClick={() => setValue(country)}
-              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300"
+              className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 transition-all"
             >
               지역별
             </button>
           </li>
           <li>
-            <button className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300">
+            <button className="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 transition-all">
               일정별
             </button>
           </li>
@@ -46,7 +46,7 @@ const Maintheme = ({ country, group, theme }) => {
             const { title, path, img, subtitle } = item;
             return (
               <div
-                className="mr-5 mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
+                className="mr-5 mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:opacity-75 transition-all"
                 key={title}
               >
                 <Link href={path}>
@@ -61,7 +61,9 @@ const Maintheme = ({ country, group, theme }) => {
                   </a>
                 </Link>
                 <div className="p-5">
-                  <p className="text-sm mb-1 font-sm text-gray-700">{title}</p>
+                  <p className="text-sm mb-1 font-sm text-gray-700 cursor-pointer">
+                    {title}
+                  </p>
                   <Link href={path}>
                     <a href="#">
                       <p className="mb-2 text-sm font-bold tracking-tight text-gray-900">
