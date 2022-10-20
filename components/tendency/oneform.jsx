@@ -6,7 +6,7 @@ export function OneForm({ one, updateFields }) {
     <FormWrapper title="Q1. 여행에 필수로 들고 가야 할 물건은 어떤 것일까요?">
       <div
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
+        className="active:shadow-xl text-gray-400 mx-auto"
       >
         <Image
           src="/img/1_sunscreen.jpg"
@@ -19,7 +19,7 @@ export function OneForm({ one, updateFields }) {
       </div>
       <div
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        className="active:shadow-xl text-gray-400 mx-auto"
       >
         <Image
           src="/img/1_camera.jpg"
@@ -32,7 +32,7 @@ export function OneForm({ one, updateFields }) {
       </div>
       <div
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
+        className="active:shadow-xl text-gray-400 mx-auto"
       >
         <Image
           src="/img/1_hiking_shoes.jpg"
@@ -45,7 +45,7 @@ export function OneForm({ one, updateFields }) {
       </div>
       <div
         onClick={(e) => updateFields({ one: e.target.dataset.img })}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        className="active:shadow-xl text-gray-400 mx-auto"
       >
         <Image
           src="/img/1_golf_club.jpg"

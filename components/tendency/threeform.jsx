@@ -8,10 +8,7 @@ export function ThreeForm({ three, updateFields }) {
 
   return (
     <FormWrapper title="Q3. 여행지 도착! 어떤 코스를 즐겨볼까요?">
-      <div
-        onClick={onClick}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
-      >
+      <div onClick={onClick} className="active:shadow-xl text-gray-400 mx-auto">
         <Image
           src="/img/3_golf.jpg"
           alt="golf"
@@ -21,10 +18,7 @@ export function ThreeForm({ three, updateFields }) {
           height={200}
         />
       </div>
-      <div
-        onClick={onClick}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
-      >
+      <div onClick={onClick} className="active:shadow-xl text-gray-400 mx-auto">
         <Image
           src="/img/3_historic_site.jpg"
           alt="historic_site"
@@ -34,10 +28,7 @@ export function ThreeForm({ three, updateFields }) {
           height={200}
         />
       </div>
-      <div
-        onClick={onClick}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
-      >
+      <div onClick={onClick} className="active:shadow-xl text-gray-400 mx-auto">
         <Image
           src="/img/3_landscape.jpg"
           alt="landscape"
@@ -47,10 +38,7 @@ export function ThreeForm({ three, updateFields }) {
           height={200}
         />
       </div>
-      <div
-        onClick={onClick}
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
-      >
+      <div onClick={onClick} className="active:shadow-xl text-gray-400 mx-auto">
         <Image
           src="/img/3_volunteer.jpg"
           alt="volunteer"
