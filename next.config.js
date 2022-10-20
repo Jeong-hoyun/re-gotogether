@@ -19,7 +19,11 @@ const nextConfig = {
      {
        source:"/ec2/reservations/user",
        destination:`http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/api/reservations/user`
-     }     
+     },
+     {
+       source:"/ec2/reservations/:path/state",
+       destination:`http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/api/reservations/:path/state`
+     }      
      ]
   },
   env: {

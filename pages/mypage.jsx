@@ -26,6 +26,19 @@ const Mypage = () => {
     };
   }, []);
 
+   const onCancel=async (path,paymentState)=>{
+    try{     
+      const res=await axios.patch(`/ec2/reservations/${path}/state`,
+      { cancelToken: source.token, headers: { "Content-Type": "application/json;charset=UTF-8" }})
+      setReserve(res.data)
+    }catch(e){
+      console.error(e)
+    }
+
+   }
+
+
+
   return (    
       <div className="mt-10">  
          {login.username?<h2 className="w-full xl:w-9/12 text-3xl mb-12 xl:mb-0 px-4 mt-24 mx-auto">{login.username}님 환영합니다</h2>:null}
@@ -59,6 +72,9 @@ const Mypage = () => {
                       <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
                         예약 정보
                       </th>
+                      <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                      체크
+                    </th>
                     </tr>
                   </thead>
   
@@ -78,6 +94,9 @@ const Mypage = () => {
                         </th>
                         <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
                         {item.paymentState}
+                        </th>
+                        <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                        <button onClick={()=>onCancel()} >취소</button>
                         </th>
                         </tr>
                       )
