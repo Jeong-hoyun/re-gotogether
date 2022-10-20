@@ -35,8 +35,7 @@ const Login = () => {
       url,
     };
     try {
-      const res = await axios(options);
-      console.log(res)
+      const res = await axios(options); 
       
       if (res.status == 200 && res.data.username) {
         MySwal.fire({

@@ -13,7 +13,7 @@ export default function Home() {
         <title>메인페이지|고투게더</title>
       </Head>
       <main className="max-w-7xl mx-auto">
-        {loginUser.username ? <Test /> : <Mainsearch />}
+        {loginUser.username ? <Test name={loginUser.username} /> : <Mainsearch />}
         <Maintheme
           country={content.country}
           group={content.group}

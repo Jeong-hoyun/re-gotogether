@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
-import Search from "./search";
 import PageLogo from "../HeaderLogo/pageLogo";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";

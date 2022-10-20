@@ -7,7 +7,7 @@ import Logo7 from "../NavbarLogo/theme7";
 import Logo9 from "../NavbarLogo/community9";
 import navMenus from "../../json/navbar.content.json"
 import DownArrow from "../NavbarLogo/downArrow";
-
+/** 기본 레이아웃에서 링크를 담당하고 있다 */
 export default function navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -135,7 +135,7 @@ export default function navbar() {
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
                 return(
-                  <li>
+                  <li key={curation.link}>
                     <Link href={curation.link}>
                     <a
                       id={curation.id} 
@@ -151,7 +151,7 @@ export default function navbar() {
               <ul className="py-1 text-sm "> 
                 { navMenus.groups.map(group => {
                   return(
-                    <li>
+                    <li key={group.link}>
                     <Link href={group.link}>
                     <a
                       id={group.id} 
@@ -197,9 +197,9 @@ export default function navbar() {
                 </ul>
 
                 <ul className="px-0 py-1 text-sm "> 
-                { navMenus.communities.map(community => {
+                {navMenus.communities.map(community => {
                   return(
-                    <li>
+                    <li key={community.link}>
                     <Link href={community.link}>
                     <a
                       id={community.id} 

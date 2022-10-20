@@ -24,6 +24,11 @@ export async function getStaticProps(context) {
   const { data: searchData } = await axios.get(
     `${API_URL}/api/products/?keyword=${keyword}`,
   );
+  if (!searchData) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       searchData,

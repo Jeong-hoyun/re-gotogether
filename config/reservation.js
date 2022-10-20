@@ -1,7 +1,11 @@
 import axios from "axios";
+import { from } from "rxjs";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+
+
 const MySwal = withReactContent(Swal);
+
 
 /** 예약용 함수 MySwal를 통해서 예약 확인 모달창이 뜸  */
 export const SetReservation = async (data) => {  
