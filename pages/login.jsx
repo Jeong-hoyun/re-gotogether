@@ -6,8 +6,7 @@ import { API_URL } from "./../config/index";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "rtk/features/loginSlice";
 import { useEffect } from "react";
-import  axios  from 'axios';
-
+import axios from "axios";
 
 const MySwal = withReactContent(Swal);
 const Login = () => {
@@ -26,7 +25,7 @@ const Login = () => {
   }, []);
 
   const onSubmit = async (data) => {
-    const url=`/ec2/login`
+    const url = `/ec2/login`;
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json;charset=UTF-8" },
@@ -35,15 +34,14 @@ const Login = () => {
       url,
     };
     try {
-      const res = await axios(options); 
-      
+      const res = await axios(options);
       if (res.status == 200 && res.data.username) {
         MySwal.fire({
           text: `${res.data.username}님 로그인 감사합니다`,
           icon: "success",
           confirmButtonText: "OK",
         }).then((result) => {
-          if (result.isConfirmed) {     
+          if (result.isConfirmed) {
             dispatch(login(res.data));
             router.push("./");
           }
@@ -55,8 +53,8 @@ const Login = () => {
           confirmButtonText: "OK",
         });
       }
-    }catch(e){
-      console.error(e)
+    } catch (e) {
+      console.error(e);
     }
   };
 
@@ -94,7 +92,7 @@ const Login = () => {
                   })}
                 />
               </div>
-        
+
               <button
                 type="submit"
                 className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
