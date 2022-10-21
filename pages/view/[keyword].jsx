@@ -27,7 +27,7 @@ export async function getStaticProps(context) {
   if (!searchData) {
     return {
       notFound: true,
-    }
+    };
   }
   return {
     props: {
@@ -46,10 +46,14 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.map((e) => e.id));
 
   if (searchData.products.length === 0) {
-    return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
+    return (
+      <main className="max-w-7xl mx-auto mt-20 flex justify-between flex-wrap">
+        현재 패키지 여행 준비중입니다
+      </main>
+    );
   }
   return (
     <>
