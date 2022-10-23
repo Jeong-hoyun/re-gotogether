@@ -17,7 +17,7 @@ export default function navbar() {
         data-collapse-toggle="mobile-menu-2"
         className="flex items-center visible text-xxs sm:invisible"
       >
-        <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
+        <ul className="flex m-auto mt-1 space-x-2 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
           {/* svg사이즈 어떻게 조절해요... 반응형으로 */}
           <li className="">
             <Link href="/">
@@ -134,7 +134,7 @@ export default function navbar() {
             {isOpen ? (
               <div
                 id="dropdown-bg"
-                className=" absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40"
+                className="absolute z-10 grid grid-cols-5 text-sm bg-white border  inset-x-30 top-40"
               >
                 <ul className="py-1 text-sm ">
                   {navMenus.curations.map((curation) => {

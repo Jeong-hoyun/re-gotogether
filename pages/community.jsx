@@ -27,11 +27,11 @@ export default function Community() {
       </div>
       {/* </div> */}
 
-      <nav className="text-sm text-black bg-white pb-7 pt-7 mt-30 drop-shadow-xl">
-        <ul className="flex justify-center text-sm font-medium lg:space-x-5">
+      <nav className="pt-6 pb-6 text-sm text-black bg-white mt-30 drop-shadow-xl">
+        <ul className="flex justify-center space-x-4 text-sm font-medium lg:space-x-5">
           <li>
             <Link href="/">
-              <a className="block px-10 py-3 bg-zinc-100">
+              <a className="block px-10 py-3 bg-zinc-100 rounded-2xl hover:bg-black hover:text-white">
                 <div>여행후기</div>
               </a>
             </Link>
@@ -39,7 +39,7 @@ export default function Community() {
 
           <li>
             <Link href="/">
-              <a className="block px-10 py-3 bg-zinc-100">
+              <a className="block px-10 py-3 bg-zinc-100 rounded-2xl hover:bg-black hover:text-white">
                 <div>공지사항</div>
               </a>
             </Link>
@@ -47,7 +47,7 @@ export default function Community() {
 
           <li>
             <Link href="/">
-              <a className="block px-10 py-3 bg-zinc-100">
+              <a className="block px-10 py-3 bg-zinc-100 rounded-2xl hover:bg-black hover:text-white">
                 <div>자료실</div>
               </a>
             </Link>

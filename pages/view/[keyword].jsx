@@ -47,11 +47,11 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
   if (searchData.products.length === 0) {
     return (
-      <main className="max-w-7xl mx-auto mt-20 flex justify-between flex-wrap">
+      <main className="flex flex-wrap justify-between mx-auto mt-20 max-w-7xl">
         현재 패키지 여행 준비중입니다
       </main>
     );
@@ -61,9 +61,8 @@ const Keyword = ({ searchData }) => {
       <Head>
         <title>{mainTitle}</title>
       </Head>
-      <Groupnav/>
-      <main className="max-w-7xl mx-auto mt-20">
-        <div className="flex justify-between flex-wrap lg:m-1 sm:m-5">
+      <main className="mx-auto mt-20 max-w-7xl">
+        <div className="flex flex-wrap justify-between">
           {searchData &&
             searchData.products.map((item) => {
          
@@ -74,14 +73,14 @@ const Keyword = ({ searchData }) => {
               const image1 = item.images[0];
               return (
                 <div
-                  className="lg:w-1/3 sm:w-1/2 mb-10 flex flex-col rounded-lg border border-gray-200 shadow-md  "
+                  className="w-1/3 mb-10 border border-gray-200 rounded-lg shadow-md "
                   key={title}
                 >
             
                   <Link href={`/travel/${productId}`}>
                     <a alt={title}>
                       <Image
-                        className="rounded-t-lg object-cover"
+                        className="object-cover rounded-t-lg"
                         src={image1}
                         alt={title}
                         width={500}
@@ -90,17 +89,17 @@ const Keyword = ({ searchData }) => {
                     </a>
                   </Link>
                   <div className="p-5">
-                    <p className="text-sm text-gray-700 font-extralight">
+                    <p className="mb-1 text-sm font-bold text-gray-700 font-sm">
                       {title}
                     </p>
                   </div>
                   <div className="pl-5">
-                  <h4 className="text-sm font-sm text-gray-700 font-bold">
+                  <h4 className="text-sm font-bold text-gray-700 font-sm">
                     {price}
                   </h4>
                   <div className="flex justify-end p-5">
                   <button
-                    className="flex"
+                    className="flex items-center justify-center flex-none border rounded-md w-9 h-9 text-slate-300 border-slate-200"
                     type="button"
                     aria-label="Like"
                     onClick={

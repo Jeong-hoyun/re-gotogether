@@ -38,21 +38,21 @@ export default function Footer() {
       <div className="hidden xl:block xl:float-right xl:pr-48 xl:mt-10">
         <a
           href="tel:+822-6105-7711"
-          className="inline-block p-3 mr-5 transition-all hover:opacity-75 border border-neutral-500 rounded-full"
+          className="inline-block p-3 mr-5 transition-all border rounded-full hover:opacity-75 border-neutral-500"
         >
           <Call />
         </a>
         <a
           href="https://goo.gl/maps/7RHLh3qouDBQCDMM8"
           target="blank"
-          className="inline-block p-3 mr-5 transition-all hover:opacity-75 border border-neutral-500 rounded-full"
+          className="inline-block p-3 mr-5 transition-all border rounded-full hover:opacity-75 border-neutral-500"
         >
           <Location />
         </a>
         <a
           href="mailto:gotogether@shinytravels.com"
           target="blank"
-          className="inline-block p-3 transition-all hover:opacity-75 border border-neutral-500 rounded-full"
+          className="inline-block p-3 transition-all border rounded-full hover:opacity-75 border-neutral-500"
         >
           <Mail />
         </a>
@@ -112,7 +112,7 @@ export default function Footer() {
       <div>
         {/* 상호명 | 주소 | 카피라이트 */}
 
-        <div className="pl-2 transition-all bg-gray-800 xl:ml-48 md:ml-48 text-xs text-gray-400">
+        <div className="pl-2 text-xs text-gray-400 transition-all bg-gray-800 xl:ml-48 md:ml-48">
           <p>
             상호명: (주)더샤이니ㅣ대표: 김소영ㅣ개인정보보호책임자: 김승덕 |
             주소: 서울특별시 중구 청계천로40(한국관광공사 서울센터) 707호
