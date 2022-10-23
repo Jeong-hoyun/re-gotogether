@@ -40,7 +40,7 @@ export default function Maincarousel() {
     ],
   };
   return (
-    <div className="max-w-full mx-auto mt-10 bg-center">
+    <div className="ml-3">
       <h2 className="mt-20 mb-6  text-lg font-semibold text-black sm:text-slate-900">
         여행 그룹 Best
       </h2>

@@ -134,12 +134,12 @@ export default function navbar() {
             {isOpen ? (
               <div
                 id="dropdown-bg"
-                className="absolute z-10 grid grid-cols-5 text-sm bg-white border  inset-x-30 top-40"
+                className="absolute z-10 grid grid-flow-col	gap-x-3 text-sm bg-white border top-40 "
               >
                 <ul className="py-1 text-sm ">
                   {navMenus.curations.map((curation) => {
                     return (
-                      <li key={curation.link}>
+                      <li key={`${curation.link}${curation.id}`}>
                         <Link href={curation.link}>
                           <a
                             id={curation.id}
@@ -156,7 +156,7 @@ export default function navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.groups.map((group) => {
                     return (
-                      <li key={group.link}>
+                      <li key={`${group.link}${group.id}`}>
                         <Link href={group.link}>
                           <a id={group.id} className="flex px-4 py-2 bg-gray">
                             {group.text}
@@ -170,7 +170,7 @@ export default function navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.countries.map((country) => {
                     return (
-                      <li>
+                      <li key={`${country.link}${country.id}`}>
                         <Link href={country.link}>
                           <a id={country.id} className="flex px-4 py-2 bg-gray">
                             {country.text}
