@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
+import Groupnav from "@/components/common/groupnav";
 
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
@@ -44,7 +45,7 @@ const Keyword = ({ searchData }) => {
         .filter((e) => e.key === location.query.keyword)
         .map((e) => e.title)[0],
   );
-  const wish = useSelector((state) => state.wish);
+  const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
   const wishItem = useMemo(() => wish.map((e) => e.id));
 
@@ -60,17 +61,23 @@ const Keyword = ({ searchData }) => {
       <Head>
         <title>{mainTitle}</title>
       </Head>
+      <Groupnav/>
       <main className="max-w-7xl mx-auto mt-20">
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-between flex-wrap lg:m-1 sm:m-5">
           {searchData &&
             searchData.products.map((item) => {
+         
               const { title, productId } = item;
+              const  price= item.price !== null ?
+               `${item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
+              : "가격문의";
               const image1 = item.images[0];
               return (
                 <div
-                  className="w-1/3 mb-10 rounded-lg border border-gray-200 shadow-md  "
+                  className="lg:w-1/3 sm:w-1/2 mb-10 flex flex-col rounded-lg border border-gray-200 shadow-md  "
                   key={title}
                 >
+            
                   <Link href={`/travel/${productId}`}>
                     <a alt={title}>
                       <Image
@@ -83,12 +90,17 @@ const Keyword = ({ searchData }) => {
                     </a>
                   </Link>
                   <div className="p-5">
-                    <p className="text-sm mb-1 font-sm text-gray-700 font-bold">
+                    <p className="text-sm text-gray-700 font-extralight">
                       {title}
                     </p>
                   </div>
+                  <div className="pl-5">
+                  <h4 className="text-sm font-sm text-gray-700 font-bold">
+                    {price}
+                  </h4>
+                  <div className="flex justify-end p-5">
                   <button
-                    className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
+                    className="flex"
                     type="button"
                     aria-label="Like"
                     onClick={
@@ -117,6 +129,9 @@ const Keyword = ({ searchData }) => {
                       />
                     </svg>
                   </button>
+                  </div>
+                 </div>
+                  
                 </div>
               );
             })}

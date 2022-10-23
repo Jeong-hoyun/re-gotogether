@@ -43,7 +43,7 @@ const Mypage = () => {
     <div className="mt-10">
       {login.username ? (
         <h2 className="w-full xl:w-9/12 text-3xl mb-12 xl:mb-0 px-4 mt-24 mx-auto">
-          {login.username}님 환영합니다
+          {login.username}님 환영합니다.
         </h2>
       ) : null}
       <section className="py-1 bg-blueGray-50">
@@ -108,7 +108,7 @@ const Mypage = () => {
                   ) : (
                     <tr className="text-center">
                       <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
-                        관심상품이 비어있습니다
+                         예약상품이 비어있습니다
                       </td>
                     </tr>
                   )}

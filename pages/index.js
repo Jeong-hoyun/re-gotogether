@@ -12,7 +12,7 @@ export default function Home() {
       <Head>
         <title>메인페이지|고투게더</title>
       </Head>
-      <main className="max-w-7xl mx-auto">
+      <main className="max-w-full mx-auto">
         {loginUser.username ? (
           <Test name={loginUser.username} />
         ) : (

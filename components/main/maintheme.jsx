@@ -6,7 +6,7 @@ const Maintheme = ({ country, group, theme }) => {
   const [value, setValue] = useState(group);
   return (
     <>
-      <div className="mb-8 border-b border-gray-100">
+      <div className="mr-10 mb-8 border-b border-gray-100">
         <ul className="flex flex-wrap text-sm font-medium text-center">
           <li className="mr-2 last:mr-0">
             <button
@@ -40,7 +40,7 @@ const Maintheme = ({ country, group, theme }) => {
         </ul>
       </div>
 
-      <div className="flex flex-wrap mx-auto">
+      <div className="flex flex-wrap mr-5">
         {value &&
           value.map((item) => {
             const { title, path, img, subtitle } = item;
