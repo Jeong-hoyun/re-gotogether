@@ -40,8 +40,8 @@ export default function Maincarousel() {
     ],
   };
   return (
-    <div>
-      <h2 className="mt-20 mb-6 text-lg font-semibold text-black sm:text-slate-900">
+    <div className="max-w-full mx-auto mt-10 bg-center">
+      <h2 className="mt-20 mb-6  text-lg font-semibold text-black sm:text-slate-900">
         여행 그룹 Best
       </h2>
       <Slider {...settings}>
