@@ -130,7 +130,7 @@ export default function navbar() {
           {/* 해야할거: 버튼 모양이 클릭할때마다 바뀌게하기 */}
           {/* 하얀바탕화면이 레프트 훅 맞은거 css 고치기... 하... */}
             {isOpen ? (
-            <div id="dropdown-bg" className=' absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
+            <div id="dropdown-bg" className='absolute z-10 grid grid-cols-5 text-sm bg-white border  inset-x-30 top-40'>
             
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
@@ -221,5 +221,4 @@ export default function navbar() {
     </>
   )
 }
-
 

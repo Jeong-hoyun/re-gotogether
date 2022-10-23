@@ -41,7 +41,7 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
   if (searchData?.products.length === 0) {
     return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
@@ -51,21 +51,21 @@ const Keyword = ({ searchData }) => {
       <Head>
         <title>{mainTitle}</title>
       </Head>
-      <main className="max-w-7xl mx-auto mt-20">
-        <div className="flex justify-between flex-wrap">
+      <main className="mx-auto mt-20 max-w-7xl">
+        <div className="flex flex-wrap justify-between">
           {searchData &&
             searchData.products.map((item) => {
               const { title, productId } = item;
               const image1 = item.images[0];
               return (
                 <div
-                  className="w-1/3 mb-10 rounded-lg border border-gray-200 shadow-md  "
+                  className="w-1/3 mb-10 border border-gray-200 rounded-lg shadow-md "
                   key={title}
                 >
                   <Link href={`/travel/${productId}`}>
                     <a alt={title}>
                       <Image
-                        className="rounded-t-lg object-cover"
+                        className="object-cover rounded-t-lg"
                         src={image1}
                         alt={title}
                         width={500}
@@ -74,12 +74,12 @@ const Keyword = ({ searchData }) => {
                     </a>
                   </Link>
                   <div className="p-5">
-                    <p className="text-sm mb-1 font-sm text-gray-700 font-bold">
+                    <p className="mb-1 text-sm font-bold text-gray-700 font-sm">
                       {title}
                     </p>
                   </div>
                   <button
-                    className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200"
+                    className="flex items-center justify-center flex-none border rounded-md w-9 h-9 text-slate-300 border-slate-200"
                     type="button"
                     aria-label="Like"
                     onClick={
