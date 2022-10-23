@@ -134,7 +134,7 @@ export default function navbar() {
             {isOpen ? (
               <div
                 id="dropdown-bg"
-                className="absolute z-10 grid grid-flow-col	gap-x-3 text-sm bg-white border top-40 "
+                className="absolute z-10 grid grid-flow-col text-sm bg-white border gap-x-3 top-40 "
               >
                 <ul className="py-1 text-sm ">
                   {navMenus.curations.map((curation) => {
@@ -153,7 +153,7 @@ export default function navbar() {
                   })}
                 </ul>
 
-                <ul className="py-1 text-sm ">
+                <ul className="py-1 text-sm">
                   {navMenus.groups.map((group) => {
                     return (
                       <li key={`${group.link}${group.id}`}>
