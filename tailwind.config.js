@@ -68,7 +68,7 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
       },
       fontSize: {
-        "xxs":"10px",
+        xxs: "10px",
         xs: "0.75rem",
         sm: "0.875rem",
         base: "1rem",
@@ -130,6 +130,10 @@ module.exports = {
       },
       zIndex: {
         "-1": "-1",
+      },
+      screens: {
+        c1170: "1170px",
+        c800: "800px",
       },
     },
     keyframes: {

@@ -1,37 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { API_URL } from './../../config/index';
+import { API_URL } from "./../../config/index";
 
 export const fetchUserFrom = createAsyncThunk(
-  'users/fetchUserFrom',
+  "users/fetchUserFrom",
   async (data) => {
     let cancel;
-    const options={
-      method: 'post',
-      headers: { 'content-type': 'application/json;charset=UTF-8' },
+    const options = {
+      method: "post",
+      headers: { "content-type": "application/json;charset=UTF-8" },
       url: `${API_URL}/login/`,
       data: JSON.stringify(data),
-      cancelToken: new axios.CancelToken(c => cancel = c)     
-    }
-   
+      cancelToken: new axios.CancelToken((c) => (cancel = c)),
+    };
+
     try {
       const response = await axios.post(options);
-      return response.data
+      return response.data;
     } catch (error) {
-      if (axios.isCancel(error)) return
+      if (axios.isCancel(error)) return;
     }
-    return () => cancel()
-  }
-)
-
-
+    return () => cancel();
+  },
+);
 
 const loginSlice = createSlice({
   name: "login",
   initialState: {
     user: null,
     fetchingUser: false,
-    fetchingError: null
+    fetchingError: null,
   },
   reducers: {},
   extraReducers: {
@@ -42,12 +40,12 @@ const loginSlice = createSlice({
     [fetchUserFrom.rejected]: (state, action) => {
       state.fetchingUser = false;
       state.fetchingError = action.error;
-    }
+    },
     [fetchUserFrom.fulfilled]: (state, action) => {
       state.fetchingUser = false;
       state.user = action.payload;
-    }
-  }
+    },
+  },
 });
 
 const { actions, reducer } = loginSlice;

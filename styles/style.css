@@ -22,6 +22,9 @@
   display: none;
 }
 
-body{
+body {
   overflow-x: hidden;
+  font-family: "Gowun Dodum";
+  font-style: normal;
+  font-weight: 400;
 }

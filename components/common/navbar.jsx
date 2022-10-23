@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Logo1 from "../NavbarLogo/travelQ1";
+import Logo1 from "../NavbarLogo/travel1";
+import Logo2 from "../NavbarLogo/travel2";
 import Logo3 from "../NavbarLogo/group3";
+import Logo4 from "../NavbarLogo/group4";
 import Logo5 from "../NavbarLogo/region5";
+import Logo6 from "../NavbarLogo/region6";
 import Logo7 from "../NavbarLogo/theme7";
+import Logo8 from "../NavbarLogo/theme8";
 import Logo9 from "../NavbarLogo/community9";
+import Logo10 from "../NavbarLogo/community10";
 import navMenus from "../../json/navbar.content.json";
+import DownArrow from "../NavbarLogo/downArrow";
 
 export default function navbar() {
   const [display, setDisplay] = useState(false);
@@ -13,6 +19,8 @@ export default function navbar() {
   const [display2, setDisplay2] = useState(false);
   const [display3, setDisplay3] = useState(false);
   const [display4, setDisplay4] = useState(false);
+
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -24,7 +32,7 @@ export default function navbar() {
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo1 className="w-25" />
+                <Logo2/>
                 <div>큐레이션</div>
               </a>
             </Link>
@@ -33,7 +41,7 @@ export default function navbar() {
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo3 />
+                <Logo4 />
                 <div>그룹별</div>
               </a>
             </Link>
@@ -42,7 +50,7 @@ export default function navbar() {
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo5 />
+                <Logo6 />
                 <div>지역별</div>
               </a>
             </Link>
@@ -51,7 +59,7 @@ export default function navbar() {
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo7 />
+                <Logo8 />
                 <div>테마별</div>
               </a>
             </Link>
@@ -60,7 +68,7 @@ export default function navbar() {
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
-                <Logo9 />
+                <Logo10 />
                 <div>커뮤니티</div>
               </a>
             </Link>
@@ -95,7 +103,7 @@ export default function navbar() {
                   <ul className="py-1 text-sm">
                     {navMenus.curations.map((curation) => {
                       return (
-                        <li className="hover:bg-sky-300 animate-fade-in-down">
+                        <li className="hover:bg-logo-color animate-fade-in-down">
                           <Link href={curation.link}>
                             <a
                               id={curation.id}
@@ -128,7 +136,7 @@ export default function navbar() {
                   <ul className="py-1 text-sm ">
                     {navMenus.groups.map((group) => {
                       return (
-                        <li className="hover:bg-sky-600 animate-fade-in-down">
+                        <li className="hover:bg-logo-color animate-fade-in-down">
                           <Link href={group.link}>
                             <a id={group.id} className="flex px-4 py-2 bg-gray">
                               {group.text}
@@ -158,7 +166,7 @@ export default function navbar() {
                   <ul className="py-1 text-sm ">
                     {navMenus.countries.map((country) => {
                       return (
-                        <li className="hover:bg-sky-600  animate-fade-in-down">
+                        <li className="hover:bg-logo-color  animate-fade-in-down">
                           <Link href={country.link}>
                             <a
                               id={country.id}
@@ -229,7 +237,105 @@ export default function navbar() {
                 </ul>
                 </div>
                 )}
-                </li>
+            </li>
+
+          
+         {/* 메가 드롭다운 버튼  */}
+            <li>       
+                <button onClick={() => setIsOpen(!isOpen)}
+                className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                전체보기 <DownArrow/>                
+                </button>           
+            </li>
+
+            {isOpen ? (
+            <div id="dropdown-bg" className=' absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
+            
+            <ul className="py-1 text-sm "> 
+              { navMenus.curations.map(curation => {
+                return(
+                  <li key={`${curation.link}${curation.id}`}>
+                    <Link href={curation.link}>
+                    <a
+                      id={curation.id} 
+                      className="flex px-4 py-2 bg-gray">
+                        {curation.text}
+                    </a>
+                    </Link>
+                  </li>
+                )
+              })}
+              </ul>
+
+              <ul className="py-1 text-sm "> 
+                { navMenus.groups.map(group => {
+                  return(
+                    <li key={`${group.link}${group.id}`}>
+                    <Link href={group.link}>
+                    <a
+                      id={group.id} 
+                      className="flex px-4 py-2 bg-gray">
+                      {group.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.countries.map(country => {
+                  return(
+                    <li key={`${country.link}${country.id}`}>
+                    <Link href={country.link}>
+                    <a
+                      id={country.id} 
+                      className="flex px-4 py-2 bg-gray">
+                      {country.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.themes.map(theme => {
+                  return(
+                    <li key={`${theme.link}${theme.id}`}>
+                    {/* <li> */}
+                    <Link href={theme.link}>
+                    <a
+                      id={theme.id} 
+                      className="flex px-4 py-2 bg-gray">
+                      {theme.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="px-0 py-1 text-sm "> 
+                { navMenus.communities.map(community => {
+                  return(
+                    <li key={`${community.link}${community.id}`}>
+                    <Link href={community.link}>
+                    <a
+                      id={community.id} 
+                      className="flex px-4 py-2 bg-gray">
+                      {community.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+            </div>
+              ): null}
+
+
 
 
           </ul>

@@ -5,8 +5,8 @@ export function TwoForm({ two, updateFields }) {
   return (
     <FormWrapper title="Q2. 어디론가 떠나고 싶은 날, 어떤 여행을 떠나고 싶으세요?">
       <div
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
         onClick={(e) => updateFields({ two: e.target.dataset.img })}
+        className="active:shadow-xl text-gray-400 mx-auto"
       >
         <Image
           src="/img/2_golf.jpg"
@@ -18,7 +18,7 @@ export function TwoForm({ two, updateFields }) {
         />
       </div>
       <div
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1"
+        className="active:shadow-xl text-gray-400 mx-auto"
         onClick={(e) => updateFields({ two: e.target.dataset.img })}
       >
         <Image
@@ -31,7 +31,7 @@ export function TwoForm({ two, updateFields }) {
         />
       </div>
       <div
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        className="active:shadow-xl text-gray-400 mx-auto"
         onClick={(e) => updateFields({ two: e.target.dataset.img })}
       >
         <Image
@@ -44,7 +44,7 @@ export function TwoForm({ two, updateFields }) {
         />
       </div>
       <div
-        className="active:shadow-xl text-gray-400 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm py-1 "
+        className="active:shadow-xl text-gray-400 mx-auto"
         onClick={(e) => updateFields({ two: e.target.dataset.img })}
       >
         <Image
