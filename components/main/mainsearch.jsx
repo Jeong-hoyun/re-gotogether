@@ -51,7 +51,7 @@ function Mainsearch() {
             return (
               <div
                 key={title}
-                className="relative cursor-pointer hover:opacity-75 transition-all"
+                className="relative   cursor-pointer hover:opacity-75 transition-all"
               >
                 <div className="absolute text-white sm:m-45 lg:m-40 z-10">
                   <h3 className="sm:text-3xl lg:text-5xl">{title}</h3>

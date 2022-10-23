@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
+import Groupnav from "@/components/common/groupnav";
 
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
@@ -44,13 +45,13 @@ const Keyword = ({ searchData }) => {
         .filter((e) => e.key === location.query.keyword)
         .map((e) => e.title)[0],
   );
-  const wish = useSelector((state) => state.wish);
+  const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
   const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
   if (searchData.products.length === 0) {
     return (
-      <main className="max-w-7xl mx-auto mt-20 flex justify-between flex-wrap">
+      <main className="flex flex-wrap justify-between mx-auto mt-20 max-w-7xl">
         현재 패키지 여행 준비중입니다
       </main>
     );
@@ -64,13 +65,18 @@ const Keyword = ({ searchData }) => {
         <div className="flex flex-wrap justify-between">
           {searchData &&
             searchData.products.map((item) => {
+         
               const { title, productId } = item;
+              const  price= item.price !== null ?
+               `${item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
+              : "가격문의";
               const image1 = item.images[0];
               return (
                 <div
                   className="w-1/3 mb-10 border border-gray-200 rounded-lg shadow-md "
                   key={title}
                 >
+            
                   <Link href={`/travel/${productId}`}>
                     <a alt={title}>
                       <Image
@@ -87,6 +93,11 @@ const Keyword = ({ searchData }) => {
                       {title}
                     </p>
                   </div>
+                  <div className="pl-5">
+                  <h4 className="text-sm font-bold text-gray-700 font-sm">
+                    {price}
+                  </h4>
+                  <div className="flex justify-end p-5">
                   <button
                     className="flex items-center justify-center flex-none border rounded-md w-9 h-9 text-slate-300 border-slate-200"
                     type="button"
@@ -117,6 +128,9 @@ const Keyword = ({ searchData }) => {
                       />
                     </svg>
                   </button>
+                  </div>
+                 </div>
+                  
                 </div>
               );
             })}

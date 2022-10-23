@@ -78,24 +78,32 @@ const ProductId = ({ post }) => {
       <Head>
         <title>{post.title}</title>
       </Head>
-      <section className="relative flex justify-center">
-        <div className="max-w-6xl px-4 sm:px-6">
-          <div className="pt-1 md:pt-10 md:pb-20 ">
-            <div>
-              <div className="relative flex justify-center mb-8">
-                <div>
-                  <img
-                    className="mx-auto"
-                    src={HeroImage}
-                    width="400"
-                    height="400"
-                    alt="Hero"
-                  />
-                </div>
-                <div className="pl-20 text-3xl font-semibold">
-                  {post.title}
-                  <div className="absolute text-number-color">{number2}</div>
-                  <div className="absolute px-10 py-8 mt-20 text-sm rounded-2xl bg-zinc-100">
+
+      <section className="flex flex-col">
+        <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-24 mx-auto">
+        <div className=" sm:flex lg:hidden">          
+        <Image         
+          src={HeroImage}
+          width={384}
+          height={384}
+          alt="Hero"
+        />
+        </div>           
+          <div className="flex">           
+          <div className="hidden sm:mx-auto lg:flex">          
+          <Image         
+            src={HeroImage}
+            width={384}
+            height={384}
+            alt="Hero"
+          />
+            </div>
+      
+
+                <div className="font-semibold">
+                   <h2 className="lg:text-3xl sm:text-2xl">{post.title}</h2>
+                  <h3 className="lg:text-2xl text-number-color">{number2}</h3>
+                  <div className="absolute px-10 py-8 mt-10 text-sm rounded-2xl bg-zinc-100">
                     <div>
                       <PointLogo />
                       {post.title} 여행
@@ -108,16 +116,16 @@ const ProductId = ({ post }) => {
                       패키지의 안전함과 자유여행의 즐거움을 동시에~
                     </div>
                   </div>
-                  <div className="text-xs font-bold mt-72">
+                  <div className="text-xs font-bold mt-60">
                     <p className="text-number-color">
                       여행지역
-                      <span className="pl-2 font-normal text-black">
+                      <span className=" font-normal text-black">
                         콜롬비아/페루/볼리비아/칠레/아르헨티나/브라질/쿠바/멕시코
                       </span>
                     </p>
                     <p className="pt-2 text-number-color">
                       여행특징
-                      <span className="pl-2 font-normal text-black">
+                      <span className="font-normal text-black">
                         5성~3성급 호텔/포함투어 25개(타사상품 비교必)
                       </span>
                     </p>
@@ -151,7 +159,7 @@ const ProductId = ({ post }) => {
                           })}
                           name="reservationDate"
                           required
-                          className="w-full ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
+                          className="ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
                         >
                           <option value="">출발일(필수)</option>
                           <option value={post.startDates[0]}>
@@ -177,7 +185,7 @@ const ProductId = ({ post }) => {
                           })}
                           required
                           name="personnel"
-                          className="w-full ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
+                          className="ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
                         >
                           <option value="">인원수(필수)</option>
                           <option value={1}>1인</option>
@@ -197,14 +205,14 @@ const ProductId = ({ post }) => {
                 </div>
               </div>
               {loginUser.username ? (
-                <div className="pb-16 border-b">
+                <div className="flex flex-col pb-16 border-b">
                   <p className="mt-10 text-2xl font-bold text-black">
                     {loginUser.username}님에게{" "}
                     <span className="text-number-color">
                       딱 어울릴 것 같아요!
                     </span>
                   </p>
-                  <div className="flex justify-center py-10 mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50">
+                  <div className="flex justify-center py-10 sm:w-4/5 lg:mx-24 lg:mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50">
                     <Angel />
                     <p className="font-semibold">
                       {loginUser.username}님과 같은{" "}
@@ -218,8 +226,8 @@ const ProductId = ({ post }) => {
               ) : null}
 
               {/* 펼쳐보기 */}
-              <div className="pb-16 border-b">
-                <p className="mt-10 text-2xl font-bold text-black">
+              <div className="flex flex-col py-10 mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50">
+                <p className="flex mt-10 justify-center text-2xl font-bold text-black">
                   이런 여행을 떠날거에요 😃
                 </p>
                 <div
@@ -227,10 +235,10 @@ const ProductId = ({ post }) => {
                   tabIndex="1"
                   className="flex flex-col justify-center py-10 mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50"
                 >
-                  <p className="font-semibold flex justify-center">
+                  <div className="font-semibold justify-center w-40">
                     펼쳐보기 ▼
-                  </p>
-                  <div className={`${toggle && "hidden"}`}>
+                  </div>
+                  <div className={`${toggle && "hidden"} `}>
                     {post.images
                       .filter((_, i) => i !== 0)
                       .map((item) => {
@@ -254,9 +262,7 @@ const ProductId = ({ post }) => {
                 </p>
                 <Maincarousel />
               </div>
-            </div>
-          </div>
-        </div>
+            </div>    
       </section>
     </>
   );

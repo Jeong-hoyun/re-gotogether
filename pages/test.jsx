@@ -73,14 +73,14 @@ const Test = ({ name }) => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto mt-20  bg-center">
+    <div className="max-w-full mx-auto mt-10 bg-center">
       {result ? (
         <div className="flex justify-between flex-wrap">
           <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center text-gray-400">
             {result.length > 0 ? (
               <div className="flex flex-col">
                 <div className="flex justify-start">
-                  <h3>{loginUser.username}님의 취향입니다!</h3>
+                  <h3>{loginUser.username}님의 여행!</h3>
                 </div>
                <div className="flex flex-col overflow-hidden hover:overflow-y-auto h-96">
                   {result.map((item) => {
