@@ -1,0 +1,9 @@
+.hidden {
+	max-height : 0;
+    overflow : hidden; 
+}
+
+.dropdownList {
+	max-height : 100px; 
+    transition : max-height 200ms ease-in-out;
+}
