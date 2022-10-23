@@ -1,16 +1,18 @@
-import {  useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { useMultistepForm } from "./../components/tendency/useMultistepForm";
 import { ThreeForm } from "./../components/tendency/threeform";
 import { TwoForm } from "./../components/tendency/twoform";
 import { OneForm } from "./../components/tendency/oneform";
+import { Zeroform } from "./../components/tendency/zeroform";
+import { API_URL } from "./../config/index";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { useRouter } from "next/router";
-import axios  from 'axios';
-import { API_URL } from './../config/index';
+import axios from "axios";
 import Image from "next/image";
-import { Zeroform } from './../components/tendency/zeroform';
-
+import Result from "./../components/tendency/result";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const MySwal = withReactContent(Swal);
 const INITIAL_DATA = {
@@ -19,46 +21,47 @@ const INITIAL_DATA = {
   three: "",
 };
 
-const Test = () => {
+const Test = ({ name }) => {
   const [data, setData] = useState(INITIAL_DATA);
-  const [result,setResult]=useState()
+  const [result, setResult] = useState();
   const Router = useRouter();
+  const loginUser = useSelector((state) => state.login.login);
   function updateFields(fields) {
     setData((prev) => {
       return { ...prev, ...fields };
     });
   }
-   function onSubmit(e) {
+  function onSubmit(e) {
     e.preventDefault();
-    if (!isLastStep) return next();    
-    if(data.one!==''&&data.two!==''&&data.three!==''){
+    if (!isLastStep) return next();
+    if (data.one !== "" && data.two !== "" && data.three !== "") {
       MySwal.fire({
         title: "최종으로 분석하시겠습니까?",
         showDenyButton: true,
         confirmButtonText: "분석",
         denyButtonText: `한번더 확인`,
-      }).then( async (result) => {
+      }).then(async (result) => {
         if (result.isConfirmed) {
-      const res=await axios.get(`${API_URL}/api/products?keyword=${data.three}&page=0&pageSize=4`)
-      if(res.data) setResult(res.data.products)  
-      console.log(res.data.products)  
+          const res = await axios.get(
+            `${API_URL}/api/products?keyword=${data.three}&page=0&pageSize=4`,
+          );
+          if (res.data) setResult(res.data.products);
+          console.log(res.data.products);
         } else if (result.isDenied) {
           Swal.fire("다시 한번 더 체크 해주세요", "", "info");
         }
       });
-    }else{
+    } else {
       MySwal.fire({
         title: "뒤에 그림을 클릭해주세요",
-        icon: 'info',
-      })
+        icon: "info",
+      });
     }
-
-
   }
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <Zeroform {...data} updateFields={updateFields} />,
+      <Zeroform {...data} updateFields={updateFields} name={name} />,
       <OneForm {...data} updateFields={updateFields} />,
       <TwoForm {...data} updateFields={updateFields} />,
       <ThreeForm {...data} updateFields={updateFields} />,
@@ -71,46 +74,65 @@ const Test = () => {
 
   return (
     <div className="max-w-7xl mx-auto mt-20  bg-center">
-    {result?<div className="flex justify-between flex-wrap">
-    <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center text-gray-400">
-    {result.length>0?result.map(item=>{
-      return(
-        <div key={item.title}>
-        <Image src={item.images[0]} width={300} height={300}></Image>
-         <h3>{item.title}</h3>
+      {result ? (
+        <div className="flex justify-between flex-wrap">
+          <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center text-gray-400">
+            {result.length > 0 ? (
+              <div className="flex flex-col">
+                <div className="flex justify-start">
+                  <h3>{loginUser.username}님의 취향입니다!</h3>
+                </div>
+               <div className="flex flex-col overflow-hidden hover:overflow-y-auto h-96">
+                  {result.map((item) => {
+                    return (
+                      <div key={item.title} className="ml-96">
+                        <Image
+                          src={item.images[0]}
+                          width={300}
+                          height={300}
+                        ></Image>
+                        <h3>{item.title}</h3>
+                      </div>
+                    );
+                  })}
+                </div>
+                <Link href={"/test"}>
+                  <a className="flex">다시테스트하기</a>
+                </Link>
+              </div>
+            ) : (
+              <Result />
+            )}
+          </div>
         </div>
-      )
-    }):"현재 성향에 맞는 상품이 없습니다 죄송합니다"}
-    </div>
-    
-    </div>
-    :       
-    <form onSubmit={onSubmit} className="flex justify-between flex-wrap">
-    <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center text-gray-400">
-      {currentStepIndex + 1} / {steps.length}
-    </div>
-    {step}
-    <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+      ) : (
+        <form onSubmit={onSubmit} className="flex justify-between flex-wrap">
+          <div className="hidden">
+            {currentStepIndex + 1} / {steps.length}
+          </div>
+          {step}
+          <div className="flex flex-wrap w-full mb-10 flex-col items-center text-center">
+            <button
+              type="submit"
+              className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded ${
+                !isFirstStep ? "" : "hidden"
+              }`}
+            >
+              {isLastStep ? "완료" : "다음"}
+            </button>
 
-     <button
-      type="submit"
-      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded ${!isFirstStep? '':'hidden'}`}
-    >
-      {isLastStep ? "완료" : "다음"}
-    </button>
-
-      {!isFirstStep && (
-        <button
-          type="button"
-          onClick={back}
-          className="bg-blue-500 m-1 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded"
-        >
-          뒤로
-        </button>
+            {!isFirstStep && (
+              <button
+                type="button"
+                onClick={back}
+                className="bg-blue-500 m-1 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded"
+              >
+                뒤로
+              </button>
+            )}
+          </div>
+        </form>
       )}
-    </div>
-  </form>}
-     
     </div>
   );
 };

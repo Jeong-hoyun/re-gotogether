@@ -1,103 +1,102 @@
-{ 
-  "curations" : [
-    { 
-      "id":1,
+{
+  "curations": [
+    {
+      "id": 1,
       "text": "나의 유형 추천받기",
       "link": "http://localhost:3000/test"
-      },
-      { 
-        "id":2,
-        "text": "나의 여행 유형 테스트",
-        "link": "http://localhost:3000/test"
-        } 
+    },
+    {
+      "id": 2,
+      "text": "나의 여행 유형 테스트",
+      "link": "http://localhost:3000/test"
+    }
   ],
 
-    "groups": [
-      { 
-        "id":3,
-        "text": "with 5070",
-        "link": "http://localhost:3000/view/5070"
-      },    
-      {
-        "id":4,
-        "text": "여자끼리 여행",
-        "link": "http://localhost:3000/view/ladies"
-      },
-      {
-        "id":5,
-        "text": "자녀 동반 여행",
-        "link": "http://localhost:3000/view/withchild"
-      },
-      {
-        "id":6,
-        "text": "with 2040",
-        "link": "http://localhost:3000/view/2040"
-      }
-    ],
-    
-    "countries": [
-      {
-        "text": "동남아시아 여행",
-        "link": "http://localhost:3000/view/Thailand"
-      },
-      {
-        "text": "유럽",
-        "link": "http://localhost:3000/view/Europe"
-      },
-      {
-        "text": "중남미 여행",
-        "link": "http://localhost:3000/view/LatinAmerica"
-      },
-      {
-        "text": "아프리카",
-        "link": "http://localhost:3000/view/Africa"
-      },
-      {
-        "text": "코카서스",
-        "link": "http://localhost:3000/view/Caucasus"
-      },
-      {
-        "text": "인도&주변국",
-        "link": "http://localhost:3000/view/india"
-      }
-    ],
+  "groups": [
+    {
+      "id": 3,
+      "text": "with 5070",
+      "link": "http://localhost:3000/view/5070"
+    },
+    {
+      "id": 4,
+      "text": "여자끼리 여행",
+      "link": "http://localhost:3000/view/ladies"
+    },
+    {
+      "id": 5,
+      "text": "자녀 동반 여행",
+      "link": "http://localhost:3000/view/withchild"
+    },
+    {
+      "id": 6,
+      "text": "with 2040",
+      "link": "http://localhost:3000/view/2040"
+    }
+  ],
 
-    "themes": [
-      {
-        "text": "문화 탐방",
-        "link": "http://localhost:3000/view/culture"
-      },
-      {
-        "text": "골프 여행",
-        "link": "http://localhost:3000/view/golf"
-      },
-      {
-        "text": "휴양지 힐링",
-        "link": "http://localhost:3000/view/vacation"
-      },
-      {
-        "text": "트레킹",
-        "link": "http://localhost:3000/view/trekking"
-      },
-      {
-        "text": "성지순례",
-        "link": "http://localhost:3000/view/pilgrimage"
-      }
-    ],
+  "countries": [
+    {
+      "text": "동남아시아 여행",
+      "link": "http://localhost:3000/view/Thailand"
+    },
+    {
+      "text": "유럽",
+      "link": "http://localhost:3000/view/Europe"
+    },
+    {
+      "text": "중남미 여행",
+      "link": "http://localhost:3000/view/LatinAmerica"
+    },
+    {
+      "text": "아프리카",
+      "link": "http://localhost:3000/view/Africa"
+    },
+    {
+      "text": "코카서스",
+      "link": "http://localhost:3000/view/Caucasus"
+    },
+    {
+      "text": "인도&주변국",
+      "link": "http://localhost:3000/view/india"
+    }
+  ],
 
-    "communities": [
-      {
-        "text": "여행후기",
-        "link": "http://localhost:3000/community/review"
-      },
-      {
-        "text": "게시판",
-        "link": "http://localhost:3000/community/bulletinboard"
-      },
-      {
-        "text": "자료실",
-        "link": "http://localhost:3000/community/library"
-      }
-      ]
-  
+  "themes": [
+    {
+      "text": "문화 탐방",
+      "link": "http://localhost:3000/view/culture"
+    },
+    {
+      "text": "골프 여행",
+      "link": "http://localhost:3000/view/golf"
+    },
+    {
+      "text": "휴양지 힐링",
+      "link": "http://localhost:3000/view/vacation"
+    },
+    {
+      "text": "트레킹",
+      "link": "http://localhost:3000/view/trekking"
+    },
+    {
+      "text": "성지순례",
+      "link": "http://localhost:3000/view/pilgrimage"
+    }
+  ],
+
+  "communities": [
+    {
+      "text": "여행후기",
+      "link": "http://localhost:3000/community/review"
+    },
+    {
+      "text": "게시판",
+      "link": "http://localhost:3000/community/bulletinboard"
+    },
+    {
+      "text": "자료실",
+      "link": "http://localhost:3000/community/library"
+    }
+  ]
 }

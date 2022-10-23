@@ -24,6 +24,11 @@ export async function getStaticProps(context) {
   const { data: searchData } = await axios.get(
     `${API_URL}/api/products/?keyword=${keyword}`,
   );
+  if (!searchData) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       searchData,
@@ -43,8 +48,12 @@ const Keyword = ({ searchData }) => {
   const dispatch = useDispatch();
   const wishItem = useMemo(() => wish.wish.map((e) => e.id));
 
-  if (searchData?.products.length === 0) {
-    return <div className="flex mt-20">현재 패키지 여행 준비중입니다</div>;
+  if (searchData.products.length === 0) {
+    return (
+      <main className="max-w-7xl mx-auto mt-20 flex justify-between flex-wrap">
+        현재 패키지 여행 준비중입니다
+      </main>
+    );
   }
   return (
     <>
