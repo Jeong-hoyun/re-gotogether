@@ -5,8 +5,9 @@ import { logout } from "rtk/features/loginSlice";
 import PageLogo from "../HeaderLogo/pageLogo";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
+import SearchBar from './searchBar';
 import Signup from "../HeaderLogo/signup";
-import SearchBar from "../HeaderLogo/searchBar";
+
 
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
@@ -16,7 +17,7 @@ export default function Header() {
     <>
       <header className="header">
         <div className="z-10 flex items-center bg-white border-b border-gray-200 ">
-          <div className="relative w-full max-w-screen-xl px-6 mx-auto">
+          <div className="relative w-full  px-6 mx-auto">
             <div
               id="MainDiv"
               className="grid grid-cols-2 gap-x-2 grid-flow-row-dense md:flex md:items-center md:mx-6"

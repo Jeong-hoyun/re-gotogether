@@ -74,6 +74,7 @@ export default function Signup() {
     <>
       <Head>
         <title>회원가입|고투게더</title>
+        <link rel="canonical" href="/signup" />
       </Head>
       <section className="mt-20">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

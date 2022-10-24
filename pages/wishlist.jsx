@@ -10,6 +10,7 @@ const Wishlist = () => {
     <>
     <Head>
     <title>위시리스트|고투게더</title>
+    <link rel="canonical" href="/wishlist" />
     </Head>
     <div className="mt-10 ">
       <section className="py-1 bg-blueGray-50">

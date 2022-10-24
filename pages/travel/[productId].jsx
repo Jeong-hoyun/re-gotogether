@@ -12,10 +12,10 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
+import DataApi from '../../config/productsApi.ts';
 
 export const getStaticPaths = async () => {
-  const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
-  const posts = await post.data;
+  const posts = await DataApi.getItem() 
   return {
     paths: posts.products.map((item) => {
       return {
@@ -77,6 +77,7 @@ const ProductId = ({ post }) => {
     <>
       <Head>
         <title>{post.title}</title>
+        <link rel="canonical" href={`/travel/${router.query.productId}`} />
       </Head>
 
       <section className="flex flex-col">
@@ -89,7 +90,7 @@ const ProductId = ({ post }) => {
           alt="Hero"
         />
         </div>           
-          <div className="flex">           
+          <div className="flex xl:mr-40">           
           <div className="hidden sm:mx-auto lg:block">          
           <Image         
             src={HeroImage}
@@ -134,7 +135,7 @@ const ProductId = ({ post }) => {
                       <span className="pl-2 font-normal text-black">미정</span>
                     </p>
                   </div>
-                  {post.startDates ? (
+                  {post.startDates&&loginUser.username ? (
                     <form onSubmit={handleSubmit(submitForm)}>
                       <div className="flex flex-col justify-center ">
                         <input
@@ -201,7 +202,7 @@ const ProductId = ({ post }) => {
                         예약하기
                       </button>
                     </form>
-                  ) : null}
+                  ) : <div className="m-10">예약은 회원가입 이후 가능합니다</div>}
                 </div>
               </div>
               {loginUser.username ? (

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import axios from "axios";
+import Head from "next/head";
 
 const Mypage = () => {
   const wish = useSelector((state) => state.wish.wish);
@@ -42,6 +43,12 @@ const Mypage = () => {
   };
 
   return (
+    <>
+    <Head>
+    <title>마이페이지|고투게더</title>
+    <link rel="canonical" href="/mypage" />
+    </Head>
+    
     <div className="mt-10">
       {login.username ? (
         <h2 className="w-full xl:w-9/12 text-3xl mb-12 xl:mb-0 px-4 mt-24 mx-auto">
@@ -190,6 +197,7 @@ const Mypage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
