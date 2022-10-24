@@ -11,7 +11,8 @@ import Logo8 from "../NavbarLogo/theme8";
 import Logo9 from "../NavbarLogo/community9";
 import Logo10 from "../NavbarLogo/community10";
 import navMenus from "../../json/navbar.content.json";
-import DownArrow from "../NavbarLogo/downArrow";
+import DownArrow from "../NavbarLogo/downArrow11";
+import DownArrow12 from "../NavbarLogo/downArrow12";
 
 export default function navbar() {
   const [display, setDisplay] = useState(false);
@@ -26,7 +27,7 @@ export default function navbar() {
     <>
       <nav
         id="mobile dropdown navbar"
-        className="flex items-center visible text-base lg:text-base sm:invisible "
+        className="flex items-center visible text-xxs sm:invisible"
       >
         <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
           <li>
@@ -73,6 +74,102 @@ export default function navbar() {
               </a>
             </Link>
           </li>
+
+          <li>       
+                <button onClick={() => setIsOpen(!isOpen)}
+                className="block border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
+                <DownArrow12/> 
+                <div>전체보기</div>                
+                </button>           
+            </li>
+
+            {isOpen ? (
+            <div id="dropdown-bg" className=' absolute z-10 grid grid-flow-col gap-x-2 text-sm bg-white border top-40'>
+            
+            <ul className="py-1 text-sm "> 
+              { navMenus.curations.map(curation => {
+                return(
+                  <li key={`${curation.link}${curation.id}`}>
+                    <Link href={curation.link}>
+                    <a
+                      id={curation.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                        {curation.text}
+                    </a>
+                    </Link>
+                  </li>
+                )
+              })}
+              </ul>
+
+              <ul className="py-1 text-sm "> 
+                { navMenus.groups.map(group => {
+                  return(
+                    <li key={`${group.link}${group.id}`}>
+                    <Link href={group.link}>
+                    <a
+                      id={group.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      {group.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.countries.map(country => {
+                  return(
+                    <li key={`${country.link}${country.id}`}>
+                    <Link href={country.link}>
+                    <a
+                      id={country.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      {country.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.themes.map(theme => {
+                  return(
+                    <li key={`${theme.link}${theme.id}`}>
+                    <Link href={theme.link}>
+                    <a
+                      id={theme.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      {theme.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="px-0 py-1 text-sm "> 
+                { navMenus.communities.map(community => {
+                  return(
+                    <li key={`${community.link}${community.id}`}>
+                    <Link href={community.link}>
+                    <a
+                      id={community.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      {community.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+            </div>
+              ): null}
+
+
         </ul>
       </nav>
 
@@ -92,7 +189,7 @@ export default function navbar() {
             <li onMouseLeave={() => setDisplay(false)}>
               <Link href="/">
                 <a
-                  className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
+                  className="block lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
                   onMouseEnter={() => setDisplay(true)}
                 >
                   <Logo1 />
@@ -101,7 +198,7 @@ export default function navbar() {
               </Link>
 
               {display && (
-                <div className="absolute z-10 top-30  bg-white rounded-md">
+                <div className="absolute z-10 top-30  bg-white">
                   <ul className="py-1 text-sm">
                     {navMenus.curations.map((curation) => {
                       return (
@@ -125,7 +222,7 @@ export default function navbar() {
             <li onMouseLeave={() => setDisplay1(false)}>
               <Link href="/">
                 <a
-                  className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
+                  className="block lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
                   onMouseEnter={() => setDisplay1("true")}
                   
                 >
@@ -135,7 +232,7 @@ export default function navbar() {
               </Link>
 
               {display1 && (
-                <div className="absolute z-10 top-30  bg-white rounded-md" >
+                <div className="absolute z-10 top-30  bg-white w-screen ">
                   <ul className="py-1 text-sm ">
                     {navMenus.groups.map((group) => {
                       return (
@@ -166,10 +263,10 @@ export default function navbar() {
 
               {display2 && (
                 <div className=" absolute z-10 top-30  bg-white animate-fade-in-down rounded-md ">
-                  <ul className="py-1 text-sm ">
+                  <ul className="py-1 text-sm">
                     {navMenus.countries.map((country) => {
                       return (
-                        <li className="hover:bg-logo-color  animate-fade-in-down">
+                        <li className="hover:bg-logo-color animate-fade-in-down">
                           <Link href={country.link}>
                             <a
                               id={country.id}
@@ -336,8 +433,6 @@ export default function navbar() {
 
             </div>
               ): null}
-
-
 
 
           </ul>

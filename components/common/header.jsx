@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
-import PageLogo from "../headerLogo/pageLogo2";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import Signup from "../HeaderLogo/signup";
@@ -31,7 +30,7 @@ export default function Header() {
                       /img/PageLogo.png 600w,
                       /img/PageLogo.png 1000w"
                       sizes="(max-width: 500px) 555px,
-                             (max-width: 700px) 666px,
+                             (max-width: 800px) 766px,
                              1300px"
                       src="/img/PageLogo.png"
                     />
@@ -44,7 +43,7 @@ export default function Header() {
               <div id="seconddiv" className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial ">
                <SearchBar />
               </div>
-              <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center lg:ml-1 sm:mb-1 ">
+              <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center sm:mb-1 ">
                 <div className="lg:flex lg:items-center ">
                   <div className="flex">
                     <Link href="/wishlist">
