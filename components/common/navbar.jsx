@@ -65,7 +65,7 @@ export default function navbar() {
               </a>
             </Link>
           </li>
-
+ 
           <li>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
@@ -232,7 +232,7 @@ export default function navbar() {
               </Link>
 
               {display1 && (
-                <div className="absolute z-10 top-30  bg-white w-screen ">
+                <div className="absolute z-10 top-30  bg-white ">
                   <ul className="py-1 text-sm ">
                     {navMenus.groups.map((group) => {
                       return (
