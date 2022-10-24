@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Logo1 from "./../NavbarLogo/travelQ1";
+import Logo1 from "../NavbarLogo/travel1";
 
 export function Zeroform({ zero, updateFields, name }) {
   return (
