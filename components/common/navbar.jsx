@@ -26,7 +26,7 @@ export default function navbar() {
     <>
       <nav
         id="mobile dropdown navbar"
-        className="flex items-center visible text-xxs sm:invisible"
+        className="flex items-center visible text-base lg:text-base sm:invisible "
       >
         <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
           <li>
@@ -135,7 +135,7 @@ export default function navbar() {
               </Link>
 
               {display1 && (
-                <div className="absolute z-10 top-30  bg-white rounded-md" display1={display1}>
+                <div className="absolute z-10 top-30  bg-white rounded-md" >
                   <ul className="py-1 text-sm ">
                     {navMenus.groups.map((group) => {
                       return (
