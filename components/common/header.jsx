@@ -66,9 +66,8 @@ export default function Header() {
                     {loginUser.username ? (
                       <Link href="/mypage">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
-                          <div className="sm:text-xs lg:text-base">
-                            마이페이지
-                          </div>
+                          <Signup />
+                          <div className="sm:text-xs lg:text-base">마이페이지</div>
                         </a>
                       </Link>
                     ) : (

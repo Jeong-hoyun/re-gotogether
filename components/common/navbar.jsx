@@ -25,7 +25,7 @@ export default function navbar() {
   return (
     <>
       <nav
-        data-collapse-toggle="mobile-menu-2"
+        id="mobile dropdown navbar"
         className="flex items-center visible text-xxs sm:invisible"
       >
         <ul className="flex m-auto space-x-2 mt-1 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
@@ -76,6 +76,8 @@ export default function navbar() {
         </ul>
       </nav>
 
+
+      {/* hover 드랍다운 네브바 */}
       <nav
         className="items-center justify-between hidden w-full mx-auto text-sm sm:flex lg:items-center lg:justify-between md:flex md:w-auto"
         id="navbar-search"
@@ -124,7 +126,8 @@ export default function navbar() {
               <Link href="/">
                 <a
                   className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
-                  onMouseEnter={() => setDisplay1(true)}
+                  onMouseEnter={() => setDisplay1("true")}
+                  
                 >
                   <Logo3 />
                   그룹별 여행
@@ -154,7 +157,7 @@ export default function navbar() {
               <Link href="/">
                 <a
                   className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 "
-                  onMouseEnter={() => setDisplay2(true)}
+                  onMouseEnter={() => setDisplay2("true")}
                 >
                   <Logo5 />
                   지역별 여행
@@ -187,7 +190,7 @@ export default function navbar() {
               <Link href="/">
                 <a
                   className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-                  onMouseEnter={() => setDisplay3(true)}
+                  onMouseEnter={() => setDisplay3("true")}
                 >
                   <Logo7 />
                   테마별 여행
@@ -215,7 +218,7 @@ export default function navbar() {
             <li onMouseLeave={() => setDisplay4(false)}>
               <Link href="/">
                 <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-                  onMouseEnter={() => setDisplay4(true)}>
+                  onMouseEnter={() => setDisplay4("true")}>
                   <Logo9 />
                   커뮤니티
                 </a>
@@ -240,7 +243,7 @@ export default function navbar() {
             </li>
 
           
-         {/* 메가 드롭다운 버튼  */}
+         {/* 메가 드롭다운 네브바  */}
             <li>       
                 <button onClick={() => setIsOpen(!isOpen)}
                 className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
@@ -249,7 +252,7 @@ export default function navbar() {
             </li>
 
             {isOpen ? (
-            <div id="dropdown-bg" className=' absolute z-10 grid grid-cols-5 text-sm bg-white border inset-x-30 top-40'>
+            <div id="dropdown-bg" className=' absolute z-10 grid grid-flow-col gap-x-2 text-sm bg-white border top-40'>
             
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
@@ -258,7 +261,7 @@ export default function navbar() {
                     <Link href={curation.link}>
                     <a
                       id={curation.id} 
-                      className="flex px-4 py-2 bg-gray">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
                         {curation.text}
                     </a>
                     </Link>
@@ -274,7 +277,7 @@ export default function navbar() {
                     <Link href={group.link}>
                     <a
                       id={group.id} 
-                      className="flex px-4 py-2 bg-gray">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
                       {group.text}
                     </a>
                     </Link>
@@ -290,7 +293,7 @@ export default function navbar() {
                     <Link href={country.link}>
                     <a
                       id={country.id} 
-                      className="flex px-4 py-2 bg-gray">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
                       {country.text}
                     </a>
                     </Link>
@@ -303,11 +306,10 @@ export default function navbar() {
                 { navMenus.themes.map(theme => {
                   return(
                     <li key={`${theme.link}${theme.id}`}>
-                    {/* <li> */}
                     <Link href={theme.link}>
                     <a
                       id={theme.id} 
-                      className="flex px-4 py-2 bg-gray">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
                       {theme.text}
                     </a>
                     </Link>
@@ -323,7 +325,7 @@ export default function navbar() {
                     <Link href={community.link}>
                     <a
                       id={community.id} 
-                      className="flex px-4 py-2 bg-gray">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
                       {community.text}
                     </a>
                     </Link>
