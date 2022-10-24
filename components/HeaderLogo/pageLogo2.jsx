@@ -1,6 +1,6 @@
 import React from "react";
 
-function PageLogo() {
+function PageLogo2() {
   return (
     <div className="w-110px lg:text-xl">
       <svg
@@ -87,4 +87,4 @@ function PageLogo() {
   );
 }
 
-export default PageLogo;
+export default PageLogo2;

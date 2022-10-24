@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
-import PageLogo from "../HeaderLogo/pageLogo";
+import PageLogo from "../headerLogo/pageLogo2";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import Signup from "../HeaderLogo/signup";
 import SearchBar from "../HeaderLogo/searchBar";
+
 
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
@@ -24,9 +25,16 @@ export default function Header() {
               <div id="firstdiv" className="lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
-                    <a>
-                      <PageLogo className="w-110px lg:text-xl" />
-                    </a>
+
+                    <img
+                      srcSet="/img/PageLogo.png 400w,
+                      /img/PageLogo.png 600w,
+                      /img/PageLogo.png 1000w"
+                      sizes="(max-width: 500px) 555px,
+                             (max-width: 700px) 666px,
+                             1300px"
+                      src="/img/PageLogo.png"
+                    />
                   </Link>
                 </div>
               </div>
