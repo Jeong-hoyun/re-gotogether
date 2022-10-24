@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <div className="z-10 flex items-center bg-white border-b border-gray-200">
+        <div className="z-10 flex items-center bg-white border-b border-gray-200 ">
           <div className="relative w-full max-w-screen-xl px-6 mx-auto">
             <div
               id="MainDiv"
@@ -41,10 +41,10 @@ export default function Header() {
 
               {/* <Search /> */}
               {/* 화면이 작아지면 다음줄로 넘어가게*/}
-              <div id="seconddiv" className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial">
+              <div id="seconddiv" className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial ">
                <SearchBar />
               </div>
-              <div className="flex flex-wrap items-center lg:justify-end sm:justify-center flex-grow col-span-3 sm:mb-1">
+              <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center lg:ml-1 sm:mb-1 ">
                 <div className="lg:flex lg:items-center ">
                   <div className="flex">
                     <Link href="/wishlist">

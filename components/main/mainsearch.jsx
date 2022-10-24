@@ -7,7 +7,7 @@ import { useMemo } from "react";
 function Mainsearch() {
   const mainCarousel = useMemo(() => content.main.map((e) => e));
   const settings = {
-    centerMode:true,
+   
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -51,11 +51,11 @@ function Mainsearch() {
             return (
               <div
                 key={title}
-                className="relative cursor-pointer hover:opacity-75 transition-all  ml-60"
+                className="relative m-0 cursor-pointer hover:opacity-75 transition-all lg:mr-10 2xl:ml-40 xl:ml-5 "
               >
-                <div className="absolute text-white sm:m-45 lg:m-40 z-10">
-                  <h3 className="sm:text-3xl lg:text-5xl">{title}</h3>
-                  <h5 className="sm:text-xl lg:text-3xl">{tag}</h5>
+                <div className="absolute text-white m-20 lg:m-40 z-10 ">
+                  <h3 className="text-xl lg:text-5xl md:text-3xl">{title}</h3>
+                  <h5 className="text-sm lg:text-3xl">{tag}</h5>
                 </div>
                 <Image
                   src={img}
