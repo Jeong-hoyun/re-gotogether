@@ -46,7 +46,7 @@ const Maintheme = ({ country, group, theme }) => {
             const { title, path, img, subtitle } = item;
             return (
               <div
-                className="mx-auto mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:opacity-75 transition-all justify-items-center c1170:last:mx-0 c1170:last:ml-5"
+                className="mx-10 mb-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:opacity-75 transition-all justify-items-center c1170:last:mx-0 c1170:last:ml-5"
                 key={title}
               >
                 <Link href={path}>

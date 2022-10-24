@@ -47,7 +47,7 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
-  const wishItem = useMemo(() => wish.wish.map((e) => e.id));
+  const wishItem = useMemo(() => wish.map((e) => e.id));
 
   if (searchData.products.length === 0) {
     return (
