@@ -12,10 +12,10 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
+import DataApi from '../../config/productsApi.ts';
 
 export const getStaticPaths = async () => {
-  const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
-  const posts = await post.data;
+  const posts = await DataApi.getItem() 
   return {
     paths: posts.products.map((item) => {
       return {
@@ -77,32 +77,131 @@ const ProductId = ({ post }) => {
     <>
       <Head>
         <title>{post.title}</title>
+        <link rel="canonical" href={`/travel/${router.query.productId}`} />
       </Head>
 
       <section className="flex flex-col">
         <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-24 mx-auto">
-          <div className=" sm:flex lg:hidden">
-            <Image src={HeroImage} width={384} height={384} alt="Hero" />
-          </div>
-          <div className="flex">
-            <div className="hidden sm:mx-auto lg:block">
-              <Image src={HeroImage} width={384} height={384} alt="Hero" />
+        <div className=" sm:flex lg:hidden">          
+        <Image         
+          src={HeroImage}
+          width={384}
+          height={384}
+          alt="Hero"
+        />
+        </div>           
+          <div className="flex xl:mr-40">           
+          <div className="hidden sm:mx-auto lg:block">          
+          <Image         
+            src={HeroImage}
+            width={384}
+            height={384}
+            alt="Hero"
+          />
             </div>
 
-            <div className="font-semibold">
-              <h2 className="lg:text-3xl sm:text-2xl">{post.title}</h2>
-              <h3 className="lg:text-2xl text-number-color">{number2}</h3>
-              <div className="absolute px-10 py-8 mt-10 text-sm rounded-2xl bg-zinc-100">
-                <div>
-                  <PointLogo />
-                  {post.title} 여행
-                </div>
-                <div>
-                  <PointLogo />한 번의 여행으로 나의 취향을 만끽하세요!
-                </div>
-                <div>
-                  <PointLogo />
-                  패키지의 안전함과 자유여행의 즐거움을 동시에~
+                <div className="font-semibold">
+                   <h2 className="lg:text-3xl sm:text-2xl">{post.title}</h2>
+                  <h3 className="lg:text-2xl text-number-color">{number2}</h3>
+                  <div className="absolute px-10 py-8 mt-10 text-sm rounded-2xl bg-zinc-100">
+                    <div>
+                      <PointLogo />
+                      {post.title} 여행
+                    </div>
+                    <div>
+                      <PointLogo />한 번의 여행으로 나의 취향을 만끽하세요!
+                    </div>
+                    <div>
+                      <PointLogo />
+                      패키지의 안전함과 자유여행의 즐거움을 동시에~
+                    </div>
+                  </div>
+                  <div className="text-xs font-bold mt-60">
+                    <p className="text-number-color">
+                      여행지역
+                      <span className=" font-normal text-black">
+                        콜롬비아/페루/볼리비아/칠레/아르헨티나/브라질/쿠바/멕시코
+                      </span>
+                    </p>
+                    <p className="pt-2 text-number-color">
+                      여행특징
+                      <span className="font-normal text-black">
+                        5성~3성급 호텔/포함투어 25개(타사상품 비교必)
+                      </span>
+                    </p>
+                    <p className="pt-2 text-number-color">
+                      여행항공
+                      <span className="pl-2 font-normal text-black">미정</span>
+                    </p>
+                  </div>
+                  {post.startDates&&loginUser.username ? (
+                    <form onSubmit={handleSubmit(submitForm)}>
+                      <div className="flex flex-col justify-center ">
+                        <input
+                          type="hidden"
+                          value={router.query.productId}
+                          {...register("productId")}
+                        />
+                        <input
+                          type="hidden"
+                          value={1}
+                          {...register("paymentState")}
+                        />
+                        <label
+                          htmlFor="reservationDate"
+                          className="text-center text-lg"
+                        >
+                          출발일(필수)
+                        </label>
+                        <select
+                          {...register("reservationDate", {
+                            required: true,
+                          })}
+                          name="reservationDate"
+                          required
+                          className="ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
+                        >
+                          <option value="">출발일(필수)</option>
+                          <option value={post.startDates[0]}>
+                            {post.startDates[0]}
+                          </option>
+                          <option value={post.startDates[1]}>
+                            {post.startDates[1]}
+                          </option>
+                          <option value={post.startDates[2]}>
+                            {post.startDates[2]}
+                          </option>
+                        </select>
+                        {/* 드롭다운 2 */}
+                        <label
+                          htmlFor="personnel"
+                          className="text-center text-lg"
+                        >
+                          인원수(필수)
+                        </label>
+                        <select
+                          {...register("personnel", {
+                            required: true,
+                          })}
+                          required
+                          name="personnel"
+                          className="ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
+                        >
+                          <option value="">인원수(필수)</option>
+                          <option value={1}>1인</option>
+                          <option value={2}>2인</option>
+                          <option value={3}>3인</option>
+                          <option value={4}>4인</option>
+                        </select>
+                      </div>
+                      <button
+                        type="submit"
+                        className="flex justify-center mr-40 py-4 px-10 mx-10 text-xl font-bold mt-7 rounded-2xl text-number-color bg-zinc-100"
+                      >
+                        예약하기
+                      </button>
+                    </form>
+                  ) : <div className="m-10">예약은 회원가입 이후 가능합니다</div>}
                 </div>
               </div>
               <div className="text-xs font-bold mt-60">

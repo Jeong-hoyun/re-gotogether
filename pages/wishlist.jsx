@@ -8,21 +8,20 @@ const Wishlist = () => {
   const wish = useSelector((state) => state.wish.wish);
   return (
     <>
-      <Head>
-        <title>위시리스트|고투게더</title>
-      </Head>
-      <div className="mt-10 ">
-        <section className="py-1 bg-blueGray-50">
-          <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
-            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
-              <div className="rounded-t mb-0 py-6 border-0">
-                <div className="flex flex-wrap items-center">
-                  <div className="relative w-full max-w-full flex-grow flex-1">
-                    <h3 className="font-normal text-xl tracking-wider text-Gray-500">
-                      위시리스트
-                    </h3>
-                  </div>
-                  <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right mt-0"></div>
+    <Head>
+    <title>위시리스트|고투게더</title>
+    <link rel="canonical" href="/wishlist" />
+    </Head>
+    <div className="mt-10 ">
+      <section className="py-1 bg-blueGray-50">
+        <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
+          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
+            <div className="rounded-t mb-0 py-6 border-0">
+              <div className="flex flex-wrap items-center">
+                <div className="relative w-full max-w-full flex-grow flex-1">
+                  <h3 className="font-normal text-xl tracking-wider text-Gray-500">
+                    위시리스트
+                  </h3>
                 </div>
               </div>
 
@@ -90,6 +89,7 @@ const Wishlist = () => {
                 </table>
               </div>
             </div>
+          </div>
           </div>
         </section>
       </div>

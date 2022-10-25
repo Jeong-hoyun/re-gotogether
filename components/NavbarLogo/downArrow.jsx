@@ -1,6 +1,6 @@
 import React from "react";
 
-function DownArrow11() {
+function DownArrow() {
   return (
     <svg
       className="inline-block"
@@ -20,4 +20,4 @@ function DownArrow11() {
   );
 }
 
-export default DownArrow11;
+export default DownArrow;
