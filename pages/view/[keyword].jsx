@@ -8,7 +8,6 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
-import productApi from './../../config/productsApi';
 
 
 export function getStaticPaths() {
@@ -23,7 +22,10 @@ export function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const { data: searchData } =  productApi.getSearchItem(keyword)
+  const { data: searchData } =  await axios({
+    method: 'GET',
+    url:  `${API_URL}/api/products/?keyword=${keyword}`,   
+  });
   if (!searchData) {
     return {
       notFound: true,

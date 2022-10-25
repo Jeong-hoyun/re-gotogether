@@ -12,12 +12,14 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
-import DataApi from '../../config/productsApi.ts';
+
 
 export const getStaticPaths = async () => {
-  const posts = await DataApi.getItem() 
+  const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
+  const posts = await post.data;
   return {
     paths: posts.products.map((item) => {
+      
       return {
         params: {
           productId: item.productId.toString(),
@@ -45,6 +47,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ProductId = ({ post }) => {
+
   const loginUser = useSelector((state) => state.login.login);
   const router = useRouter();
   const [reserve, setReserve] = useState();
