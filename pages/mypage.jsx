@@ -10,10 +10,11 @@ const Mypage = () => {
   const login = useSelector((state) => state.login.login);
   const [reserve, setReserve] = useState();
   const router = useRouter();
-  useEffect(() => {
-    login.username == !null ? router.push("./") : null;
-    const CancelToken = axios.CancelToken;
-    const source = CancelToken.source();
+  const CancelToken = axios.CancelToken;
+  const source = CancelToken.source();
+  useEffect(() => {  
+    login.username ===undefined ? router.push("./") : null;    
+  
     (async () => {
       try {
         const res = await axios.get(`/ec2/reservations/user`, {
@@ -25,13 +26,14 @@ const Mypage = () => {
       }
     })();
     return () => {};
-  }, []);
+  }, [login]);
 
-  const onCancel = async (path, paymentState) => {
+  const onCancel = async (path) => {
     try {
       const res = await axios.patch(`/ec2/reservations/${path}/state`, {
         cancelToken: source.token,
         headers: { "Content-Type": "application/json;charset=UTF-8" },
+        data:{"paymentState":3}
       });
       setReserve(res.data);
     } catch (e) {
@@ -85,8 +87,9 @@ const Mypage = () => {
                 <tbody className="border-b">
                   {reserve ? (
                     reserve.reservations.map((item) => {
+            
                       return (
-                        <tr key={item.productId}>
+                        <tr key={item.reservationId}>
                           <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
                             {item.productId}
                           </th>
@@ -100,7 +103,7 @@ const Mypage = () => {
                             {item.paymentState}
                           </th>
                           <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            <button onClick={() => onCancel()}>취소</button>
+                            <button onClick={() => onCancel(item.reservationId)}>취소</button>
                           </th>
                         </tr>
                       );

@@ -90,7 +90,7 @@ const ProductId = ({ post }) => {
         />
         </div>           
           <div className="flex">           
-          <div className="hidden sm:mx-auto lg:flex">          
+          <div className="hidden sm:mx-auto lg:block">          
           <Image         
             src={HeroImage}
             width={384}
