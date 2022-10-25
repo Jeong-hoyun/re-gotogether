@@ -12,10 +12,13 @@ import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
-import DataApi from '../../config/productsApi.ts';
+
 
 export const getStaticPaths = async () => {
-  const posts = await DataApi.getItem() 
+  const posts = await  axios({
+    method: 'GET',
+    url: `${API_URL}/api/products?&pageSize=100`,   
+  });
   return {
     paths: posts.products.map((item) => {
       return {
