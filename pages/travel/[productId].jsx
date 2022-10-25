@@ -15,12 +15,11 @@ import Image from "next/image";
 
 
 export const getStaticPaths = async () => {
-  const posts = await  axios({
-    method: 'GET',
-    url: `${API_URL}/api/products?&pageSize=100`,   
-  });
+  const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
+  const posts = await post.data;
   return {
     paths: posts.products.map((item) => {
+      
       return {
         params: {
           productId: item.productId.toString(),
@@ -48,6 +47,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ProductId = ({ post }) => {
+
   const loginUser = useSelector((state) => state.login.login);
   const router = useRouter();
   const [reserve, setReserve] = useState();
