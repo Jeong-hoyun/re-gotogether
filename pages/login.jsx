@@ -2,12 +2,11 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
-import { API_URL } from "./../config/index";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "rtk/features/loginSlice";
 import { useEffect } from "react";
 import axios from "axios";
-
+import  Head from 'next/head';
 const MySwal = withReactContent(Swal);
 const Login = () => {
   const router = useRouter();
@@ -55,10 +54,20 @@ const Login = () => {
       }
     } catch (e) {
       console.error(e);
+      MySwal.fire({
+          text: "현재 서버 상태가 불완전합니다 나중에 로그인해주세요",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
     }
   };
 
   return (
+    <>
+      <Head>
+        <title>회원가입|고투게더</title>
+        <link rel="canonical" href="/signup" />
+      </Head>
     <section className="mt-20">
       <div className="container h-full px-6 py-12">
         <div className="flex flex-wrap items-center justify-center h-full text-gray-800 g-6">
@@ -111,6 +120,7 @@ const Login = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

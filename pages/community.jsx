@@ -9,6 +9,10 @@ import communtiyReview from "../json/community.content.json";
 export default function Community() {
   return (
     <>
+    <Head>
+    <title>커뮤니티|고투게더</title>
+    <link rel="canonical" href="/community" />
+    </Head>
       {/* <div className="relative bg-cover"> */}
       <div className="relative mt-4 bg-cover">
         <Image
