@@ -14,6 +14,7 @@ const Mypage = () => {
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
   useEffect(() => {
+    console.log(login.username )
     login.username === undefined ? router.push("./") : null;
 
     (async () => {
@@ -27,7 +28,7 @@ const Mypage = () => {
       }
     })();
     return () => {};
-  }, [login]);
+  }, [login.username]);
 
   const onCancel = async (path) => {
     try {

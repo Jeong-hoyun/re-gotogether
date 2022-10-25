@@ -10,6 +10,7 @@ export const SetReservation = async (data) => {
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
   const url = `/ec2/reservations`;
+  console.log(data)
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json;charset=UTF-8" },
@@ -22,10 +23,12 @@ export const SetReservation = async (data) => {
     console.log(res);
     if (res.status == 200) {
       MySwal.fire({
-        text: `예약 감사합니다`,
-        icon: "success",
-        confirmButtonText: "OK",
-      }).then((result) => {
+          title: "<strong>예약되었습니다</strong>",
+          icon: "info",
+          html:
+            '<a href="/mypage">마이페이지</a>에서 결제를 진행해주세요,' +
+            '<a href="/mypage">마이페이지</a> ',
+        }).then((result) => {
         if (result.isConfirmed) {
           return "OK";
         }
@@ -39,7 +42,7 @@ export const SetReservation = async (data) => {
     }
   } catch (error) {
     MySwal.fire({
-      text: `출발일과 인원수를 추가해주세요`,
+      text: `다시 예약해주세요`,
       icon: "error",
       confirmButtonText: "OK",
     });
