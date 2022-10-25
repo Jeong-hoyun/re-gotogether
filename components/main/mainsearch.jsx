@@ -7,7 +7,6 @@ import { useMemo } from "react";
 function Mainsearch() {
   const mainCarousel = useMemo(() => content.main.map((e) => e));
   const settings = {
-   
     dots: true,
     infinite: true,
     slidesToShow: 1,

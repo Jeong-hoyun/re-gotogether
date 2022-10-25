@@ -12,7 +12,7 @@ import Logo9 from "../NavbarLogo/community9";
 import Logo10 from "../NavbarLogo/community10";
 import navMenus from "../../json/navbar.content.json";
 import DownArrow from "../NavbarLogo/downArrow11";
-import DownArrow12 from "../NavbarLogo/downArrow12";
+// import DownArrow12 from "../NavbarLogo/downArrow12";
 
 export default function navbar() {
   const [display, setDisplay] = useState(false);
@@ -85,20 +85,11 @@ export default function navbar() {
             </button>
           </li>
 
-          {/* <li>       
-                <button onClick={() => setIsOpen(!isOpen)}
-                className="block border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0">
-                <DownArrow12/> 
-                <div>전체보기</div>                
-                </button>           
-            </li> */}
 
-
-          {/* 큰화면이랑 같은 방식의 메가드롭다운 */}
-
-            {/* {isOpen ? (
-            <div id="dropdown-bg" className=' absolute z-10 grid grid-flow-col gap-x-2 text-sm bg-white border top-40'>
-            
+        {/* column 하나로 길게 내려오는 스크롤 드랍다운 */}
+        {isOpen ? (
+          <div className="relative w-120 h-120 ">
+            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 text-sm bg-white right-7 top-12 animate-fade-in-down'>
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
                 return(
@@ -122,7 +113,7 @@ export default function navbar() {
                     <Link href={group.link}>
                     <a
                       id={group.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
                       {group.text}
                     </a>
                     </Link>
@@ -138,7 +129,7 @@ export default function navbar() {
                     <Link href={country.link}>
                     <a
                       id={country.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
                       {country.text}
                     </a>
                     </Link>
@@ -154,7 +145,7 @@ export default function navbar() {
                     <Link href={theme.link}>
                     <a
                       id={theme.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
                       {theme.text}
                     </a>
                     </Link>
@@ -180,100 +171,15 @@ export default function navbar() {
                 </ul>
 
             </div>
-              ): null} */}
-
-
-        {/* column 하나로 길게 내려오는 드랍다운 */}
-        {isOpen ? (
-            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 text-sm bg-white top-40 animate-fade-in-down'>
-            <ul className="py-1 text-sm "> 
-              { navMenus.curations.map(curation => {
-                return(
-                  <li key={`${curation.link}${curation.id}`}>
-                    <Link href={curation.link}>
-                    <a
-                      id={curation.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
-                        {curation.text}
-                    </a>
-                    </Link>
-                  </li>
-                )
-              })}
-              </ul>
-
-              <ul className="py-1 text-sm "> 
-                { navMenus.groups.map(group => {
-                  return(
-                    <li key={`${group.link}${group.id}`}>
-                    <Link href={group.link}>
-                    <a
-                      id={group.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
-                      {group.text}
-                    </a>
-                    </Link>
-                  </li>
-                  )
-                })}
-                </ul>
-
-                <ul className="py-1 text-sm "> 
-                { navMenus.countries.map(country => {
-                  return(
-                    <li key={`${country.link}${country.id}`}>
-                    <Link href={country.link}>
-                    <a
-                      id={country.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
-                      {country.text}
-                    </a>
-                    </Link>
-                  </li>
-                  )
-                })}
-                </ul>
-
-                <ul className="py-1 text-sm "> 
-                { navMenus.themes.map(theme => {
-                  return(
-                    <li key={`${theme.link}${theme.id}`}>
-                    <Link href={theme.link}>
-                    <a
-                      id={theme.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
-                      {theme.text}
-                    </a>
-                    </Link>
-                  </li>
-                  )
-                })}
-                </ul>
-
-                <ul className="px-0 py-1 text-sm "> 
-                { navMenus.communities.map(community => {
-                  return(
-                    <li key={`${community.link}${community.id}`}>
-                    <Link href={community.link}>
-                    <a
-                      id={community.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
-                      {community.text}
-                    </a>
-                    </Link>
-                  </li>
-                  )
-                })}
-                </ul>
-
             </div>
               ): null}
+              
 
 
         </ul>
       </nav>
 
-
+      {/* 데스크탑 화면 */}
       {/* hover 드랍다운 네브바 */}
       <nav
         className="items-center justify-between hidden w-full mx-auto text-sm sm:flex lg:items-center lg:justify-between md:flex md:w-auto"

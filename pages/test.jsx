@@ -82,7 +82,7 @@ const Test = ({ name }) => {
                 <div className="flex justify-start">
                   <h3>{loginUser.username}님의 여행!</h3>
                 </div>
-               <div className="flex flex-col overflow-hidden hover:overflow-y-auto h-96">
+                <div className="flex flex-col overflow-hidden hover:overflow-y-auto h-96">
                   {result.map((item) => {
                     return (
                       <div key={item.title} className="ml-96">

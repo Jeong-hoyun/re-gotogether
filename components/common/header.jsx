@@ -7,7 +7,6 @@ import Login from "../HeaderLogo/login";
 import Signup from "../HeaderLogo/signup";
 import SearchBar from "../HeaderLogo/searchBar";
 
-
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
   const dispatch = useDispatch();
@@ -24,7 +23,6 @@ export default function Header() {
               <div id="firstdiv" className="lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
-
                     <img
                       srcSet="/img/PageLogo.png 400w,
                       /img/PageLogo.png 600w,
@@ -40,8 +38,11 @@ export default function Header() {
 
               {/* <Search /> */}
               {/* 화면이 작아지면 다음줄로 넘어가게*/}
-              <div id="seconddiv" className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial ">
-               <SearchBar />
+              <div
+                id="seconddiv"
+                className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial "
+              >
+                <SearchBar />
               </div>
               <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center sm:mb-1 ">
                 <div className="lg:flex lg:items-center ">
@@ -74,14 +75,18 @@ export default function Header() {
                       <Link href="/mypage">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
                           <Signup />
-                          <div className="sm:text-xs lg:text-base">마이페이지</div>
+                          <div className="sm:text-xs lg:text-base">
+                            마이페이지
+                          </div>
                         </a>
                       </Link>
                     ) : (
                       <Link href="/signup">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
                           <Signup />
-                          <div className="sm:text-xs lg:text-base">회원가입</div>
+                          <div className="sm:text-xs lg:text-base">
+                            회원가입
+                          </div>
                         </a>
                       </Link>
                     )}
