@@ -73,8 +73,7 @@ const Login = () => {
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
             <img
-              // src="https://images.unsplash.com/photo-1592763245692-3dd02241056c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fGhvdCUyMGFpciUyMGJhbGxvb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-              src="https://images.unsplash.com/photo-1560419656-c2fe828696af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhcmFjaHV0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
+              src="../img/login.png"
               className="w-full"
               alt="Phone image"
             />
