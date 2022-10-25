@@ -5,6 +5,7 @@ import Link from "next/link";
 import Union from "@/components/Logo/union";
 import { Pagination } from "@mui/material";
 import communtiyReview from "../json/community.content.json";
+import Head from "next/head";
 
 export default function Community() {
   return (
