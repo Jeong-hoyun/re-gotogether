@@ -4,16 +4,43 @@ import Image from "next/image";
 import Slider from "react-slick";
 import { useMemo } from "react";
 
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
+
+
 function Mainsearch() {
   const mainCarousel = useMemo(() => content.main.map((e) => e));
   const settings = {
-   
+    focusOnSelect: true,
+  
     dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 2000,
     autoplaySpeed: 4000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -43,7 +70,7 @@ function Mainsearch() {
   };
 
   return (
-    <div className="flex flex-col mt-5 mb-20">
+    <div className="flex flex-col mt-5 mb-20  ">
       <Slider {...settings}>
         {mainCarousel &&
           mainCarousel.map((step) => {
@@ -51,18 +78,23 @@ function Mainsearch() {
             return (
               <div
                 key={title}
-                className="relative m-0 cursor-pointer hover:opacity-75 transition-all lg:mr-10 2xl:ml-40 xl:ml-5 "
+                className="relative m-0   cursor-pointer hover:opacity-75 transition-all lg:mr-10  xl:ml-5 "
               >
-                <div className="absolute text-white m-20 lg:m-40 z-10 ">
-                  <h3 className="text-xl lg:text-5xl md:text-3xl">{title}</h3>
-                  <h5 className="text-sm lg:text-3xl">{tag}</h5>
+                <div className="absolute text-white top-50 m-10 lg:m-30 z-10 ">
+                  <h3 className="text-lg lg:text-3xl xl:text-4xl 2xl:text-5xl md:text-3xl">{title}</h3>
+                  <h4 className="text-sm lg:text-2xl">{tag}</h4>
                 </div>
+                <div className="absolute text-white m-40 lg:m-80 z-10 ">
+                  <h4 className="text-xl lg:text-2l xl:text-3xl 2xl:text-4xl md:text-2xl">{"see more ➝"}</h4>
+                 
+                </div>
+          
                 <Image
                   src={img}
                   alt={title}
-                  width={1296}
-                  height={648}
-                  className="z-5"
+                  width={2400}
+                  height={1024}
+                  className="z-5"                  
                 />
               </div>
             );

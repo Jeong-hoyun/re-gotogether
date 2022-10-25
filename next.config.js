@@ -1,6 +1,6 @@
 /**  @rewrites samesite 방지를 위한 세팅 */
 const nextConfig = {
-  reactStrictMode: true,
+
   swcMinify: true,
   images: {
     domains: ["cdn.imweb.me"],

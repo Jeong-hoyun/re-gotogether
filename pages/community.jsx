@@ -8,6 +8,10 @@ import { Pagination } from "@mui/material";
 export default function Community() {
   return (
     <>
+    <Head>
+    <title>커뮤니티|고투게더</title>
+    <link rel="canonical" href="/community" />
+    </Head>
       {/* <div className="relative bg-cover"> */}
       <div className="relative bg-cover">
         <Image

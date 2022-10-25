@@ -12,6 +12,7 @@ import Logo9 from "../NavbarLogo/community9";
 import Logo10 from "../NavbarLogo/community10";
 import navMenus from "../../json/navbar.content.json";
 import DownArrow from "../NavbarLogo/downArrow";
+import Navbarli from "./navbarli";
 
 export default function navbar() {
   const [display, setDisplay] = useState(false);
@@ -87,162 +88,12 @@ export default function navbar() {
           id="mobile-menu-2"
         >
           
-          <ul className="flex space-x-10 text-sm lg:flex-row mb-20px"
-          >
-            <li onMouseLeave={() => setDisplay(false)}>
-              <Link href="/">
-                <a
-                  className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
-                  onMouseEnter={() => setDisplay(true)}
-                >
-                  <Logo1 />
-                  여행 큐레이션
-                </a>
-              </Link>
-
-              {display && (
-                <div className="absolute z-10 top-30  bg-white rounded-md">
-                  <ul className="py-1 text-sm">
-                    {navMenus.curations.map((curation) => {
-                      return (
-                        <li className="hover:bg-logo-color animate-fade-in-down">
-                          <Link href={curation.link}>
-                            <a
-                              id={curation.id}
-                              className="flex px-4 py-2 bg-gray"
-                            >
-                              {curation.text}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li onMouseLeave={() => setDisplay1(false)}>
-              <Link href="/">
-                <a
-                  className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
-                  onMouseEnter={() => setDisplay1("true")}
-                  
-                >
-                  <Logo3 />
-                  그룹별 여행
-                </a>
-              </Link>
-
-              {display1 && (
-                <div className="absolute z-10 top-30  bg-white rounded-md" >
-                  <ul className="py-1 text-sm ">
-                    {navMenus.groups.map((group) => {
-                      return (
-                        <li className="hover:bg-logo-color animate-fade-in-down">
-                          <Link href={group.link}>
-                            <a id={group.id} className="flex px-4 py-2 bg-gray">
-                              {group.text}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li onMouseLeave={() => setDisplay2(false)}>
-              <Link href="/">
-                <a
-                  className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 "
-                  onMouseEnter={() => setDisplay2("true")}
-                >
-                  <Logo5 />
-                  지역별 여행
-                </a>
-              </Link>
-
-              {display2 && (
-                <div className=" absolute z-10 top-30  bg-white animate-fade-in-down rounded-md ">
-                  <ul className="py-1 text-sm ">
-                    {navMenus.countries.map((country) => {
-                      return (
-                        <li className="hover:bg-logo-color  animate-fade-in-down">
-                          <Link href={country.link}>
-                            <a
-                              id={country.id}
-                              className="flex px-4 py-2 bg-gray"
-                            >
-                              {country.text}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li onMouseLeave={() => setDisplay3(false)}>
-              <Link href="/">
-                <a
-                  className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-                  onMouseEnter={() => setDisplay3("true")}
-                >
-                  <Logo7 />
-                  테마별 여행
-                </a>
-              </Link>
-              {display3 && (
-                <div className=" absolute z-10 top-30 bg-white rounded-md">
-                  <ul className="py-1 text-sm ">
-                    {navMenus.themes.map((theme) => {
-                      return (
-                        <li className="hover:bg-logo-color  animate-fade-in-down">
-                          <Link href={theme.link}>
-                            <a id={theme.id} className="flex px-4 py-2 bg-gray">
-                              {theme.text}
-                            </a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </li>
-
-            <li onMouseLeave={() => setDisplay4(false)}>
-              <Link href="/">
-                <a className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
-                  onMouseEnter={() => setDisplay4("true")}>
-                  <Logo9 />
-                  커뮤니티
-                </a>
-              </Link>
-              {display4 && (
-              <div className=" absolute z-10 top-30 bg-white border rounded-md">
-                <ul className="px-0 py-1 text-sm ">
-                  {navMenus.communities.map((community) => {
-                    return (
-                      <li className="hover:bg-logo-color  animate-fade-in-down">
-                        <Link href={community.link}>
-                          <a id={community.id} className="flex px-4 py-2 bg-gray">
-                            {community.text}
-                          </a>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-                </div>
-                )}
-            </li>
-
-          
+          <ul className="flex space-x-10 text-sm lg:flex-row mb-20px">
+          <Navbarli setDisplay={setDisplay}  display={display}  Logo={Logo1} name={"여행 큐레이션"}/>
+          <Navbarli setDisplay={setDisplay1} display={display1} Logo={Logo3} name={"그룹별 여행"} />
+          <Navbarli setDisplay={setDisplay2} display={display2}  Logo={Logo5} name={"지역별 여행"} /> 
+          <Navbarli setDisplay={setDisplay3} display={display3}  Logo={Logo7} name={"테마별 여행"}/> 
+          <Navbarli setDisplay={setDisplay4} display={display4}  Logo={Logo9} name={"커뮤니티"} />            
          {/* 메가 드롭다운 네브바  */}
             <li>       
                 <button onClick={() => setIsOpen(!isOpen)}

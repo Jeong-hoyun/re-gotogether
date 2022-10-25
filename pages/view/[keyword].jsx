@@ -8,7 +8,8 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
-import Groupnav from "@/components/common/groupnav";
+import productApi from './../../config/productsApi';
+
 
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
@@ -22,9 +23,7 @@ export function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const { data: searchData } = await axios.get(
-    `${API_URL}/api/products/?keyword=${keyword}`,
-  );
+  const { data: searchData } =  productApi.getSearchItem(keyword)
   if (!searchData) {
     return {
       notFound: true,
@@ -60,6 +59,7 @@ const Keyword = ({ searchData }) => {
     <>
       <Head>
         <title>{mainTitle}</title>
+        <link rel="canonical" href={`/view/${location.query.keyword}`} />
       </Head>
       <main className="mx-auto mt-20 max-w-7xl">
         <div className="flex flex-wrap justify-between">
