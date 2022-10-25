@@ -13,9 +13,9 @@ const Mypage = () => {
   const router = useRouter();
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
-  useEffect(() => {  
-    login.username ===undefined ? router.push("./") : null;    
-  
+  useEffect(() => {
+    login.username === undefined ? router.push("./") : null;
+
     (async () => {
       try {
         const res = await axios.get(`/ec2/reservations/user`, {
@@ -34,7 +34,7 @@ const Mypage = () => {
       const res = await axios.patch(`/ec2/reservations/${path}/state`, {
         cancelToken: source.token,
         headers: { "Content-Type": "application/json;charset=UTF-8" },
-        data:{"paymentState":3}
+        data: { paymentState: 3 },
       });
       setReserve(res.data);
     } catch (e) {
@@ -94,7 +94,6 @@ const Mypage = () => {
                 <tbody className="border-b">
                   {reserve ? (
                     reserve.reservations.map((item) => {
-            
                       return (
                         <tr key={item.reservationId}>
                           <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
@@ -110,7 +109,11 @@ const Mypage = () => {
                             {item.paymentState}
                           </th>
                           <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            <button onClick={() => onCancel(item.reservationId)}>취소</button>
+                            <button
+                              onClick={() => onCancel(item.reservationId)}
+                            >
+                              취소
+                            </button>
                           </th>
                         </tr>
                       );
@@ -118,7 +121,7 @@ const Mypage = () => {
                   ) : (
                     <tr className="text-center">
                       <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
-                         예약상품이 비어있습니다
+                        예약상품이 비어있습니다
                       </td>
                     </tr>
                   )}

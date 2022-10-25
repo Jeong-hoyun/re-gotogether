@@ -73,7 +73,7 @@ const Login = () => {
         <div className="flex flex-wrap items-center justify-center h-full text-gray-800 g-6">
           <div className="mb-12 md:w-8/12 lg:w-6/12 md:mb-0">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+              src="../img/login.png"
               className="w-full"
               alt="Phone image"
             />

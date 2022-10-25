@@ -27,53 +27,155 @@ export default function navbar() {
     <>
       <nav
         id="mobile dropdown navbar"
-        className="flex items-center visible text-base lg:text-base sm:invisible "
+        className="flex items-center visible text-xxs sm:invisible"
       >
         <ul className="flex m-auto mt-1 space-x-2 font-medium lg:flex-row lg:space-x-5 lg:mt-0 px-auto">
           <li>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
                 <Logo2 />
                 <div>큐레이션</div>
               </a>
             </Link>
+            </button>
           </li>
 
           <li>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
                 <Logo4 />
                 <div>그룹별</div>
               </a>
             </Link>
+            </button>
           </li>
 
           <li>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
                 <Logo6 />
                 <div>지역별</div>
               </a>
             </Link>
+            </button>
           </li>
 
           <li>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
                 <Logo8 />
                 <div>테마별</div>
               </a>
             </Link>
+            </button>
           </li>
-
+ 
           <li>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <Link href="/">
               <a className="block pl-3 lg:p-0">
                 <Logo10 />
                 <div>커뮤니티</div>
               </a>
             </Link>
+            </button>
           </li>
+
+
+        {/* column 하나로 길게 내려오는 스크롤 드랍다운 */}
+        {isOpen ? (
+          <div className="relative w-120 h-120 ">
+            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 text-sm bg-white right-7 top-12 animate-fade-in-down'>
+            <ul className="py-1 text-sm "> 
+              { navMenus.curations.map(curation => {
+                return(
+                  <li key={`${curation.link}${curation.id}`}>
+                    <Link href={curation.link}>
+                    <a
+                      id={curation.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                        {curation.text}
+                    </a>
+                    </Link>
+                  </li>
+                )
+              })}
+              </ul>
+
+              <ul className="py-1 text-sm "> 
+                { navMenus.groups.map(group => {
+                  return(
+                    <li key={`${group.link}${group.id}`}>
+                    <Link href={group.link}>
+                    <a
+                      id={group.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      {group.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.countries.map(country => {
+                  return(
+                    <li key={`${country.link}${country.id}`}>
+                    <Link href={country.link}>
+                    <a
+                      id={country.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      {country.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="py-1 text-sm "> 
+                { navMenus.themes.map(theme => {
+                  return(
+                    <li key={`${theme.link}${theme.id}`}>
+                    <Link href={theme.link}>
+                    <a
+                      id={theme.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      {theme.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+                <ul className="px-0 py-1 text-sm "> 
+                { navMenus.communities.map(community => {
+                  return(
+                    <li key={`${community.link}${community.id}`}>
+                    <Link href={community.link}>
+                    <a
+                      id={community.id} 
+                      className="flex px-4 py-2 bg-gray hover:bg-logo-color">
+                      {community.text}
+                    </a>
+                    </Link>
+                  </li>
+                  )
+                })}
+                </ul>
+
+            </div>
+            </div>
+              ): null}
+              
+
+
         </ul>
       </nav>
 

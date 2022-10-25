@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "rtk/features/loginSlice";
-import PageLogo from "../HeaderLogo/pageLogo";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import SearchBar from './searchBar';
@@ -25,19 +24,28 @@ export default function Header() {
               <div id="firstdiv" className="lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
-                    <a>
-                      <PageLogo className="w-110px lg:text-xl" />
-                    </a>
+                    <img
+                      srcSet="/img/PageLogo.png 400w,
+                      /img/PageLogo.png 600w,
+                      /img/PageLogo.png 1000w"
+                      sizes="(max-width: 500px) 555px,
+                             (max-width: 800px) 766px,
+                             1300px"
+                      src="/img/PageLogo.png"
+                    />
                   </Link>
                 </div>
               </div>
 
               {/* <Search /> */}
               {/* 화면이 작아지면 다음줄로 넘어가게*/}
-              <div id="seconddiv" className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial ">
-               <SearchBar />
+              <div
+                id="seconddiv"
+                className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial "
+              >
+                <SearchBar />
               </div>
-              <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center lg:ml-1 sm:mb-1 ">
+              <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center sm:mb-1 ">
                 <div className="lg:flex lg:items-center ">
                   <div className="flex">
                     <Link href="/wishlist">
@@ -68,14 +76,18 @@ export default function Header() {
                       <Link href="/mypage">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
                           <Signup />
-                          <div className="sm:text-xs lg:text-base">마이페이지</div>
+                          <div className="sm:text-xs lg:text-base">
+                            마이페이지
+                          </div>
                         </a>
                       </Link>
                     ) : (
                       <Link href="/signup">
                         <a className="flex shrink-0 items-center mr-2 hover:text-gray-700">
                           <Signup />
-                          <div className="sm:text-xs lg:text-base">회원가입</div>
+                          <div className="sm:text-xs lg:text-base">
+                            회원가입
+                          </div>
                         </a>
                       </Link>
                     )}
