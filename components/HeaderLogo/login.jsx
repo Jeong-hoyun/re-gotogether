@@ -1,5 +1,6 @@
 import React from "react";
 
+/*메인헤더의 로그인&로그아웃 아이콘을 관리하기위한 svg component*/
 function Login() {
   return (
     <svg

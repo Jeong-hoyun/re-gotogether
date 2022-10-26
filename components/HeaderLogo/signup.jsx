@@ -1,5 +1,6 @@
 import React from "react";
 
+/*메인헤더의 회원가입&마이페이지 아이콘을 관리하기위한 svg component*/
 function Signup() {
   return (
     <svg
