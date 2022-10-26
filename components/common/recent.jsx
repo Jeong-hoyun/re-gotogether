@@ -1,12 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Recent = () => {
     const recent= useSelector((state) => state.recent.recent);
 
+
     return (   
         <section className="py-1 bg-blueGray-50">
-        <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
+        <div className="w-full xl:w-6/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
             <div className="rounded-t mb-0 py-6 border-0">
               <div className="flex flex-wrap items-center">
@@ -33,10 +36,11 @@ const Recent = () => {
                         .map((item) => {
                           const { title, img, id } = item;
                           return (
-                            <td
+                            <tr
                               key={title}
                               className="ml-3 border-t-0 text-neutral-400 pt-12 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap cursor-pointer hover:opacity-75 transition-all"
                             >
+                            <td>
                               <Link href={`view/${id}`}>
                                 <a>
                                   <Image
@@ -48,8 +52,13 @@ const Recent = () => {
                                   />
                                 </a>
                               </Link>
-                              <h4 className="">{title}</h4>
-                            </td>
+                             
+                              </td>
+                              <td>
+                              <h4 className="ml-10">여행명:{title}</h4>
+                              <h4 className="ml-10">항공사:미정</h4>
+                              </td>
+                            </tr>
                           );
                         })
                     )}

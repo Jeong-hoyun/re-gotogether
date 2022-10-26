@@ -40,7 +40,7 @@ export default function Maincarousel() {
     ],
   };
   return (
-    <div className="ml-3">
+    <div className="flex flex-col mx-20">
       <h2 className="mt-20 mb-6  text-lg font-semibold text-black sm:text-slate-900">
         여행 그룹 Best
       </h2>
@@ -51,7 +51,7 @@ export default function Maincarousel() {
             return (
               <div
                 key={title}
-                className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
+                className="max-w-lg bg-white rounded-lg border border-gray-200 shadow-md"
               >
                 <Link href={key}>
                   <a>
@@ -77,6 +77,7 @@ export default function Maincarousel() {
                     </a>
                   </Link>
                 </div>
+               
               </div>
             );
           })}

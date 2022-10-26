@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
+import Recent from './../components/common/recent';
 
 const Wishlist = () => {
   const wish = useSelector((state) => state.wish.wish);
@@ -92,6 +93,7 @@ const Wishlist = () => {
           </div>
           </div>
         </section>
+        <Recent/>
       </div>
     </>
   );
