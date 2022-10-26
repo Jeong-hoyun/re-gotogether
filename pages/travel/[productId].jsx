@@ -1,17 +1,16 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState,useEffect } from "react";
 import axios from "axios";
 import Head from "next/head";
 import Angel from "@/components/Logo/angel";
 import PointLogo from "@/components/Logo/pointLogo";
 import { API_URL } from "./../../config/index";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Maincarousel from "./../../components/main/maincarousel";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
+import { addRecent } from "rtk/features/recentSlice";
 
 
 export const getStaticPaths = async () => {
@@ -47,13 +46,23 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ProductId = ({ post }) => {
-
   const loginUser = useSelector((state) => state.login.login);
-  const router = useRouter();
-  const [reserve, setReserve] = useState();
+  const recent =useSelector((state) => state.recent.recent);
+  const router = useRouter(); 
   const [toggle, setToggle] = useState(true);
   const { register, handleSubmit } = useForm();
-  const MySwal = withReactContent(Swal);
+  const dispatch=useDispatch()
+  React.useEffect(()=>{   
+    if(!recent.map(({title})=>title).includes(post.title)){
+      dispatch(addRecent({
+        title:post.title,
+        id:router.query.productId,
+        img:post.images[0]
+       }))  
+    }
+    console.log(recent)      
+  },[]) 
+
   const number2 =
     typeof post.price === "string"
       ? `${post.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
@@ -62,15 +71,7 @@ const ProductId = ({ post }) => {
 
   const submitForm = (data) => {
     try {
-      SetReservation(data).then(() => {
-        MySwal.fire({
-          title: "<strong>예약되었습니다</strong>",
-          icon: "info",
-          html:
-            '<a href="/mypage">마이페이지</a>에서 결제를 진행해주세요, ' +
-            '<a href="/mypage">마이페이지</a> ',
-        });
-      });
+      SetReservation(data)
     } catch (error) {
       console.error(error);
     }
@@ -84,7 +85,7 @@ const ProductId = ({ post }) => {
       </Head>
 
       <section className="flex flex-col">
-        <div className="w-full xl:w-9/12 mb-12 xl:mb-0 px-4 mt-24 mx-auto">
+        <div className="w-full xl:w-11/12 mb-12 xl:mb-0 px-4 mt-24 mx-auto">
         <div className=" sm:flex lg:hidden">          
         <Image         
           src={HeroImage}

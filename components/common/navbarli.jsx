@@ -4,7 +4,7 @@ import navMenus from "../../json/navbar.content.json";
 const Navbarli = ({setDisplay,display,Logo,name}) => {
     return (
         <li onMouseLeave={() => setDisplay(false)}>
-              <Link href="/" key={`${name} ${Math.random()* 20}`}>
+              <Link href="/" >
                 <a
                   className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
                   onMouseEnter={() => setDisplay(true)}
@@ -18,7 +18,7 @@ const Navbarli = ({setDisplay,display,Logo,name}) => {
                   <ul className="py-1 text-sm">
                     {navMenus.curations.map((curation) => {
                       return (
-                        <li className="hover:bg-logo-color animate-fade-in-down">
+                        <li key={`${curation.text} ${Math.random()* 20}`} className="hover:bg-logo-color animate-fade-in-down">
                           <Link href={curation.link}>
                             <a
                               id={curation.id}
