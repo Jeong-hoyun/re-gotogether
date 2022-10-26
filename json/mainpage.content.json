@@ -1,25 +1,28 @@
 {
   "group": [
     {
-      "title": "with 5070",
+      "title": "5070 only!",
       "path": "/view/5070",
       "img": "https://cdn.imweb.me/thumbnail/20220213/5a0b08a2f0e44.png",
-      "subtitle": "시니어들과 함께하는 여행"
+      "subtitle": "중장년층의 특별한 여행"
     },
     {
-      "title": "여자끼리 여행",
+      "title": "Women only!",
       "path": "/view/ladies",
-      "img": "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png"
+      "img": "https://cdn.imweb.me/thumbnail/20220213/1d2bd0798009a.png",
+      "subtitle": "여자들끼리 가볼까요?"
     },
     {
-      "title": "자녀 동반 여행",
+      "title": "Child with.",
       "path": "/view/withchild",
-      "img": "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png"
+      "img": "https://cdn.imweb.me/thumbnail/20220213/c63de17faceef.png",
+      "subtitle": "우리 아이와 함께"
     },
     {
-      "title": "with 2040",
+      "title": "2040 only!",
       "path": "/view/2040",
-      "img": "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png"
+      "img": "https://cdn.imweb.me/thumbnail/20220213/5608b456f659e.png",
+      "subtitle": "2040끼리 어울려봐요!"
     }
   ],
   "country": [
