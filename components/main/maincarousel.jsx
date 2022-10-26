@@ -81,6 +81,7 @@ export default function Maincarousel() {
                     </a>
                   </Link>
                 </div>
+               
               </div>
             );
           })}
