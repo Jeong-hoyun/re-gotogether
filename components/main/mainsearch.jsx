@@ -31,8 +31,7 @@ function PrevArrow(props) {
 function Mainsearch() {
   const mainCarousel = useMemo(() => content.main.map((e) => e));
   const settings = {
-    focusOnSelect: true,
-  
+    focusOnSelect: true,  
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -70,7 +69,7 @@ function Mainsearch() {
   };
 
   return (
-    <div className="flex flex-col mt-5 mb-20  ">
+    <div className="flex flex-col mt-5 mb-20 ">
       <Slider {...settings}>
         {mainCarousel &&
           mainCarousel.map((step) => {
@@ -78,7 +77,7 @@ function Mainsearch() {
             return (
               <div
                 key={title}
-                className="relative m-0   cursor-pointer hover:opacity-75 transition-all lg:mr-10  xl:ml-5 "
+                className="relative  cursor-pointer hover:opacity-75 transition-all"
               >
                 <div className="absolute text-white top-50 m-10 lg:m-30 z-10 ">
                   <h3 className="text-lg lg:text-3xl xl:text-4xl 2xl:text-5xl md:text-3xl">{title}</h3>
@@ -92,8 +91,8 @@ function Mainsearch() {
                 <Image
                   src={img}
                   alt={title}
-                  width={2400}
-                  height={1024}
+                  width={1920}
+                  height={1280}
                   className="z-5"                  
                 />
               </div>

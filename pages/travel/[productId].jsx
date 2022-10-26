@@ -247,10 +247,7 @@ const ProductId = ({ post }) => {
               <div></div>
             </div>
           </div>
-          <div className="pb-16">
-            <p className="mt-10 text-2xl font-bold text-black">
-              이런 여행은 어떠신가요?
-            </p>
+          <div className="pb-16">        
             <Maincarousel />
           </div>
         </div>
