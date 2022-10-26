@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'navbar': '160px minmax(160px, 1fr) 160px',
+      },
       colors: {
         "footer-color": "#242424",
         "number-color": "#00A3FF",
