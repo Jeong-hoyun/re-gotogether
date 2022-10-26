@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Navbarli = ({setDisplay,display,Logo,name,navMenus}) => {
     return (
-        <li onMouseLeave={() => setDisplay(false)}>              
+        <li onMouseLeave={() => setDisplay(false)} className="lg:text-lg sm:text-base">              
                 <span
                   className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
                   onMouseEnter={() => setDisplay(true)}

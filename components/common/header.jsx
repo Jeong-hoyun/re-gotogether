@@ -47,11 +47,11 @@ export default function Header() {
               </div>
               <div className="flex flex-wrap flex-grow col-span-3  items-center  ml-10 text-base lg:ml-1 lg:justify-end sm:justify-center sm:mb-1 ">
                 <div className="lg:flex lg:items-center ">
-                  <div className="flex">
+                  <div className="flex ">
                     <Link href="/wishlist">
                       <a className="flex shrink-0 items-center hover:text-gray-700">
                         <Wishlist />
-                        <div className="mr-2 sm:text-xs lg:text-base">
+                        <div className="mr-2 sm:text-xs lg:text-base ">
                           관심상품
                         </div>
                       </a>
