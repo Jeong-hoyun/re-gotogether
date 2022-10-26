@@ -9,9 +9,8 @@ import Maincarousel from "./../../components/main/maincarousel";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 import Image from "next/image";
+import { addRecent } from "rtk/features/recentSlice";
 
 
 export const getStaticPaths = async () => {
@@ -47,16 +46,23 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const ProductId = ({ post }) => {
-
   const loginUser = useSelector((state) => state.login.login);
+  const recent =useSelector((state) => state.recent.recent);
   const router = useRouter(); 
   const [toggle, setToggle] = useState(true);
   const { register, handleSubmit } = useForm();
   const dispatch=useDispatch()
+  React.useEffect(()=>{   
+    if(!recent.map(({title})=>title).includes(post.title)){
+      dispatch(addRecent({
+        title:post.title,
+        id:router.query.productId,
+        img:post.images[0]
+       }))  
+    }
+    console.log(recent)      
+  },[]) 
 
-
-
-  const MySwal = withReactContent(Swal);
   const number2 =
     typeof post.price === "string"
       ? `${post.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
