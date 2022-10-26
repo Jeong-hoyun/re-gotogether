@@ -1,22 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
-import navMenus from "../../json/navbar.content.json";
-const Navbarli = ({setDisplay,display,Logo,name}) => {
+
+const Navbarli = ({setDisplay,display,Logo,name,navMenus}) => {
     return (
-        <li onMouseLeave={() => setDisplay(false)}>
-              <Link href="/" >
-                <a
+        <li onMouseLeave={() => setDisplay(false)}>              
+                <span
                   className="block border-b lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700"
                   onMouseEnter={() => setDisplay(true)}
                 >
                   <Logo />
                   {name}
-                </a>
-             </Link>
+                </span>          
               {display && (
                 <div className="absolute z-10 top-30  bg-white rounded-md">
                   <ul className="py-1 text-sm">
-                    {navMenus.curations.map((curation) => {
+                    {navMenus.map((curation) => {
                       return (
                         <li key={`${curation.text} ${Math.random()* 20}`} className="hover:bg-logo-color animate-fade-in-down">
                           <Link href={curation.link}>

@@ -4,12 +4,7 @@
       "id": 1,
       "text": "나의 유형 추천받기",
       "link": "http://localhost:3000/test"
-    },
-    {
-      "id": 2,
-      "text": "나의 여행 유형 테스트",
-      "link": "http://localhost:3000/test"
-    }
+    }  
   ],
 
   "groups": [
