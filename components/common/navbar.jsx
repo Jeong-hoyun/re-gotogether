@@ -88,8 +88,8 @@ export default function navbar() {
 
         {/* column 하나로 길게 내려오는 스크롤 드랍다운 */}
         {isOpen ? (
-          <div className="relative w-120 h-120 ">
-            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 text-sm bg-white right-7 top-12 animate-fade-in-down'>
+          <div className="relative  ">
+            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 bg-white right-7 top-12 animate-fade-in-down'>
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
                 return(
@@ -225,7 +225,7 @@ export default function navbar() {
               navMenus={navMenus.communities}
             />
             {/* 메가 드롭다운 네브바  */}
-            <li>
+            <li className="lg:text-lg sm:text-sm">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="block border-b border-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0"
