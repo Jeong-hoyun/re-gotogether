@@ -41,7 +41,7 @@ export default function Maincarousel() {
     ],
   };
   return (
-    <div className="ml-3">
+    <div className="mx-48">
       <div className="flex gap-2 mt-10 mb-10">
       <Best />
       <h2 className="mt-1 text-lg font-semibold text-black nline-block sm:text-slate-900">
