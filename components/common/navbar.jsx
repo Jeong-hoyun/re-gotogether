@@ -195,30 +195,35 @@ export default function navbar() {
               display={display}
               Logo={Logo1}
               name={"여행 큐레이션"}
+              navMenus={navMenus.curations}
             />
             <Navbarli
               setDisplay={setDisplay1}
               display={display1}
               Logo={Logo3}
               name={"그룹별 여행"}
+              navMenus={navMenus.groups}
             />
             <Navbarli
               setDisplay={setDisplay2}
               display={display2}
               Logo={Logo5}
               name={"지역별 여행"}
+              navMenus={navMenus.countries}
             />
             <Navbarli
               setDisplay={setDisplay3}
               display={display3}
               Logo={Logo7}
               name={"테마별 여행"}
+              navMenus={navMenus.themes}
             />
             <Navbarli
               setDisplay={setDisplay4}
               display={display4}
               Logo={Logo9}
               name={"커뮤니티"}
+              navMenus={navMenus.communities}
             />
             {/* 메가 드롭다운 네브바  */}
             <li>
