@@ -1,10 +1,10 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
 import Head from "next/head";
 import Angel from "@/components/Logo/angel";
 import PointLogo from "@/components/Logo/pointLogo";
 import { API_URL } from "./../../config/index";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Maincarousel from "./../../components/main/maincarousel";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
@@ -47,9 +47,10 @@ export const getStaticProps = async ({ params }) => {
 const ProductId = ({ post }) => {
   const loginUser = useSelector((state) => state.login.login);
   const router = useRouter();
-  const [reserve, setReserve] = useState();
   const [toggle, setToggle] = useState(true);
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
+
   const MySwal = withReactContent(Swal);
   const number2 =
     typeof post.price === "string"
@@ -59,15 +60,7 @@ const ProductId = ({ post }) => {
 
   const submitForm = (data) => {
     try {
-      SetReservation(data).then(() => {
-        MySwal.fire({
-          title: "<strong>예약되었습니다</strong>",
-          icon: "info",
-          html:
-            '<a href="/mypage">마이페이지</a>에서 결제를 진행해주세요, ' +
-            '<a href="/mypage">마이페이지</a> ',
-        });
-      });
+      SetReservation(data);
     } catch (error) {
       console.error(error);
     }
@@ -81,7 +74,7 @@ const ProductId = ({ post }) => {
       </Head>
 
       <section className="flex flex-col">
-        <div className="w-full px-4 mx-auto mt-24 mb-12 xl:w-9/12 xl:mb-0">
+        <div className="w-full px-4 mx-auto mt-24 mb-12 xl:w-11/12 xl:mb-0">
           <div className=" sm:flex lg:hidden">
             <Image src={HeroImage} width={384} height={384} alt="Hero" />
           </div>
