@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import content from "../../json/best.content.json";
 import Image from "next/image";
 import Link from "next/link";
+import Best from "../Logo/best"
 
 export default function Maincarousel() {
   const settings = {
@@ -41,9 +42,12 @@ export default function Maincarousel() {
   };
   return (
     <div className="ml-3">
-      <h2 className="mt-20 mb-6  text-lg font-semibold text-black sm:text-slate-900">
-        여행 그룹 Best
+      <div className="flex gap-2 mt-10 mb-10">
+      <Best />
+      <h2 className="mt-1 text-lg font-semibold text-black nline-block sm:text-slate-900">
+      Best 여행 그룹
       </h2>
+      </div>
       <Slider {...settings}>
         {content.main &&
           content.main.map((item) => {
@@ -51,7 +55,7 @@ export default function Maincarousel() {
             return (
               <div
                 key={title}
-                className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md"
+                className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md"
               >
                 <Link href={key}>
                   <a>
@@ -60,18 +64,18 @@ export default function Maincarousel() {
                       alt={title}
                       width={1296}
                       height={648}
-                      className="rounded-t-lg object-cover cursor-pointer hover:opacity-75 transition-all z-5"
+                      className="object-cover transition-all rounded-t-lg cursor-pointer hover:opacity-75 z-5"
                     />
                   </a>
                 </Link>
                 <div className="p-5">
-                  <p className="text-sm mb-1 font-sm text-gray-700">{title}</p>
+                  <p className="mb-1 text-sm text-gray-700 font-sm">{title}</p>
                   <Link href={key}>
                     <a>
                       <p className="mb-2 text-sm font-bold text-gray-900">
                         {tag ? tag : title}
                       </p>
-                      <p className="text-lg mb-1 font-sm font-bold text-gray-700">
+                      <p className="mb-1 text-lg font-bold text-gray-700 font-sm">
                         {price}
                       </p>
                     </a>
