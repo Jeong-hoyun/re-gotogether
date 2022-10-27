@@ -5,8 +5,6 @@ import Image from 'next/image';
 
 const Recent = () => {
     const recent= useSelector((state) => state.recent.recent);
-
-
     return (   
         <section className="py-1 bg-blueGray-50">
         <div className="w-full xl:w-6/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
@@ -36,10 +34,7 @@ const Recent = () => {
                         .map((item) => {
                           const { title, img, id } = item;
                           return (
-                            <tr
-                              key={title}
-                              className="ml-3 border-t-0 text-neutral-400 pt-12 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap cursor-pointer hover:opacity-75 transition-all"
-                            >
+                           <div>
                             <td>
                               <Link href={`view/${id}`}>
                                 <a>
@@ -54,11 +49,11 @@ const Recent = () => {
                               </Link>
                              
                               </td>
-                              <td>
+                              <td className='mt-10'>
                               <h4 className="ml-10">여행명:{title}</h4>
                               <h4 className="ml-10">항공사:미정</h4>
                               </td>
-                            </tr>
+                              </div>
                           );
                         })
                     )}

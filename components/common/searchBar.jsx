@@ -25,7 +25,7 @@ let SearchResultObservable = searchSubject$.pipe(
   mergeMap((val) => from(getTravelByProducts(val))),
 );
 
-const useObservable = (observable, setter) => {
+export const useObservable = (observable, setter) => {
   React.useEffect(() => {
     let subscription = observable.subscribe((result) => {
       if (result) {
