@@ -61,7 +61,7 @@ export default function Community() {
         </ul>
       </nav>
 
-      <div className="relative pt-5 mt-12 text-black mx-72">
+      <div className="relative pt-5 mx-10 mt-12 text-black lg:mx-72">
         <input
           className="w-64 h-10 text-sm border-none rounded-lg pr-14 bg-neutral-100 placeholder:text-gray-400"
           type="text"
@@ -78,7 +78,7 @@ export default function Community() {
 
       {/* 여행후기 */}
 
-      <ul className="grid grid-cols-4 gap-4 mt-8 text-sm mx-72 mb-14">
+      <ul className="grid grid-cols-1 gap-4 mx-10 mt-8 text-sm mb-14 lg:mx-72 lg:grid-cols-4">
         {communtiyReview.community.map((review) => {
           return (
             <li
