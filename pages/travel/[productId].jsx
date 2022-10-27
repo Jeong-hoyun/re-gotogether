@@ -79,7 +79,7 @@ const ProductId = ({ post }) => {
 
   return (
     <>
-      <Head>
+   <Head>
         <title>{post.title}</title>
         <link rel="canonical" href={`/travel/${router.query.productId}`} />
       </Head>

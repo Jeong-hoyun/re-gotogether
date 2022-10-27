@@ -7,7 +7,7 @@ import Login from "../HeaderLogo/login";
 import SearchBar from './searchBar';
 import Signup from "../HeaderLogo/signup";
 
-
+  /** 기본 레이아웃의 헤더 **/
 export default function Header() {
   const loginUser = useSelector((state) => state.login.login);
   const dispatch = useDispatch();
@@ -38,7 +38,6 @@ export default function Header() {
               </div>
 
               {/* <Search /> */}
-              {/* 화면이 작아지면 다음줄로 넘어가게*/}
               <div
                 id="seconddiv"
                 className="col-span-3 lg:mt-2 lg:mx-auto sm:flex-initial "
