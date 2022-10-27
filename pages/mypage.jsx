@@ -5,24 +5,50 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import axios from "axios";
 import Head from "next/head";
+import { BehaviorSubject, mergeMap,from,map } from 'rxjs';
+import { useObservable } from './../components/common/searchBar';
+import { API_URL } from './../config/index';
+
+
+export const getReserveItem = async (ProductIds) => { 
+  const { data: products } = await axios.get(
+    `${API_URL}/api/products/?pageSize=100`,
+  );
+  if(ProductIds){
+   const productsItems= products.products.map((item) => item)
+    const data=productsItems.filter(id=>id.productId==ProductIds)
+    return data
+  }else{
+    return null;
+  }
+};
+
+let Subject$ = new BehaviorSubject("");
+let ResultObservable = Subject$.pipe(
+  map(val=>val),
+  mergeMap((val) => from(getReserveItem(val))),
+);
+
 
 const Mypage = () => {
   const wish = useSelector((state) => state.wish.wish);
   const login = useSelector((state) => state.login.login);
   const [reserve, setReserve] = useState();
+  const [result, setResult] = useState();
   const router = useRouter();
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
   useEffect(() => {
-    console.log(login.username )
     login.username === undefined ? router.push("./") : null;
-
     (async () => {
       try {
         const res = await axios.get(`/ec2/reservations/user`, {
           cancelToken: source.token,
         });
         setReserve(res.data);
+        const dataSet=res.data.reservations
+        .map(e=>e.productId)
+        Subject$.next(dataSet);
       } catch (e) {
         console.error(e);
       }
@@ -43,16 +69,19 @@ const Mypage = () => {
     }
   };
 
+  useObservable(ResultObservable,setResult)
+
+
   return (
     <>
     <Head>
     <title>마이페이지|고투게더</title>
     <link rel="canonical" href="/mypage" />
     </Head>
-    
+  
     <div className="mt-10">
       {login.username ? (
-        <h2 className="w-full xl:w-9/12 text-3xl mb-12 xl:mb-0 px-4 mt-24 mx-auto">
+        <h2 className="w-full xl:w-9/12  lg:text-3xl lg:mb-12 xl:mb-0 px-4 lg:mt-24 mx-auto">
           {login.username}님 환영합니다.
         </h2>
       ) : null}
@@ -91,20 +120,20 @@ const Mypage = () => {
                     </th>
                   </tr>
                 </thead>
-
+                
                 <tbody className="border-b">
                   {reserve ? (
                     reserve.reservations.map((item) => {
                       return (
                         <tr key={item.reservationId}>
                           <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
-                            {item.productId}
+                           {result&&result.map(({title,productId})=>item.productId===productId?title:null)}
                           </th>
                           <th className="pl-5 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
                             {item.personnel}인
                           </th>
                           <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            {item.paymentState}
+                          {result&&result.map(({price,productId})=>item.productId===productId?price:null)}
                           </th>
                           <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
                             {item.paymentState}
@@ -157,7 +186,7 @@ const Mypage = () => {
             </div>
 
             <div className="block w-full overflow-x-auto">
-              <table className="items-center bg-transparent w-full border-collapse">
+              <table className=" table-auto items-center bg-transparent w-full border-collapse">
                 <tbody>
                   <tr className="text-center">
                     {wish.length <= 1 ? (
@@ -165,6 +194,7 @@ const Mypage = () => {
                         위시리스트가 없습니다 🫥
                       </td>
                     ) : (
+                  
                       wish
                         .filter((_, i) => i !== 0)
                         .map((item) => {
@@ -172,7 +202,7 @@ const Mypage = () => {
                           return (
                             <td
                               key={title}
-                              className="ml-3 border-t-0  text-neutral-400 pt-12 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap cursor-pointer hover:opacity-75"
+                              className="ml-3 border-t-0   text-neutral-400 pt-12 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap cursor-pointer hover:opacity-75"
                             >
                               <Link href={`view/${id}`}>
                                 <a>
@@ -185,10 +215,7 @@ const Mypage = () => {
                                   />
                                 </a>
                               </Link>
-                              <h4 className="">{title}</h4>
-                              <button className="flex justify-center bg-blue-600 p-3 w-14 rounded-lg text-white hover:bg-blue-400:">
-                                삭제
-                              </button>
+                              <h4 className="">{title}</h4>                              
                             </td>
                           );
                         })

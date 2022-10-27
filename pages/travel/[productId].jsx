@@ -60,7 +60,6 @@ const ProductId = ({ post }) => {
         }),
       );
     }
-    console.log(recent);
   }, []);
 
   const number2 =
@@ -193,7 +192,9 @@ const ProductId = ({ post }) => {
                   </button>
                 </form>
               ) : (
-                <div className="m-10">예약은 회원가입 이후 가능합니다</div>
+                loginUser.username?
+                <div className="m-10"></div>
+                :<div className="m-10">예약은 회원가입 이후 가능합니다</div>
               )}
             </div>
           </div>
