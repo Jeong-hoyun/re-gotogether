@@ -174,9 +174,6 @@ export default function navbar() {
             </div>
             </div>
               ): null}
-              
-
-
         </ul>
       </nav>
 
@@ -238,7 +235,7 @@ export default function navbar() {
             {isOpen ? (
               <div
                 id="dropdown-bg"
-                className="absolute z-10 grid grid-flow-col text-sm bg-white border gap-x-2 top-40"
+                className="absolute top-44 left-2/5 z-10 grid grid-cols-5 text-sm bg-white border "
 >
                 <ul className="py-1 text-sm ">
                   {navMenus.curations.map((curation) => {
