@@ -1,6 +1,12 @@
 {
   "main": [
     {
+      "title": "와인 사랑인의 코카서스 3개국 18일",
+      "tag": "#조지아 #아르메니아 #와인투어",
+      "img": "/img/slide_georgia.jpg",
+      "key": "withchild"
+    },
+    {
       "title": "3040들만의 라운드 치앙마이 다색 골프",
       "tag": "#골프여행 #태국 #치앙마이",
       "img": "/img/slide_golf.jpg",
@@ -17,12 +23,6 @@
       "tag": "#링로드일주 #하이랜드 #빙하",
       "img": "/img/slide_iceland2.jpg",
       "key": "ladies"
-    },
-    {
-      "title": "와인 사랑인의 코카서스 3개국 18일",
-      "tag": "#조지아 #아르메니아 #와인투어",
-      "img": "/img/slide_georgia.jpg",
-      "key": "withchild"
     },
     {
       "title": "5070의 버킷리스트 중남미 8개국 34일",

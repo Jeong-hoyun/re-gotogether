@@ -1,5 +1,6 @@
 import React from "react";
 
+/*네브바의 "테마별여행" 아이콘을 관리하기위한 svg component*/
 function Logo7() {
   return (
     <svg

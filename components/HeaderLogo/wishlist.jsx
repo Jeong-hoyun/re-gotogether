@@ -1,6 +1,6 @@
 import React from "react";
 
-
+/*메인헤더의 관심상품 아이콘을 관리하기위한 svg component*/
 function Wishlist() {
   return (
     <svg

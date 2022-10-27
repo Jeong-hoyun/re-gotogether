@@ -1,5 +1,6 @@
 import React from "react";
 
+/*모바일 네브바의 "그룹별" 아이콘을 관리하기위한 svg component*/
 function Logo4() {
   return (
     <svg

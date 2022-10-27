@@ -1,6 +1,7 @@
 import React from "react";
 
-function Logo2({}) {
+/*모바일 네브바의 "큐레이션" 아이콘을 관리하기위한 svg component*/
+function Logo2() {
   return (
     <svg
       width="40"

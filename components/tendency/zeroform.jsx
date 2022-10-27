@@ -20,7 +20,7 @@ export function Zeroform({ zero, updateFields, name }) {
       </h3>
 
       <button
-        className="absolute px-4 py-4 border-2 border-solid lg:top-96 rounded-3xl z-2 left-16 top-24 lg:left-80 lg:ml-64 lg:text-xl lg:border-amber-300 text-amber-300"
+        className="absolute px-2 py-2 border-2 border-solid lg:top-96 rounded-3xl z-2 left-16 top-24 lg:left-80 lg:ml-64 lg:text-xl border-amber-300 text-amber-300"
         onClick={() => updateFields({ zero: "start" })}
       >
         <span className="text-center">당신에게 맞는 여행을 찾아보세요!</span>
