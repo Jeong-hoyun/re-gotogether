@@ -83,7 +83,7 @@
   "communities": [
     {
       "text": "여행후기",
-      "link": "http://localhost:3000/community/review"
+      "link": "http://localhost:3000/community/"
     },
     {
       "text": "게시판",

@@ -90,8 +90,8 @@ export default function navbar() {
 
         {/* column 하나로 길게 내려오는 스크롤 드랍다운 */}
         {isOpen ? (
-          <div className="relative  ">
-            <div id="dropdown-bg" className='w-60 h-60 overflow-auto absolute z-10 gap-y-2 bg-white right-7 top-12 animate-fade-in-down'>
+          <div className="relative ">
+            <div id="dropdown-bg" className='absolute z-10 overflow-auto bg-white w-60 h-60 gap-y-2 right-7 top-12 animate-fade-in-down'>
             <ul className="py-1 text-sm "> 
               { navMenus.curations.map(curation => {
                 return(
@@ -99,7 +99,7 @@ export default function navbar() {
                     <Link href={curation.link}>
                     <a
                       id={curation.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color">
                         {curation.text}
                     </a>
                     </Link>
@@ -115,7 +115,7 @@ export default function navbar() {
                     <Link href={group.link}>
                     <a
                       id={group.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color">
                       {group.text}
                     </a>
                     </Link>
@@ -131,7 +131,7 @@ export default function navbar() {
                     <Link href={country.link}>
                     <a
                       id={country.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color">
                       {country.text}
                     </a>
                     </Link>
@@ -147,7 +147,7 @@ export default function navbar() {
                     <Link href={theme.link}>
                     <a
                       id={theme.id} 
-                      className="flex px-4 py-2 bg-gray hover:bg-logo-color rounded-full">
+                      className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color">
                       {theme.text}
                     </a>
                     </Link>
@@ -236,7 +236,7 @@ export default function navbar() {
             {isOpen ? (
               <div
                 id="dropdown-bg"
-                className="absolute top-44 left-2/5 z-10 grid grid-cols-5 text-sm bg-white border "
+                className="absolute z-10 grid grid-cols-5 text-sm bg-white border top-44 left-2/5 "
 >
                 <ul className="py-1 text-sm ">
                   {navMenus.curations.map((curation) => {
