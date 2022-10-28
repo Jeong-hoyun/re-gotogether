@@ -238,8 +238,8 @@ const ProductId = ({ post }) => {
                       <Image
                         key={item}
                         src={item}
-                        width={640}
-                        height={1856}
+                        width={800}
+                        height={2320}
                         layout="responsive"
                       />
                     );
