@@ -6,11 +6,11 @@ const Maintheme = ({ country, group, theme }) => {
   const [value, setValue] = useState(group);
   return (
     <>
-       <div className="mb-8 border-b border-gray-100 lg:ml-44 sm:ml-10">
+       <div className="mb-8 border-b border-gray-100 ml-11 lg:ml-32 sm:ml-10">
        <span className="text-xl font-semibold">테마별로 여행을 찾아보세요</span><br />
        <span className="font-medium text-gray-600">당신에게 딱 맞는 여행이 준비되어 있어요 :)</span>
        </div>
-      <div className="mb-8 sm:ml-10 lg:ml-40 border-b border-gray-100">
+      <div className="mb-8 border-b border-gray-100 ml-7 sm:ml-10 lg:ml-28">
         <ul className="flex flex-wrap text-sm font-medium text-center ">
           <li className="mr-2 last:mr-0">
             <button
@@ -44,7 +44,7 @@ const Maintheme = ({ country, group, theme }) => {
         </ul>
       </div>
 
-      <div className="flex flex-wrap sm:ml-10 lg:ml-20 ">
+      <div className="flex flex-wrap sm:ml-10 lg:ml-20">
         {value &&
           value.map((item) => {
             const { title, path, img, subtitle } = item;

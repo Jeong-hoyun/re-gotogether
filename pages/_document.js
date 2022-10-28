@@ -55,6 +55,7 @@ class MyDocument extends Document {
           <title>{SITE_NAME}</title>
           <script dangerouslySetInnerHTML={this.redirectIEtoEdge()} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400&display=swap" rel="stylesheet" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           {/* SEO */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
