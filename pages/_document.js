@@ -50,7 +50,7 @@ class MyDocument extends Document {
   }
   render() {
     return (
-      <Html>
+      <Html lang="ko">
         <Head>
           <title>{SITE_NAME}</title>
           <script dangerouslySetInnerHTML={this.redirectIEtoEdge()} />
