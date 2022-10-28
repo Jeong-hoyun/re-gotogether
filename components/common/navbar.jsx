@@ -21,8 +21,9 @@ export default function navbar() {
   const [display2, setDisplay2] = useState(false);
   const [display3, setDisplay3] = useState(false);
   const [display4, setDisplay4] = useState(false);
-
   const [isOpen, setIsOpen] = useState(false);
+
+
 
   return (
     <>

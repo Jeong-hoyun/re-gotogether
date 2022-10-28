@@ -68,7 +68,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>회원가입|고투게더</title>
+        <title>로그인|고투게더</title>
         <link rel="canonical" href="/signup" />
       </Head>
     <section className="mt-20">
