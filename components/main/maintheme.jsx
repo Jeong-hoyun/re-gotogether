@@ -1,15 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-
+/** 메인 테마 그룹별 여행 관리  **/
 const Maintheme = ({ country, group, theme }) => {
   const [value, setValue] = useState(group);
   return (
     <>
-       <div className="mb-8 border-b border-gray-100 ml-11 lg:ml-32 sm:ml-10">
-       <span className="text-xl font-semibold">테마별로 여행을 찾아보세요</span><br />
-       <span className="font-medium text-gray-600">당신에게 딱 맞는 여행이 준비되어 있어요 :)</span>
-       </div>
+      <div className="mb-8 border-b border-gray-100 ml-11 lg:ml-32 sm:ml-10">
+        <span className="text-xl font-semibold">
+          테마별로 여행을 찾아보세요
+        </span>
+        <br />
+        <span className="font-medium text-gray-600">
+          당신에게 딱 맞는 여행이 준비되어 있어요 :)
+        </span>
+      </div>
       <div className="mb-8 border-b border-gray-100 ml-7 sm:ml-10 lg:ml-28">
         <ul className="flex flex-wrap text-sm font-medium text-center ">
           <li className="mr-2 last:mr-0">

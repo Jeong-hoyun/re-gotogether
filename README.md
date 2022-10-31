@@ -60,20 +60,11 @@ $ yarn run format:fix
 - [ ] 마이페이지 <br/>비로그인 시 로그인 버튼이 활성화 돼야 합니다.<br/>로그인 시 회원의 이름을 보여주고, 로그아웃 버튼이 활성화돼야 합니다.
 - [ ] 예약하기 페이지 ☞ 예약자의 정보, 주문요약 정보를 보여주고 결제수단을 선택해 결제를 진행 할 수 있도록 합니다.
 
-### 필수 요구사항 -
+### 백엔드 현황
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-
-### 필수 요구사항 -
-
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- .env를 통해서 api 서버 URL 관리 (http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080)
+- API 설정 http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/docs/index.html
+-
 
 ## 🤼‍♀️ 팀 구성
 
@@ -83,8 +74,6 @@ $ yarn run format:fix
 
 | |
 <img src="https://avatars.githubusercontent.com/Jeong-hoyun" width="100"> | <img src="https://avatars.githubusercontent.com/roroism" width="100"> | <img src="https://avatars.githubusercontent.com/Kang-IJ" width="100"> | <img src="https://avatars.githubusercontent.com/MinJ33" width="100"> |
-
-- .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.
 
 ## 🤼‍♀️ 조원 한마디
 
@@ -105,7 +94,3 @@ $ yarn run format:fix
 - (UI/UX)양범철
 
 - (UI/UX)서형우
-
-## 주의사항
-
-- .env는 현재 .gitignore에 의해 업로드 하지 않습니다. 주의를 부탁드리겠습니다.

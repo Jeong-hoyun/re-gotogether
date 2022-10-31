@@ -26,12 +26,11 @@ function PrevArrow(props) {
   );
 }
 
-
-
+/** 메인 캐로셀 컴포넌트  **/
 function Mainsearch() {
   const mainCarousel = useMemo(() => content.main.map((e) => e));
   const settings = {
-    focusOnSelect: true,  
+    focusOnSelect: true,
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -77,20 +76,25 @@ function Mainsearch() {
             return (
               <div
                 key={title}
-                className="relative  cursor-pointer hover:opacity-75 transition-all">
+                className="relative  cursor-pointer hover:opacity-75 transition-all"
+              >
                 <div className="absolute text-white top-50 m-10 lg:m-30 z-10 ">
-                  <h3 className="text-lg lg:text-3xl xl:text-4xl 2xl:text-5xl md:text-3xl">{title}</h3>
+                  <h3 className="text-lg lg:text-3xl xl:text-4xl 2xl:text-5xl md:text-3xl">
+                    {title}
+                  </h3>
                   <h4 className="text-sm lg:text-2xl">{tag}</h4>
                 </div>
                 <div className="absolute text-white m-40 lg:ml-96 z-10 ">
-                  <h4 className="text-xl lg:text-2l xl:text-3xl 2xl:text-4xl md:text-2xl">{"see more ➝"}</h4>                 
-                </div>          
+                  <h4 className="text-xl lg:text-2l xl:text-3xl 2xl:text-4xl md:text-2xl">
+                    {"see more ➝"}
+                  </h4>
+                </div>
                 <Image
                   src={img}
                   alt={title}
                   width={1920}
                   height={700}
-                  className="z-5"                  
+                  className="z-5"
                 />
               </div>
             );

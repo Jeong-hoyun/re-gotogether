@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>메인페이지|고투게더</title>       
+        <title>메인페이지|고투게더</title>
       </Head>
       <main className="max-w-full mx-auto">
         {loginUser.username ? (

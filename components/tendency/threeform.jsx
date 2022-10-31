@@ -22,7 +22,7 @@ export function ThreeForm({ three, updateFields }) {
         <Image
           src="/img/3_historic_site.jpg"
           alt="historic_site"
-          data-img="유적지 탐방"
+          data-img="유럽"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
           width={300}
           height={200}
@@ -40,9 +40,9 @@ export function ThreeForm({ three, updateFields }) {
       </div>
       <div onClick={onClick} className="active:shadow-xl text-gray-400 mx-auto">
         <Image
-          src="/img/3_volunteer.jpg"
+          src="/img/wine.jpg"
           alt="volunteer"
-          data-img="봉사활동"
+          data-img="와인"
           className="rounded-lg cursor-pointer hover:opacity-75 transition-all"
           width={300}
           height={200}

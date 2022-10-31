@@ -80,23 +80,22 @@ const Test = ({ name }) => {
             {result.length > 0 ? (
               <div className="flex flex-col">
                 <div className="flex flex-row justify-start">
-                  <h3>{loginUser.username}님에게 여행을 추천해드립니다!</h3>                           
+                  <h3>{loginUser.username}님에게 여행을 추천해드립니다!</h3>
                 </div>
                 <div className="flex flex-col overflow-hidden hover:overflow-y-auto h-96 bg-[url('/img/graph.png')] bg-no-repeat bg-contain">
-                  {result.map((item) => {                  
+                  {result.map((item) => {
                     return (
-                      <div key={item.title} className="ml-96 bg-gray-100" >
-                      <Link href={`/travel/${item.productId}`}>
-                      <a>
-                      <Image
-                        className="rounded-lg"
-                          src={item.images[0]}
-                          width={300}
-                          height={300}
-                        ></Image>
-                      </a>
-                      </Link>
-                      
+                      <div key={item.title} className="ml-96 bg-gray-100">
+                        <Link href={`/travel/${item.productId}`}>
+                          <a>
+                            <Image
+                              className="rounded-lg"
+                              src={item.images[0]}
+                              width={300}
+                              height={300}
+                            ></Image>
+                          </a>
+                        </Link>
                         <h3>{item.title}</h3>
                       </div>
                     );

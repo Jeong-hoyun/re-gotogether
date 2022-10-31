@@ -37,7 +37,7 @@ export const useObservable = (observable, setter) => {
     return () => subscription.unsubscribe();
   }, [observable, setter]);
 };
-
+/** rxjs를 이용한 스마트 검색방식 커스텀 훅을 통한 데이터 변동 OR distinctUntilChanged로 자동 캔슬 방식추가  **/
 function SearchBar() {
   const [search, setSearch] = React.useState();
   const [results, setResults] = React.useState([]);

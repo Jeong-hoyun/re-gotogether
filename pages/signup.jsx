@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
 const MySwal = withReactContent(Swal);
+/** 회원가입 페이지 **/
 export default function Signup() {
   const router = useRouter();
   const password = useRef({});

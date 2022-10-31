@@ -10,10 +10,10 @@ import Head from "next/head";
 export default function Community() {
   return (
     <>
-    <Head>
-    <title>커뮤니티|고투게더</title>
-    <link rel="canonical" href="/community" />
-    </Head>
+      <Head>
+        <title>커뮤니티|고투게더</title>
+        <link rel="canonical" href="/community" />
+      </Head>
       {/* <div className="relative bg-cover"> */}
       <div className="relative mt-4 bg-cover">
         <Image
@@ -85,10 +85,15 @@ export default function Community() {
               className="px-5 py-5 mb-3 bg-white rounded-2xl drop-shadow-2xl"
               key={`${review.img}${review.title}${review.name}${review.date}`}
             >
-              <img className="w-full h-48 bg-auto rounded-2xl" src={review.img} />
+              <img
+                className="w-full h-48 bg-auto rounded-2xl"
+                src={review.img}
+              />
               <p className="pt-10 text-sm font-semibold">{review.title}</p>
               <div className="float-left pt-2 text-xs">{review.name}</div>
-              <div className="inline-block float-right pt-2 text-xs">{review.date}</div>
+              <div className="inline-block float-right pt-2 text-xs">
+                {review.date}
+              </div>
             </li>
           );
         })}

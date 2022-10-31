@@ -1,9 +1,11 @@
 /**  @rewrites samesite 방지를 위한 세팅 */
 const nextConfig = {
-
   swcMinify: true,
   images: {
-    domains: ["cdn.imweb.me"],
+    domains: [
+      "cdn.imweb.me",
+      "go-together-bucket.s3.ap-northeast-2.amazonaws.com",
+    ],
     // domains: ['images.unsplash.com']
   },
   async rewrites() {

@@ -78,7 +78,7 @@ const ProductId = ({ post }) => {
 
   return (
     <>
-   <Head>
+      <Head>
         <title>{post.title}</title>
         <link rel="canonical" href={`/travel/${router.query.productId}`} />
       </Head>
@@ -109,17 +109,15 @@ const ProductId = ({ post }) => {
                   패키지의 안전함과 자유여행의 즐거움을 동시에~
                 </div>
               </div>
-              <div className="text-xs font-bold mt-60">
+              <div className="text-base font-bold mt-60">
                 <p className="text-number-color">
                   여행지역
-                  <span className="font-normal text-black ">
-                    콜롬비아/페루/볼리비아/칠레/아르헨티나/브라질/쿠바/멕시코
-                  </span>
+                  <span className="pl-2 font-normal text-black">미정</span>
                 </p>
                 <p className="pt-2 text-number-color">
                   여행특징
-                  <span className="font-normal text-black">
-                    5성~3성급 호텔/포함투어 25개(타사상품 비교必)
+                  <span className="pl-2 font-normal text-black">
+                    5성~3성급 호텔(타사상품 비교必)
                   </span>
                 </p>
                 <p className="pt-2 text-number-color">
@@ -191,10 +189,10 @@ const ProductId = ({ post }) => {
                     예약하기
                   </button>
                 </form>
-              ) : (
-                loginUser.username?
+              ) : loginUser.username ? (
                 <div className="m-10"></div>
-                :<div className="m-10">예약은 회원가입 이후 가능합니다</div>
+              ) : (
+                <div className="m-10">예약은 회원가입 이후 가능합니다</div>
               )}
             </div>
           </div>
@@ -218,16 +216,16 @@ const ProductId = ({ post }) => {
           ) : null}
 
           {/* 펼쳐보기 */}
-          <div className="flex flex-col py-10 mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50">
+          <div className="flex flex-col py-10 lg:mx-24 lg:mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50">
             <p className="flex justify-center mt-10 text-2xl font-bold text-black">
               이런 여행을 떠날거에요 😃
             </p>
             <div
               onClick={() => (toggle ? setToggle(false) : setToggle(true))}
               tabIndex="1"
-              className="flex flex-col justify-center py-10 mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50"
+              className="flex flex-col justify-center py-10 lg:mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50"
             >
-              <div className="justify-center w-40 font-semibold">
+              <div className="justify-center sm:w-full lg:w-40 font-semibold">
                 펼쳐보기 ▼
               </div>
               <div className={`${toggle && "hidden"} `}>
@@ -248,7 +246,7 @@ const ProductId = ({ post }) => {
               <div></div>
             </div>
           </div>
-          <div className="pb-16">        
+          <div className="pb-16">
             <Maincarousel />
           </div>
         </div>

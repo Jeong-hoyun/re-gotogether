@@ -3,8 +3,8 @@ import Slider from "react-slick";
 import content from "../../json/best.content.json";
 import Image from "next/image";
 import Link from "next/link";
-import Best from "../Logo/best"
-
+import Best from "../Logo/best";
+/** 베스트 상품 컴포넌트  **/
 export default function Maincarousel() {
   const settings = {
     arrows: true,
@@ -43,10 +43,10 @@ export default function Maincarousel() {
   return (
     <div className="flex flex-col mx-12 lg:mx-32">
       <div className="flex gap-2 mt-10 mb-10">
-      <Best />
-      <h2 className="mt-1 text-lg font-semibold text-black nline-block sm:text-slate-900">
-      Best 여행 그룹
-      </h2>
+        <Best />
+        <h2 className="mt-1 text-lg font-semibold text-black nline-block sm:text-slate-900">
+          Best 여행 그룹
+        </h2>
       </div>
       <Slider {...settings}>
         {content.main &&
@@ -81,7 +81,6 @@ export default function Maincarousel() {
                     </a>
                   </Link>
                 </div>
-               
               </div>
             );
           })}

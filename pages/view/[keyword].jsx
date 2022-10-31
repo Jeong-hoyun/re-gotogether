@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
 
-
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
     return { params: { keyword: item.key } };
@@ -22,9 +21,9 @@ export function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { keyword } = context.params;
-  const { data: searchData } =  await axios({
-    method: 'GET',
-    url:  `${API_URL}/api/products/?keyword=${keyword}`,   
+  const { data: searchData } = await axios({
+    method: "GET",
+    url: `${API_URL}/api/products/?keyword=${keyword}`,
   });
   if (!searchData) {
     return {
@@ -37,7 +36,7 @@ export async function getStaticProps(context) {
     },
   };
 }
-
+/* 여행  상세페이지 **/
 const Keyword = ({ searchData }) => {
   const location = useRouter();
   const mainTitle = useMemo(
@@ -48,7 +47,7 @@ const Keyword = ({ searchData }) => {
   );
   const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
-  const wishItem = wish&&wish.map((e) => e.id);
+  const wishItem = wish && wish.map((e) => e.id);
 
   if (searchData.products.length === 0) {
     return (
@@ -74,7 +73,8 @@ const Keyword = ({ searchData }) => {
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
                   : "가격문의";
-              const image1 = item.images[0];
+
+              const image1 = item.images ? item.images[0] : "/img/untitled.jpg";
               return (
                 <div
                   className="w-1/3 mb-10 border border-gray-200 rounded-lg shadow-md "
@@ -106,7 +106,7 @@ const Keyword = ({ searchData }) => {
                         type="button"
                         aria-label="Like"
                         onClick={
-                          wishItem.includes(productId)
+                          wishItem && wishItem.includes(productId)
                             ? () => dispatch(delwish(productId))
                             : () =>
                                 dispatch(
@@ -121,7 +121,11 @@ const Keyword = ({ searchData }) => {
                         <svg
                           width="20"
                           height="20"
-                          fill={wishItem.includes(productId) ? "red" : "blue"}
+                          fill={
+                            wishItem && wishItem.includes(productId)
+                              ? "red"
+                              : "blue"
+                          }
                           aria-hidden="true"
                         >
                           <path
