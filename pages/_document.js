@@ -51,8 +51,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head>
-          <title>{SITE_NAME}</title>
+        <Head>    
           <script dangerouslySetInnerHTML={this.redirectIEtoEdge()} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

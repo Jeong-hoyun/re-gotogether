@@ -9,7 +9,8 @@
     "lint": "next lint",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "prettier --write --ignore-path .gitignore .",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -42,6 +43,7 @@
     "autoprefixer": "^10.4.12",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^2.0.7",
+    "cypress": "^10.11.0",
     "depcheck": "^1.4.3",
     "eslint": "^8.24.0",
     "eslint-config-airbnb": "^19.0.4",
