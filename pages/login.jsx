@@ -3,12 +3,12 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "rtk/features/loginSlice";
 import { useEffect } from "react";
-import axios from "axios";
 import Head from "next/head";
 import Lottie from "react-lottie-player";
 import moveImg from "../json/loginmove.json";
+import { fetchByLogin } from './../rtk/features/loginSlice';
+import { unwrapResult } from "@reduxjs/toolkit";
 
 const MySwal = withReactContent(Swal);
 /** 로그인 페이지 **/
@@ -23,29 +23,24 @@ const Login = () => {
   } = useForm();
 
   useEffect(() => {
-    loginUser.username ? router.push("./mypage") : null;
+ loginUser.username ? router.push("./mypage") : null; 
     return () => {}; // cleanUp Function
   }, []);
 
-  const onSubmit = async (data) => {
-    const url = `/ec2/login`;
-    const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json;charset=UTF-8" },
-      data: JSON.stringify(data),
-      withCredentials: true,
-      url,
-    };
-    try {
-      const res = await axios(options);
-      if (res.status == 200 && res.data.username) {
+  const onSubmit = async (data) => {  
+    try {     
+   const dispatchLogin= await dispatch(fetchByLogin(data))
+   const res= unwrapResult(dispatchLogin)   
+   if(!res) {
+    await MySwal.fire({ didOpen: () => { Swal.showLoading()} })
+   }
+    if (res.username) {
         MySwal.fire({
-          text: `${res.data.username}님 로그인 감사합니다`,
+          text: `${res.username}님 로그인 감사합니다`,
           icon: "success",
           confirmButtonText: "OK",
         }).then((result) => {
-          if (result.isConfirmed) {
-            dispatch(login(res.data));
+          if (result.isConfirmed) {         
             router.push("./");
           }
         });
