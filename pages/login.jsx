@@ -24,7 +24,6 @@ const Login = () => {
 
   useEffect(() => {
  loginUser.username ? router.push("./mypage") : null; 
-    return () => {}; // cleanUp Function
   }, []);
 
   const onSubmit = async (data) => {  
