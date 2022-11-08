@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Maincarousel from "../components/main/maincarousel";
 import Maintheme from "../components/main/maintheme";
-import Mainsearch from "./../components/main/mainsearch";
+import Mainsearch from "../components/main/mainsearch";
 import content from "../json/mainpage.content.json";
 import { useSelector } from "react-redux";
 import Test from "./test";

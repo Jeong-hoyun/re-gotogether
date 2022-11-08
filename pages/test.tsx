@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useMultistepForm } from "./../components/tendency/useMultistepForm";
-import { ThreeForm } from "./../components/tendency/threeform";
-import { TwoForm } from "./../components/tendency/twoform";
-import { OneForm } from "./../components/tendency/oneform";
-import { Zeroform } from "./../components/tendency/zeroform";
-import { API_URL } from "./../config/index";
+import { useMultistepForm } from "../components/tendency/useMultistepForm";
+import { ThreeForm } from "../components/tendency/threeform";
+import { TwoForm } from "../components/tendency/twoform";
+import { OneForm } from "../components/tendency/oneform";
+import { Zeroform } from "../components/tendency/zeroform";
+import { API_URL } from "../config/index";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import Image from "next/image";
-import Result from "./../components/tendency/result";
+import Result from "../components/tendency/result";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 
@@ -26,12 +26,8 @@ const Test = ({ name }) => {
   const [result, setResult] = useState();
   const Router = useRouter();
   const loginUser = useSelector((state) => state.login.login);
-  function updateFields(fields) {
-    setData((prev) => {
-      return { ...prev, ...fields };
-    });
-  }
-  function onSubmit(e) {
+
+  function onSubmit(e:Event) {
     e.preventDefault();
     if (!isLastStep) return next();
     if (data.one !== "" && data.two !== "" && data.three !== "") {

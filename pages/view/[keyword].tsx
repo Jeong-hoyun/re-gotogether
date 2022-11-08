@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
+import {typeSearchData} from "../../types/common"
 
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
@@ -43,7 +44,7 @@ const Keyword = ({ searchData }) => {
     () =>
       content.search
         .filter((e) => e.key === location.query.keyword)
-        .map((e) => e.title)[0],
+        .map((e) => e.title)[0],[]
   );
   const wish = useSelector((state) => state.wish.wish);
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ const Keyword = ({ searchData }) => {
       <main className="mx-auto mt-20 max-w-7xl">
         <div className="flex flex-wrap justify-between">
           {searchData &&
-            searchData.products.map((item) => {
+            searchData.products.map((item:typeSearchData) => {
               const { title, productId } = item;
               const price =
                 item.price !== null
@@ -81,7 +82,7 @@ const Keyword = ({ searchData }) => {
                   key={title}
                 >
                   <Link href={`/travel/${productId}`}>
-                    <a alt={title}>
+                    <a>
                       <Image
                         className="object-cover rounded-t-lg"
                         src={image1}
@@ -130,7 +131,7 @@ const Keyword = ({ searchData }) => {
                         >
                           <path
                             fillRule="evenodd"
-                            clipule="evenodd"
+                            clipRule="evenodd"
                             d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
                           />
                         </svg>

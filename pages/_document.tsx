@@ -2,40 +2,14 @@ import Document, {
   Html,
   Head,
   Main,
-  NextScript,
-  DocumentContext,
+  NextScript
 } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 
 const SITE_NAME = "고투게더|같이 가고 싶은 파트너와 함께 가는 여행";
 const SITE_TITLE = "고투게더";
 const SITE_DESCRIPTION = "같이 가고 싶은 파트너와 함께 가는 여행";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet();
-    const originalRenderPage = ctx.renderPage;
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        });
-
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
-  }
 
   redirectIEtoEdge() {
     return {

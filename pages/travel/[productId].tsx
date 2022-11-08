@@ -1,16 +1,17 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Head from "next/head";
 import Angel from "@/components/Logo/angel";
 import PointLogo from "@/components/Logo/pointLogo";
-import { API_URL } from "./../../config/index";
+import { API_URL } from "../../config/index";
 import { useDispatch, useSelector } from "react-redux";
-import Maincarousel from "./../../components/main/maincarousel";
+import Maincarousel from "../../components/main/maincarousel";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { addRecent } from "rtk/features/recentSlice";
+import {typeReservation} from "../../types/common"
 
 export const getStaticPaths = async () => {
   const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
@@ -48,8 +49,10 @@ const ProductId = ({ post }) => {
   const recent = useSelector((state) => state.recent.recent);
   const router = useRouter();
   const [toggle, setToggle] = useState(true);
-  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
+
+  const { register, handleSubmit } = useForm<typeReservation>();
+
   React.useEffect(() => {
     if (!recent.map(({ title }) => title).includes(post.title)) {
       dispatch(
@@ -68,8 +71,8 @@ const ProductId = ({ post }) => {
       : "가격문의";
   const HeroImage = post.images[0];
 
-  const submitForm = (data) => {
-    try {
+  const submitForm = (data:typeReservation) => {
+    try {      
       SetReservation(data);
     } catch (error) {
       console.error(error);

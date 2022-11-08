@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import Head from "next/head";
 import { BehaviorSubject, mergeMap, from, map } from "rxjs";
-import { useObservable } from "./../components/common/searchBar";
-import { API_URL } from "./../config/index";
+import { useObservable } from "../components/common/searchBar";
+import { API_URL } from "../config/index";
 import { fetchByReservation } from "rtk/features/reservationSlice";
 import { fetchByReservationCancel } from "rtk/features/cancelSlice";
 
