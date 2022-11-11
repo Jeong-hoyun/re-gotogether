@@ -9,6 +9,7 @@ import Lottie from "react-lottie-player";
 import moveImg from "../json/loginmove.json";
 import { fetchByLogin } from './../rtk/features/loginSlice';
 import { unwrapResult } from "@reduxjs/toolkit";
+import {typeLoginResponse,typeLoginData} from "../types/common"
 
 const MySwal = withReactContent(Swal);
 /** 로그인 페이지 **/
@@ -26,7 +27,7 @@ const Login = () => {
  loginUser.username ? router.push("./mypage") : null; 
   }, []);
 
-  const onSubmit = async (data) => {  
+  const onSubmit = async (data:typeLoginData) => {  
     try {     
    const dispatchLogin= await dispatch(fetchByLogin(data))
    const res= unwrapResult(dispatchLogin)   

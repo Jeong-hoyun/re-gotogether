@@ -12,3 +12,13 @@ export type typeSearchData={
         images:string
 
 }
+
+export type typeLoginResponse={
+    username:string
+    email:string
+    insertDate:number
+}
+export type typeLoginData={
+    email:string,
+    password:string
+  }

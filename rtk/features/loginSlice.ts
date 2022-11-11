@@ -2,9 +2,10 @@ import { createSlice,createAsyncThunk ,current} from "@reduxjs/toolkit";
 import  axios  from 'axios';
 const initialState = { login: [] }; // 처음에는 빈 배열로 시작
 
-export const fetchByLogin = createAsyncThunk(
+
+export const fetchByLogin = createAsyncThunk<typeLoginData>(
   'users/fetchByLogin',
-  async (data, { rejectWithValue }) => {
+  async (data) => {
     try {
 
       const url = `/ec2/login`;
@@ -18,7 +19,7 @@ export const fetchByLogin = createAsyncThunk(
       const res = await axios(options); 
       return res.data
     } catch (error) {
-      return rejectWithValue(error.response.data);
+      console.error(error)
     }
   
   }

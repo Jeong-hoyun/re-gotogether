@@ -7,7 +7,7 @@ import { store, persistor } from "../rtk/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import Head from "next/head";
-
+import type { AppProps } from "next/app";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>

@@ -13,7 +13,6 @@ export const fetchByReservationCancel = createAsyncThunk(
         headers: { "Content-Type": "application/json;charset=UTF-8" },
         data: { paymentState: 3 },
       });
-
       return res.data      
     } catch (error) {
      console.error(error)

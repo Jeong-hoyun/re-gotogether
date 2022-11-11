@@ -1,7 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import wishReducer from "../rtk/features/wishSlice";
-import loginReducer from "../rtk/features/loginSlice";
-import recentReducer from "../rtk/features/recentSlice";
+import wishReducer from "./features/wishSlice";
+import loginReducer from "./features/loginSlice";
+import recentReducer from "./features/recentSlice";
+
 import {
   persistStore,
   persistReducer,
@@ -13,6 +14,9 @@ import {
   REGISTER,
 } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+
+export type AppDispatch = typeof store.dispatch
+
 const createNoopStorage = () => {
   return {
     getItem(_key) {
@@ -42,6 +46,8 @@ const rootReducer = combineReducers({
   login: loginReducer,
   recent: recentReducer,
 });
+export type RootState = ReturnType<typeof rootReducer>
+
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
