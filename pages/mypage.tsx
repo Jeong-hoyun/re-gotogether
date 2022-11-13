@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import { useRouter } from "next/router";
 import axios from "axios";
 import Head from "next/head";
@@ -10,19 +10,19 @@ import { useObservable } from "../components/common/searchBar";
 import { API_URL } from "../config/index";
 import { fetchByReservation } from "rtk/features/reservationSlice";
 import { fetchByReservationCancel } from "rtk/features/cancelSlice";
+import { useAppStore, useAppDispatch } from "../rtk/store";
+import { typeReservation, typeSearchData } from "../types/common";
 
-
-
-
-
-export const getReserveItem = async (ProductIds) => {
+export const getReserveItem = async (ProductIds: number) => {
   const { data: products } = await axios.get(
     `${API_URL}/api/products/?pageSize=100`,
   );
   if (ProductIds) {
-    const productsItems = products.products.map((item) => item);
-    const test = productsItems.filter((e) => ProductIds.includes(e.productId));
-    return test;
+    const productsItems = products.products.map((item: typeSearchData) => item);
+    const ReserveItem = productsItems.filter(
+      (e: typeSearchData) => ProductIds === e.productId,
+    );
+    return ReserveItem;
   } else {
     return null;
   }
@@ -31,38 +31,37 @@ export const getReserveItem = async (ProductIds) => {
 let Subject$ = new BehaviorSubject("");
 let ResultObservable = Subject$.pipe(
   map((val) => val),
-  mergeMap((val) => from(getReserveItem(val))),
+  mergeMap((val) => from(getReserveItem(Number(val)))),
 );
 
 /** 마이페이지 **/
 const Mypage = () => {
-  const dispatch=useDispatch()
-  const wish = useSelector((state) => state.wish.wish);
-  const login = useSelector((state) => state.login.login);
-  const [reserve, setReserve] = useState();
-  const [result, setResult] = useState();
+  const dispatch = useAppDispatch();
+  const wish = useAppStore((state) => state.wish.wish);
+  const login = useAppStore((state) => state.login.login);
+  const [reserve, setReserve] = useState<Array<typeReservation>>();
+  const [result, setResult] = useState<Array<typeSearchData>>();
   const router = useRouter();
 
-
   useEffect(() => {
-    console.log("hello")
     login.username === undefined ? router.push("./") : null;
     (async () => {
       try {
-        const res=await dispatch(fetchByReservation())
-        setReserve(res.payload);
-        const dataSet = res.payload.reservations.map((e) => e.productId);
+        const res = await dispatch(fetchByReservation());
+        const reserveData = res.payload.reservations;
+        setReserve(reserveData);
+        const dataSet = reserveData.map((e: typeSearchData) => e.productId);
         Subject$.next(dataSet);
       } catch (e) {
         console.error(e);
       }
     })();
     return () => {};
-  }, [login.username,onCancel]);
+  }, [login.username]);
 
-  const onCancel = async (path) => {
+  const onCancel = async (path: number) => {
     try {
-       dispatch(fetchByReservationCancel(path))       
+      dispatch(fetchByReservationCancel(path));
     } catch (e) {
       console.error(e);
     }
@@ -120,52 +119,52 @@ const Mypage = () => {
                   </thead>
 
                   <tbody className="border-b">
-                  {reserve ? (
-                    reserve.reservations.map((item) => {
-                      return (
-                        <tr key={item.reservationId}>
-                          <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
-                            {result &&
-                              result.map(({ title, productId }) =>
-                                item.productId === productId ? title : null,
-                              )}
-                          </th>
-                          <th className="pl-5 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            {item.personnel}인
-                          </th>
-                          <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            {result &&
-                              result.map(({ price, productId }) =>
-                                item.productId === productId
-                                  ? `${price
-                                      .toString()
-                                      .replace(
-                                        /\B(?=(\d{3})+(?!\d))/g,
-                                        ",",
-                                      )}원`
-                                  : null,
-                              )}
-                          </th>
-                          <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            {item.paymentState}
-                          </th>
-                          <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
-                            <button
-                              onClick={() => onCancel(item.reservationId)}
-                            >
-                              취소
-                            </button>
-                          </th>
-                        </tr>
-                      );
-                    })
-                  ) : (
-                    <tr className="text-center">
-                      <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
-                        예약상품이 비어있습니다
-                      </td>
-                    </tr>
-                  )}
+                    {reserve ? (
+                      reserve.map((item) => {
+                        return (
+                          <tr key={item.reservationId}>
+                            <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
+                              {result &&
+                                result.map(({ title, productId }) =>
+                                  item.productId === productId ? title : null,
+                                )}
+                            </th>
+                            <th className="pl-5 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                              {item.personnel}인
+                            </th>
+                            <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                              {result &&
+                                result.map(({ price, productId }) =>
+                                  item.productId === productId
+                                    ? `${price
+                                        .toString()
+                                        .replace(
+                                          /\B(?=(\d{3})+(?!\d))/g,
+                                          ",",
+                                        )}원`
+                                    : null,
+                                )}
+                            </th>
+                            <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                              {item.paymentState}
+                            </th>
+                            <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
+                              <button
+                                onClick={() => onCancel(item.reservationId)}
+                              >
+                                취소
+                              </button>
+                            </th>
+                          </tr>
+                        );
+                      })
+                    ) : (
+                      <tr className="text-center">
+                        <td className="border-t-0 text-neutral-400 py-32 pl-8 align-middle border-l-0 border-r-0 text-sm">
+                          예약상품이 비어있습니다
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
 

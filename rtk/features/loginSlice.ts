@@ -1,13 +1,32 @@
-import { createSlice,createAsyncThunk ,current} from "@reduxjs/toolkit";
-import  axios  from 'axios';
-const initialState = { login: [] }; // 처음에는 빈 배열로 시작
+import {
+  createSlice,
+  createAsyncThunk,
+  PayloadAction,
+  isAsyncThunkAction,
+} from "@reduxjs/toolkit";
+import axios from "axios";
+import { typeLoginData, typeLoginResponse } from "../../types/common";
 
+export interface LoginStateType {
+  login: {
+    username: string;
+    email: string;
+    insertDate: number;
+  };
+}
 
-export const fetchByLogin = createAsyncThunk<typeLoginData>(
-  'users/fetchByLogin',
+const initialState: LoginStateType = {
+  login: {
+    username: "",
+    email: "",
+    insertDate: 0,
+  },
+};
+
+export const fetchByLogin = createAsyncThunk<typeLoginResponse, typeLoginData>(
+  "users/fetchByLogin",
   async (data) => {
     try {
-
       const url = `/ec2/login`;
       const options = {
         method: "POST",
@@ -16,33 +35,35 @@ export const fetchByLogin = createAsyncThunk<typeLoginData>(
         withCredentials: true,
         url,
       };
-      const res = await axios(options); 
-      return res.data
+      const res = await axios(options);
+      return res.data;
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  
-  }
-)
-
+  },
+);
 
 const loginSlice = createSlice({
   name: "login",
   initialState,
-  reducers: {    
+  reducers: {
     logout(state) {
-      state.login = { login: [] };
+      state.login = {
+        username: "",
+        email: "",
+        insertDate: 0,
+      };
     },
-  },  
+  },
   extraReducers: (builder) => {
     builder
-    .addCase(fetchByLogin.pending, (state) => {})
-    .addCase(fetchByLogin.fulfilled, (state, action) => {
-      state.login = action.payload;
-    })
+      .addCase(fetchByLogin.pending, (state) => {})
+      .addCase(fetchByLogin.fulfilled, (state, action) => {
+        state.login = action.payload;
+      });
   },
 });
 
 const { actions, reducer } = loginSlice;
-export const { login, logout } = actions;
+export const { logout } = actions;
 export default reducer;

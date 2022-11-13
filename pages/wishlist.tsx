@@ -2,11 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useSelector } from "react-redux";
 import Recent from "./../components/common/recent";
+import { useAppStore } from "./../rtk/store";
 
 const Wishlist = () => {
-  const wish = useSelector((state) => state.wish.wish);
+  const wish = useAppStore((state) => state.wish.wish);
   return (
     <>
       <Head>

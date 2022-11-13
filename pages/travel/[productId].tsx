@@ -11,13 +11,29 @@ import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { addRecent } from "rtk/features/recentSlice";
-import {typeReservation} from "../../types/common"
+import { typeReservation, typeSearchData } from "../../types/common";
+import { useAppDispatch, useAppStore } from "./../../rtk/store";
+
+type typeParams = {
+  params: {
+    productId: string;
+  };
+};
+type typePosts = {
+  post: {
+    title: number;
+    productId: number;
+    price: string;
+    images: string[];
+    startDates: string[];
+  };
+};
 
 export const getStaticPaths = async () => {
   const post = await axios.get(`${API_URL}/api/products?&pageSize=100`);
   const posts = await post.data;
   return {
-    paths: posts.products.map((item) => {
+    paths: posts.products.map((item: typeSearchData) => {
       return {
         params: {
           productId: item.productId.toString(),
@@ -28,7 +44,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }: typeParams) => {
   const response = await axios.get(
     `${API_URL}/api/products/${params.productId}`,
   );
@@ -44,12 +60,12 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const ProductId = ({ post }) => {
-  const loginUser = useSelector((state) => state.login.login);
-  const recent = useSelector((state) => state.recent.recent);
+const ProductId = ({ post }: typePosts) => {
+  const loginUser = useAppStore((state) => state.login.login);
+  const recent = useAppStore((state) => state.recent.recent);
   const router = useRouter();
   const [toggle, setToggle] = useState(true);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { register, handleSubmit } = useForm<typeReservation>();
 
@@ -71,8 +87,8 @@ const ProductId = ({ post }) => {
       : "가격문의";
   const HeroImage = post.images[0];
 
-  const submitForm = (data:typeReservation) => {
-    try {      
+  const submitForm = (data: typeReservation) => {
+    try {
       SetReservation(data);
     } catch (error) {
       console.error(error);
@@ -225,7 +241,7 @@ const ProductId = ({ post }) => {
             </p>
             <div
               onClick={() => (toggle ? setToggle(false) : setToggle(true))}
-              tabIndex="1"
+              tabIndex={1}
               className="flex flex-col justify-center py-10 lg:mx-24 mt-12 bg-white rounded-2xl drop-shadow-2xl shadow-slate-50"
             >
               <div className="justify-center sm:w-full lg:w-40 font-semibold">

@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import wishReducer from "./features/wishSlice";
 import loginReducer from "./features/loginSlice";
 import recentReducer from "./features/recentSlice";
+import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 
 import {
   persistStore,
@@ -15,17 +16,18 @@ import {
 } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch: () => AppDispatch = useDispatch;
 
 const createNoopStorage = () => {
   return {
-    getItem(_key) {
+    getItem(_key: string | null) {
       return Promise.resolve(null);
     },
-    setItem(_key, value) {
+    setItem(_key: string | null, value: string | null) {
       return Promise.resolve(value);
     },
-    removeItem(_key) {
+    removeItem(_key: string | null) {
       return Promise.resolve();
     },
   };
@@ -46,8 +48,7 @@ const rootReducer = combineReducers({
   login: loginReducer,
   recent: recentReducer,
 });
-export type RootState = ReturnType<typeof rootReducer>
-
+export type RootState = ReturnType<typeof rootReducer>;
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
@@ -60,5 +61,13 @@ export const store = configureStore({
       },
     }),
 });
+export type AppStoreType = ReturnType<typeof store.getState>;
+
+export const useAppStore: TypedUseSelectorHook<AppStoreType> = (
+  selector,
+  equalityFn,
+) => {
+  return useSelector(selector, equalityFn);
+};
 
 export const persistor = persistStore(store);

@@ -2,45 +2,49 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Head from "next/head";
 import Lottie from "react-lottie-player";
 import moveImg from "../json/loginmove.json";
-import { fetchByLogin } from './../rtk/features/loginSlice';
+import { fetchByLogin } from "./../rtk/features/loginSlice";
 import { unwrapResult } from "@reduxjs/toolkit";
-import {typeLoginResponse,typeLoginData} from "../types/common"
+import { typeLoginData } from "../types/common";
+import { useAppStore, useAppDispatch } from "../rtk/store";
 
 const MySwal = withReactContent(Swal);
 /** 로그인 페이지 **/
 const Login = () => {
   const router = useRouter();
-  const loginUser = useSelector((state) => state.login.login);
-  const dispatch = useDispatch();
+  const loginUser = useAppStore((state) => state.login.login);
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<typeLoginData>();
 
   useEffect(() => {
- loginUser.username ? router.push("./mypage") : null; 
+    loginUser?.username ? router.push("./mypage") : null;
   }, []);
 
-  const onSubmit = async (data:typeLoginData) => {  
-    try {     
-   const dispatchLogin= await dispatch(fetchByLogin(data))
-   const res= unwrapResult(dispatchLogin)   
-   if(!res) {
-    await MySwal.fire({ didOpen: () => { Swal.showLoading()} })
-   }
-    if (res.username) {
+  const onSubmit = async (data: typeLoginData) => {
+    try {
+      const dispatchLogin = await dispatch(fetchByLogin(data));
+      const res = unwrapResult(dispatchLogin);
+      if (!res) {
+        await MySwal.fire({
+          didOpen: () => {
+            Swal.showLoading();
+          },
+        });
+      }
+      if (res.username) {
         MySwal.fire({
           text: `${res.username}님 로그인 감사합니다`,
           icon: "success",
           confirmButtonText: "OK",
         }).then((result) => {
-          if (result.isConfirmed) {         
+          if (result.isConfirmed) {
             router.push("./");
           }
         });

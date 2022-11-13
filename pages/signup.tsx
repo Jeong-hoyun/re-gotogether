@@ -6,11 +6,13 @@ import { API_URL } from "../config/index";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
+import { typeSignupData } from "../types/common";
+
 const MySwal = withReactContent(Swal);
 /** 회원가입 페이지 **/
 export default function Signup() {
   const router = useRouter();
-  const password = useRef({});
+  const password = useRef<HTMLInputElement | undefined>(null);
   const {
     register,
     handleSubmit,
@@ -27,9 +29,7 @@ export default function Signup() {
     },
   });
 
-  password.current = watch("password", "");
-
-  const submitForm = async (data) => {
+  const submitForm = async (data: typeSignupData) => {
     data.birth = data.birth.replace(/-/g, "");
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
@@ -114,7 +114,6 @@ export default function Signup() {
                     비밀번호
                   </label>
                   <input
-                    ref={password}
                     {...register("password", {
                       required: true,
                     })}
@@ -123,27 +122,6 @@ export default function Signup() {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 "
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    비밀번호 확인
-                  </label>
-                  <input
-                    {...register("confirmpassword", {
-                      validate: (value) =>
-                        value === password.current ||
-                        "The passwords do not match",
-                    })}
-                    type="password"
-                    name="confirmpassword"
-                    id="confirmpassword"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                    required=""
                   />
                 </div>
                 <div>

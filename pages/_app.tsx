@@ -13,9 +13,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Layout>
-        <Head>
-        <title>고투게더</title>
-         </Head>
+          <Head>
+            <title>고투게더</title>
+          </Head>
           <Component {...pageProps} />
         </Layout>
       </PersistGate>

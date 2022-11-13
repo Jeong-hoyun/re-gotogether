@@ -5,10 +5,21 @@ import { API_URL } from "../../config/index";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import { useSelector, useDispatch } from "react-redux";
 import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
-import {typeSearchData} from "../../types/common"
+import { typeSearchData } from "../../types/common";
+import { useAppStore, useAppDispatch } from "./../../rtk/store";
+
+type typeContext = {
+  params: {
+    keyword: string;
+  };
+};
+type typeProps = {
+  searchData: {
+    products: typeSearchData[];
+  };
+};
 
 export function getStaticPaths() {
   const paths = content.search.map((item) => {
@@ -20,7 +31,7 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: typeContext) {
   const { keyword } = context.params;
   const { data: searchData } = await axios({
     method: "GET",
@@ -38,16 +49,17 @@ export async function getStaticProps(context) {
   };
 }
 /* 여행  상세페이지 **/
-const Keyword = ({ searchData }) => {
+const Keyword = ({ searchData }: typeProps) => {
   const location = useRouter();
   const mainTitle = useMemo(
     () =>
       content.search
         .filter((e) => e.key === location.query.keyword)
-        .map((e) => e.title)[0],[]
+        .map((e) => e.title)[0],
+    [],
   );
-  const wish = useSelector((state) => state.wish.wish);
-  const dispatch = useDispatch();
+  const wish = useAppStore((state) => state.wish.wish);
+  const dispatch = useAppDispatch();
   const wishItem = wish && wish.map((e) => e.id);
 
   if (searchData.products.length === 0) {
@@ -66,7 +78,7 @@ const Keyword = ({ searchData }) => {
       <main className="mx-auto mt-20 max-w-7xl">
         <div className="flex flex-wrap justify-between">
           {searchData &&
-            searchData.products.map((item:typeSearchData) => {
+            searchData.products.map((item: typeSearchData) => {
               const { title, productId } = item;
               const price =
                 item.price !== null

@@ -1,36 +1,32 @@
-import { createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import  axios  from 'axios';
-const initialState = { reservation: [] }; 
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+const initialState = { reservation: [] };
 
 export const fetchByReservation = createAsyncThunk(
-  'reservation/fetchByReservation',
+  "reservation/fetchByReservation",
   async () => {
     try {
-      const res = await axios.get(`/ec2/reservations/user`);    
-      return res.data
+      const res = await axios.get(`/ec2/reservations/user`);
+      return res.data;
     } catch (error) {
-     console.error(error)
+      console.error(error);
     }
-  
-  }
-)
-
+  },
+);
 
 const reservationSlice = createSlice({
   name: "reservation",
   initialState,
-  reducers: {     
-  },  
+  reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(fetchByReservation.pending, (state) => {})
-    .addCase(fetchByReservation.fulfilled, (state, action) => {
-        const {reservations}=action.payload
+      .addCase(fetchByReservation.pending, (state) => {})
+      .addCase(fetchByReservation.fulfilled, (state, action) => {
+        const { reservations } = action.payload;
         state.reservation = reservations;
-    })
+      });
   },
 });
 
-const { actions, reducer } = reservationSlice;
-export const { cancel} = actions;
+const { reducer } = reservationSlice;
 export default reducer;

@@ -11,8 +11,10 @@ import withReactContent from "sweetalert2-react-content";
 import axios from "axios";
 import Image from "next/image";
 import Result from "../components/tendency/result";
-import { useSelector } from "react-redux";
+
 import Link from "next/link";
+import { useAppStore } from "../rtk/store";
+import { typeSearchData } from "../types/common";
 
 const MySwal = withReactContent(Swal);
 const INITIAL_DATA = {
@@ -23,11 +25,10 @@ const INITIAL_DATA = {
 
 const Test = ({ name }) => {
   const [data, setData] = useState(INITIAL_DATA);
-  const [result, setResult] = useState();
-  const Router = useRouter();
-  const loginUser = useSelector((state) => state.login.login);
+  const [result, setResult] = useState<Array<typeSearchData>>();
+  const loginUser = useAppStore((state) => state.login.login);
 
-  function onSubmit(e:Event) {
+  function onSubmit(e: Event) {
     e.preventDefault();
     if (!isLastStep) return next();
     if (data.one !== "" && data.two !== "" && data.three !== "") {
@@ -36,14 +37,14 @@ const Test = ({ name }) => {
         showDenyButton: true,
         confirmButtonText: "분석",
         denyButtonText: `한번더 확인`,
-      }).then(async (result) => {
-        if (result.isConfirmed) {
+      }).then(async (comp) => {
+        if (comp.isConfirmed) {
           const res = await axios.get(
             `${API_URL}/api/products?keyword=${data.three}&page=0&pageSize=4`,
           );
           if (res.data) setResult(res.data.products);
           console.log(res.data.products);
-        } else if (result.isDenied) {
+        } else if (comp.isDenied) {
           Swal.fire("다시 한번 더 체크 해주세요", "", "info");
         }
       });

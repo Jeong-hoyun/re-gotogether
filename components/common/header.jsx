@@ -1,16 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
+
 import { logout } from "rtk/features/loginSlice";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import SearchBar from "./searchBar";
 import Signup from "../HeaderLogo/signup";
-
+import { useAppDispatch, useAppStore } from "rtk/store";
 /** 기본 레이아웃의 헤더 **/
 export default function Header() {
-  const loginUser = useSelector((state) => state.login.login);
-  const dispatch = useDispatch();
+  const loginUser = useAppStore((state) => state.login.login);
+  const dispatch = useAppDispatch();
 
   return (
     <>

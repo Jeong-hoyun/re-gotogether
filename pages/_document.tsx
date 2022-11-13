@@ -1,16 +1,10 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript
-} from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 const SITE_NAME = "고투게더|같이 가고 싶은 파트너와 함께 가는 여행";
 const SITE_TITLE = "고투게더";
 const SITE_DESCRIPTION = "같이 가고 싶은 파트너와 함께 가는 여행";
 
 class MyDocument extends Document {
-
   redirectIEtoEdge() {
     return {
       __html: `
@@ -25,7 +19,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head>    
+        <Head>
           <script dangerouslySetInnerHTML={this.redirectIEtoEdge()} />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

@@ -1,6 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { wish: [{ id: 1 }] }; // 처음에는 빈 배열로 시작
+export type WishState = {
+  id: number;
+  title: string;
+  img: string;
+};
+
+export interface WishStateType {
+  wish: WishState[];
+}
+
+const initialState: WishStateType = {
+  wish: [
+    {
+      id: 1,
+      title: "",
+      img: "",
+    },
+  ],
+};
 
 const wishSlice = createSlice({
   name: "wish",
@@ -10,7 +28,8 @@ const wishSlice = createSlice({
       state.wish.push(action.payload);
     },
     delwish(state, action) {
-      state.wish = state.wish.filter((item) => item.id !== action.payload);
+      const data = state.wish.filter((item) => item.id !== action.payload);
+      state.wish = data;
     },
   },
 });
