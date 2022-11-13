@@ -1,10 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
+import { useAppStore } from 'rtk/store';
+
+
 /** 최근 본 상품 컴포넌트 마이페이지 전용  **/
 const Recent = () => {
-  const recent = useSelector((state) => state.recent.recent);
+  const recent = useAppStore((state) => state.recent.recent);
   return (
     <section className="py-1 bg-blueGray-50">
       <div className="w-full xl:w-6/12 mb-12 xl:mb-0 px-4 mt-12 mx-auto">
@@ -34,7 +36,7 @@ const Recent = () => {
                       .map((item) => {
                         const { title, img, id } = item;
                         return (
-                          <div>
+                          <div key={id}>
                             <td>
                               <Link href={`view/${id}`}>
                                 <a>

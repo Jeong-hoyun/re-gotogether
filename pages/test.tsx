@@ -58,10 +58,10 @@ const Test = ({ name }) => {
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
-      <Zeroform {...data} updateFields={updateFields} name={name} />,
-      <OneForm {...data} updateFields={updateFields} />,
-      <TwoForm {...data} updateFields={updateFields} />,
-      <ThreeForm {...data} updateFields={updateFields} />,
+      <Zeroform {...data} updateFields={updateFields} name={name} key={1} />,
+      <OneForm {...data} updateFields={updateFields}   key={2}/>,
+      <TwoForm {...data} updateFields={updateFields}   key={3}/>,
+      <ThreeForm {...data} updateFields={updateFields} key={4}/>,
     ]);
   function updateFields(fields) {
     setData((prev) => {

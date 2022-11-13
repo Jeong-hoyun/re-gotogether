@@ -15,7 +15,7 @@ import DownArrow from "../NavbarLogo/downArrow";
 import Navbarli from "./navbarli";
 
 /**기본 레이아웃에서 링크를 담당 **/
-export default function navbar() {
+export default function Navbar() {
   const [display, setDisplay] = useState(false);
   const [display1, setDisplay1] = useState(false);
   const [display2, setDisplay2] = useState(false);

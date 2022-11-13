@@ -9,7 +9,9 @@
       "version": "detect"
     }
   },
-  "extends": ["next/babel"],
+  "extends": [
+    "next"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
