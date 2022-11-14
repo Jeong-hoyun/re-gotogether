@@ -28,6 +28,7 @@ class MyDocument extends Document {
           />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           {/* SEO */}
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link rel="canonical" href="http://localhost:3000/" />
           <meta name="description" content={SITE_DESCRIPTION} />
