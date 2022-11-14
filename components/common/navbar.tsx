@@ -98,7 +98,7 @@ export default function Navbar() {
                       <li key={`${curation.link}${curation.id}`}>
                         <Link href={curation.link}>
                           <a
-                            id={curation.id}
+                            id={`${curation.id}`}
                             className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color"
                           >
                             {curation.text}
@@ -115,7 +115,7 @@ export default function Navbar() {
                       <li key={`${group.link}${group.id}`}>
                         <Link href={group.link}>
                           <a
-                            id={group.id}
+                            id={`${group.id}`}
                             className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color"
                           >
                             {group.text}
@@ -129,10 +129,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.countries.map((country) => {
                     return (
-                      <li key={`${country.link}${country.id}`}>
+                      <li key={`${country.link}${country.text}`}>
                         <Link href={country.link}>
                           <a
-                            id={country.id}
+                             id={`${country.text}`}
                             className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color"
                           >
                             {country.text}
@@ -146,10 +146,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.themes.map((theme) => {
                     return (
-                      <li key={`${theme.link}${theme.id}`}>
+                      <li key={`${theme.link}${theme.text}`}>
                         <Link href={theme.link}>
                           <a
-                            id={theme.id}
+                            id={theme.text}
                             className="flex px-4 py-2 rounded-full bg-gray hover:bg-logo-color"
                           >
                             {theme.text}
@@ -163,10 +163,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.communities.map((community) => {
                     return (
-                      <li key={`${community.link}${community.id}`}>
+                      <li key={`${community.link}${community.text}`}>
                         <Link href={community.link}>
                           <a
-                            id={community.id}
+                            id={community.text}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {community.text}
@@ -248,7 +248,7 @@ export default function Navbar() {
                       <li key={`${curation.link}${curation.id}`}>
                         <Link href={curation.link}>
                           <a
-                            id={curation.id}
+                            id={`${curation.id}`}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {curation.text}
@@ -265,7 +265,7 @@ export default function Navbar() {
                       <li key={`${group.link}${group.id}`}>
                         <Link href={group.link}>
                           <a
-                            id={group.id}
+                         id={`${group.id}`}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {group.text}
@@ -279,10 +279,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.countries.map((country) => {
                     return (
-                      <li key={`${country.link}${country.id}`}>
+                      <li key={`${country.link}${country.text}`}>
                         <Link href={country.link}>
                           <a
-                            id={country.id}
+                              id={`${country.text}`}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {country.text}
@@ -296,10 +296,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.themes.map((theme) => {
                     return (
-                      <li key={`${theme.link}${theme.id}`}>
+                      <li key={`${theme.link}${theme.text}`}>
                         <Link href={theme.link}>
                           <a
-                            id={theme.id}
+                                  id={`${theme.text}`}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {theme.text}
@@ -313,10 +313,10 @@ export default function Navbar() {
                 <ul className="py-1 text-sm ">
                   {navMenus.communities.map((community) => {
                     return (
-                      <li key={`${community.link}${community.id}`}>
+                      <li key={`${community.link}${community.text}`}>
                         <Link href={community.link}>
                           <a
-                            id={community.id}
+                             id={`${community.text}`}
                             className="flex px-4 py-2 bg-gray hover:bg-logo-color"
                           >
                             {community.text}

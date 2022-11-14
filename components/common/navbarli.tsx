@@ -1,7 +1,22 @@
 import React from "react";
 import Link from "next/link";
 
-const Navbarli = ({ setDisplay, display, Logo, name, navMenus }) => {
+type TypeNavMenus={
+  text:string,
+  id?:number,
+  link:string,
+}
+
+type TypeDisplay={
+  setDisplay:(name:boolean)=>void,
+  display:boolean,
+  Logo:React.FunctionComponent,
+  name:string,
+  navMenus:TypeNavMenus[]
+}
+
+
+const Navbarli: React.FC<TypeDisplay>  = ({ setDisplay, display, Logo, name, navMenus }) => {
   return (
     <li
       onMouseLeave={() => setDisplay(false)}
@@ -17,14 +32,14 @@ const Navbarli = ({ setDisplay, display, Logo, name, navMenus }) => {
       {display && (
         <div className="absolute z-10 top-30  bg-white rounded-md">
           <ul className="py-1 text-sm">
-            {navMenus.map((curation) => {
+            {navMenus.map((curation:TypeNavMenus) => {
               return (
                 <li
                   key={`${curation.text} ${Math.random() * 20}`}
                   className="hover:bg-logo-color animate-fade-in-down"
                 >
                   <Link href={curation.link}>
-                    <a id={curation.id} className="flex px-4 py-2 bg-gray">
+                    <a id={`${curation.id}`} className="flex px-4 py-2 bg-gray">
                       {curation.text}
                     </a>
                   </Link>

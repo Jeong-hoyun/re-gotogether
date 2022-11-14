@@ -1,11 +1,11 @@
 import Link from "next/link";
-
 import { logout } from "rtk/features/loginSlice";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import SearchBar from "./searchBar";
 import Signup from "../HeaderLogo/signup";
 import { useAppDispatch, useAppStore } from "rtk/store";
+import Image from "next/image";
 /** 기본 레이아웃의 헤더 **/
 export default function Header() {
   const loginUser = useAppStore((state) => state.login.login);
@@ -23,14 +23,11 @@ export default function Header() {
               <div id="firstdiv" className="lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
-                    <img
-                      srcSet="/img/PageLogo.png 400w,
-                      /img/PageLogo.png 600w,
-                      /img/PageLogo.png 1000w"
-                      sizes="(max-width: 500px) 555px,
-                             (max-width: 800px) 766px,
-                             1300px"
+                    <Image
+                      height={50}
+                      width={200}
                       src="/img/PageLogo.png"
+                      alt={"logo"}
                     />
                   </Link>
                 </div>
@@ -56,7 +53,7 @@ export default function Header() {
                     </Link>
                     {loginUser.username ? (
                       <button
-                        onClick={() => dispatch(logout(loginUser.email))}
+                        onClick={() => dispatch(logout())}
                         className="shrink-0 flex items-center mr-2 hover:text-gray-700"
                       >
                         <Login />

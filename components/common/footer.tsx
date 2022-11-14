@@ -1,11 +1,12 @@
 import Image from "next/image";
 import company_logo2 from "../../public/img/company_logo2.png";
-import Link from "next/link";
-import Share from "../Logo/share.jsx";
-import Youtube from "../Logo/youtube.jsx";
-import Call from "../Logo/call.jsx";
-import Location from "../Logo/Location.jsx";
-import Mail from "../Logo/Mail.jsx";
+
+import Share from "../Logo/share";
+import Youtube from "../Logo/youtube";
+import Call from "../Logo/call";
+import Location from "../Logo/Location";
+import Mail from "../Logo/Mail";
+
 
 export default function Footer() {
   return (
@@ -29,7 +30,7 @@ export default function Footer() {
           onClick={(e) => e.preventDefault}
           className="hidden xl:block xl:absolute xl:w-7 xl:right-[215px] xl:top-6 hover:opacity-75 transition-all"
         >
-          <Share width="10" height="10" fill="blue" />
+          <Share />
         </a>
       </div>
 

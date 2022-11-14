@@ -2,7 +2,11 @@ import Header from "./header";
 import Footer from "./footer";
 import Navbar from "./navbar";
 
-export default function Layout({ children }) {
+export interface LayoutProps  { 
+  children: React.ReactNode
+}
+
+export default function Layout({ children }:LayoutProps ) {
   return (
     <>
       <Header />
