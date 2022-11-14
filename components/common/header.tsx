@@ -23,12 +23,14 @@ export default function Header() {
               <div id="firstdiv" className="lg:w-1/4 xl:w-1/5 lg:pr-8">
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
+                    <a>
                     <Image
                       height={50}
                       width={200}
                       src="/img/PageLogo.png"
                       alt={"logo"}
                     />
+                    </a>
                   </Link>
                 </div>
               </div>

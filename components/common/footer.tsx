@@ -3,7 +3,7 @@ import company_logo2 from "../../public/img/company_logo2.png";
 import Share from "../Logo/share";
 import Youtube from "../Logo/youtube";
 import Call from "../Logo/call";
-import Mail from "../Logo/Mail";
+
 
 export default function Footer() {
   return (

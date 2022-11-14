@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { API_URL } from "./../../config/index";
+import { API_URL } from "../../config/index";
 import { BehaviorSubject, from } from "rxjs";
 import {
   filter,
@@ -9,12 +9,13 @@ import {
   distinctUntilChanged,
 } from "rxjs/operators";
 import Link from "next/link";
+import type {typeSearchData} from "../../types/common"
 
-const getTravelByProducts = async (searchkeyword) => {
+const getTravelByProducts = async (searchkeyword:string) => {
   const { data: products } = await axios.get(
     `${API_URL}/api/products/?pageSize=100`,
   );
-  return products.products.filter((item) => item.title.includes(searchkeyword));
+  return products.products.filter((item:typeSearchData) => item.title.includes(searchkeyword));
 };
 
 let searchSubject$ = new BehaviorSubject("");
@@ -25,9 +26,9 @@ let SearchResultObservable = searchSubject$.pipe(
   mergeMap((val) => from(getTravelByProducts(val))),
 );
 
-export const useObservable = (observable, setter) => {
+export const useObservable = (observable:any, setter:any) => {
   React.useEffect(() => {
-    let subscription = observable.subscribe((result) => {
+    let subscription = observable.subscribe((result:typeSearchData[]) => {
       if (result) {
         setter(result);
       } else {
@@ -39,9 +40,9 @@ export const useObservable = (observable, setter) => {
 };
 /** rxjs를 이용한 스마트 검색방식 커스텀 훅을 통한 데이터 변동 OR distinctUntilChanged로 자동 캔슬 방식추가  **/
 function SearchBar() {
-  const [search, setSearch] = React.useState();
+  const [search, setSearch] = React.useState<string>();
   const [results, setResults] = React.useState([]);
-  const onSearch = (e) => {
+  const onSearch = (e:React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setSearch(newValue);
     searchSubject$.next(newValue);
@@ -82,11 +83,11 @@ function SearchBar() {
           search ? "" : "hidden"
         }`}
       >
-        {results.map((item) => {
+        {results.map((item:typeSearchData) => {
           return (
             <li
               className="text-center text-white bg-gray-400 z-30"
-              key={item.title}
+              key={`${item.title}${Math.random()*10}`}
             >
               <Link href={`/travel/${item.productId}`}>
                 <a>{item.title}</a>

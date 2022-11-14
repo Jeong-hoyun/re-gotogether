@@ -43,7 +43,7 @@ const Recent = () => {
                                   <Image
                                     className="rounded-lg object-cover"
                                     src={img}
-                                    alt={title}
+                                    alt={`${title}`}
                                     width={500}
                                     height={300}
                                   />

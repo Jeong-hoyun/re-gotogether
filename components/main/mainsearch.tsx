@@ -1,34 +1,11 @@
-import * as React from "react";
+import React from "react";
 import content from "../../json/slick.content.json";
 import Image from "next/image";
 import Slider from "react-slick";
-import { useMemo } from "react";
-
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "none", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "none", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
 
 /** 메인 캐로셀 컴포넌트  **/
 function Mainsearch() {
-  const mainCarousel = useMemo(() => content.main.map((e) => e));
+  const mainCarousel = content.main.map((e) => e);
   const settings = {
     focusOnSelect: true,
     dots: true,
@@ -37,8 +14,6 @@ function Mainsearch() {
     slidesToScroll: 1,
     speed: 2000,
     autoplaySpeed: 4000,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,

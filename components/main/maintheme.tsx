@@ -1,9 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+
+type BasicTheme={
+  title:string,
+  path:string,
+  img:string,
+  subtitle? :string,
+}[]
+
+type TypeTheme={
+  country: BasicTheme,
+  group:BasicTheme,
+  theme:BasicTheme, 
+}
+
+
 /** 메인 테마 그룹별 여행 관리  **/
-const Maintheme = ({ country, group, theme }) => {
-  const [value, setValue] = useState(group);
+const Maintheme = ({ country, group, theme }:TypeTheme) => {
+  const [value, setValue] = useState<BasicTheme>(group);
   return (
     <>
       <div className="mb-8 border-b border-gray-100 ml-11 lg:ml-32 sm:ml-10">
@@ -59,7 +74,7 @@ const Maintheme = ({ country, group, theme }) => {
                 key={title}
               >
                 <Link href={path}>
-                  <a alt={title}>
+                  <a >
                     <Image
                       className="object-cover rounded-t-lg"
                       src={img}
