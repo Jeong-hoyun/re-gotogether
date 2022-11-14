@@ -64,7 +64,7 @@ $ yarn run format:fix
 
 - .env를 통해서 api 서버 URL 관리 (http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080)
 - API 설정 http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/docs/index.html
--
+- AWS Amplify 세팅 설정 https://main.d2imipx759fcvw.amplifyapp.com/
 
 ## 🤼‍♀️ 팀 구성
 
