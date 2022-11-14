@@ -1,12 +1,9 @@
 import Image from "next/image";
 import company_logo2 from "../../public/img/company_logo2.png";
-
 import Share from "../Logo/share";
 import Youtube from "../Logo/youtube";
 import Call from "../Logo/call";
-import Location from "../Logo/Location";
 import Mail from "../Logo/Mail";
-
 
 export default function Footer() {
   return (
@@ -48,7 +45,16 @@ export default function Footer() {
           target="blank"
           className="inline-block p-3 mr-5 transition-all border rounded-full hover:opacity-75 border-neutral-500"
         >
-          <Location />
+            <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="30px"
+      viewBox="0 0 24 24"
+      width="30px"
+      fill="#e2e2e2"
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+    </svg>
         </a>
         <a
           href="mailto:gotogether@shinytravels.com"
