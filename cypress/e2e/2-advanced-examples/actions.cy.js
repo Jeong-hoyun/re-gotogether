@@ -2,7 +2,7 @@
 
 context("Actions", () => {
   beforeEach(() => {
-    cy.visit("https://example.cypress.io/commands/actions");
+    cy.visit("https://main.d2imipx759fcvw.amplifyapp.com/login");
   });
 
   // https://on.cypress.io/interacting-with-elements

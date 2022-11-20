@@ -62,9 +62,9 @@ $ yarn run format:fix
 
 ### 백엔드 현황
 
-- .env를 통해서 api 서버 URL 관리 (http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080)
 - API 설정 http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/docs/index.html
-- AWS Amplify 세팅 설정 https://main.d2imipx759fcvw.amplifyapp.com/
+- 현재 백엔드가 불안정한 관계로 확인에 문제가 있습니다. 
+
 
 ## 🤼‍♀️ 팀 구성
 
@@ -94,3 +94,7 @@ $ yarn run format:fix
 - (UI/UX)양범철
 
 - (UI/UX)서형우
+
+## 배포 관련
+
+- AWS Amplify 세팅 설정 https://main.d2imipx759fcvw.amplifyapp.com/

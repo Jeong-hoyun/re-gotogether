@@ -12,6 +12,7 @@ import { fetchByReservation } from "rtk/features/reservationSlice";
 import { fetchByReservationCancel } from "rtk/features/cancelSlice";
 import { useAppStore, useAppDispatch } from "../rtk/store";
 import { typeReservation, typeSearchData } from "../types/common";
+import { getPrice } from './../config/price';
 
 export const getReserveItem = async (ProductIds: number) => {
   const { data: products } = await axios.get(
@@ -136,12 +137,7 @@ const Mypage = () => {
                               {result &&
                                 result.map(({ price, productId }) =>
                                   item.productId === productId
-                                    ? `${price
-                                        .toString()
-                                        .replace(
-                                          /\B(?=(\d{3})+(?!\d))/g,
-                                          ",",
-                                        )}원`
+                                    ? getPrice(price)
                                     : null,
                                 )}
                             </th>

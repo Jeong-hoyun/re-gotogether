@@ -9,6 +9,7 @@ import { addwish, delwish } from "rtk/features/wishSlice";
 import { useMemo } from "react";
 import { typeSearchData } from "../../types/common";
 import { useAppStore, useAppDispatch } from "./../../rtk/store";
+import { getPrice } from './../../config/price';
 
 type typeContext = {
   params: {
@@ -80,12 +81,7 @@ const Keyword = ({ searchData }: typeProps) => {
           {searchData &&
             searchData.products.map((item: typeSearchData) => {
               const { title, productId } = item;
-              const price =
-                item.price !== null
-                  ? `${item.price
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원`
-                  : "가격문의";
+              const price =getPrice(item.price)            
 
               const image1 = item.images ? item.images[0] : "/img/untitled.jpg";
               return (
