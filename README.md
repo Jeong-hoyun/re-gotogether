@@ -64,6 +64,8 @@ $ yarn run format:fix
 
 - API 설정 http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/docs/index.html
 - 현재 백엔드가 불안정한 관계로 확인에 문제가 있습니다. 
+문제 1. 접속 자체의 불안정으로 로그인이나 상세페이지 접속 자체에 문제가 있습니다. 
+=> 해결 방안 현재 자체적으로 nodejs 데모 서버를 간단하게 구축하려고 계획중입니다.
 
 
 ## 🤼‍♀️ 팀 구성

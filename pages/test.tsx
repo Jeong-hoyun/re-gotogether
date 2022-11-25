@@ -42,8 +42,7 @@ const Test = ({ name }) => {
           const res = await axios.get(
             `${API_URL}/api/products?keyword=${data.three}&page=0&pageSize=4`,
           );
-          if (res.data) setResult(res.data.products);
-          console.log(res.data.products);
+          if (res.data) setResult(res.data.products);  
         } else if (comp.isDenied) {
           Swal.fire("다시 한번 더 체크 해주세요", "", "info");
         }

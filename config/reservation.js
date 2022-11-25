@@ -10,7 +10,7 @@ export const SetReservation = async (data) => {
   const CancelToken = axios.CancelToken;
   const source = CancelToken.source();
   const url = `/ec2/reservations`;
-  console.log(data);
+
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json;charset=UTF-8" },
@@ -19,8 +19,7 @@ export const SetReservation = async (data) => {
     url,
   };
   try {
-    const res = await axios(options);
-    console.log(res);
+    const res = await axios(options);  
     if (res.status == 200) {
       MySwal.fire({
         title: "<strong>예약되었습니다</strong>",
