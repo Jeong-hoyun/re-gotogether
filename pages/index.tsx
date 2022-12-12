@@ -1,14 +1,14 @@
 import Head from "next/head";
-import Maincarousel from "../components/main/maincarousel";
-import Maintheme from "../components/main/maintheme";
-import Mainsearch from "../components/main/mainsearch";
+import Maincarousel from "@/components/main/maincarousel";
+import Maintheme from "@/components/main/maintheme";
+import Mainsearch from "@/components/main/mainsearch";
 import content from "../json/mainpage.content.json";
 import { useAppStore } from "../rtk/store";
 import Test from "./test";
 
 export default function Home() {
   const loginUser = useAppStore((state) => state.login.login);
-  return (
+    return (
     <>
       <Head>
         <title>메인페이지|고투게더</title>

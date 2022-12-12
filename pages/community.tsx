@@ -85,9 +85,13 @@ export default function Community() {
               className="px-5 py-5 mb-3 bg-white rounded-2xl drop-shadow-2xl"
               key={`${review.img}${review.title}${review.name}${review.date}`}
             >
-              <img
+              <Image
                 className="w-full h-48 bg-auto rounded-2xl"
                 src={review.img}
+                width={300}
+                height={300}
+                layout={'fill'}
+                alt={review.title}
               />
               <p className="pt-10 text-sm font-semibold">{review.title}</p>
               <div className="float-left pt-2 text-xs">{review.name}</div>
