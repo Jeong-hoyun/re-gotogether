@@ -13,7 +13,7 @@ import Image from "next/image";
 import Result from "../components/tendency/result";
 
 import Link from "next/link";
-import { useAppStore } from "../rtk/store";
+import { useAppStore } from "@/rtk/store";
 import { typeSearchData } from "../types/common";
 
 const MySwal = withReactContent(Swal);
@@ -42,7 +42,7 @@ const Test = ({ name }) => {
           const res = await axios.get(
             `${API_URL}/api/products?keyword=${data.three}&page=0&pageSize=4`,
           );
-          if (res.data) setResult(res.data.products);  
+          if (res.data) setResult(res.data.products);
         } else if (comp.isDenied) {
           Swal.fire("다시 한번 더 체크 해주세요", "", "info");
         }
@@ -58,9 +58,9 @@ const Test = ({ name }) => {
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
     useMultistepForm([
       <Zeroform {...data} updateFields={updateFields} name={name} key={1} />,
-      <OneForm {...data} updateFields={updateFields}   key={2}/>,
-      <TwoForm {...data} updateFields={updateFields}   key={3}/>,
-      <ThreeForm {...data} updateFields={updateFields} key={4}/>,
+      <OneForm {...data} updateFields={updateFields} key={2} />,
+      <TwoForm {...data} updateFields={updateFields} key={3} />,
+      <ThreeForm {...data} updateFields={updateFields} key={4} />,
     ]);
   function updateFields(fields) {
     setData((prev) => {

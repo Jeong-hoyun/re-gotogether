@@ -6,10 +6,10 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Lottie from "react-lottie-player";
 import moveImg from "../json/loginmove.json";
-import { fetchByLogin } from "./../rtk/features/loginSlice";
+import { fetchByLogin } from "@/rtk/features/loginSlice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { typeLoginData } from "../types/common";
-import { useAppStore, useAppDispatch } from "../rtk/store";
+import { useAppStore, useAppDispatch } from "@/rtk/store";
 
 const MySwal = withReactContent(Swal);
 /** 로그인 페이지 **/

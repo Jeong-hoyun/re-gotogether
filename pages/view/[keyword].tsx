@@ -5,18 +5,18 @@ import { API_URL } from "../../config/index";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import { addwish, delwish } from "rtk/features/wishSlice";
+import { addwish, delwish } from "@/rtk/features/wishSlice";
 import { useMemo } from "react";
 import { typeSearchData } from "../../types/common";
-import { useAppStore, useAppDispatch } from "./../../rtk/store";
-import { getPrice } from './../../config/price';
+import { useAppStore, useAppDispatch } from "@/rtk/store";
+import { getPrice } from "./../../config/price";
 
-type typeContext = {
+type ViewParams = {
   params: {
     keyword: string;
   };
 };
-type typeProps = {
+type ViewProps = {
   searchData: {
     products: typeSearchData[];
   };
@@ -32,7 +32,7 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: typeContext) {
+export async function getStaticProps(context: ViewParams) {
   const { keyword } = context.params;
   const { data: searchData } = await axios({
     method: "GET",
@@ -50,7 +50,7 @@ export async function getStaticProps(context: typeContext) {
   };
 }
 /* 여행  상세페이지 **/
-const Keyword = ({ searchData }: typeProps) => {
+const Keyword = ({ searchData }: ViewProps) => {
   const location = useRouter();
   const mainTitle = useMemo(
     () =>
@@ -81,7 +81,7 @@ const Keyword = ({ searchData }: typeProps) => {
           {searchData &&
             searchData.products.map((item: typeSearchData) => {
               const { title, productId } = item;
-              const price =getPrice(item.price)            
+              const price = getPrice(item.price);
 
               const image1 = item.images ? item.images[0] : "/img/untitled.jpg";
               return (

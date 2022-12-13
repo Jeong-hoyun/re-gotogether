@@ -90,7 +90,7 @@ export default function Community() {
                 src={review.img}
                 width={300}
                 height={300}
-                layout={'fill'}
+                layout={"fill"}
                 alt={review.title}
               />
               <p className="pt-10 text-sm font-semibold">{review.title}</p>

@@ -8,7 +8,7 @@ const nextConfig = {
     ],
     // domains: ['images.unsplash.com']
   },
-  async rewrites() {
+  /*  async rewrites() {
     return [
       {
         source: "/ec2/login",
@@ -27,9 +27,10 @@ const nextConfig = {
         destination: `http://ec2-3-36-209-210.ap-northeast-2.compute.amazonaws.com:8080/api/reservations/:path/state`,
       },
     ];
-  },
+  }, */
   env: {
-    API_URL: process.env.API_URL,
+    NEXT_PUBLIC_GOOGLE_CLIENT: process.env.NEXT_PUBLIC_GOOGLE_CLIENT,
+    NEXT_PUBLIC_API_KEY: process.env.NEXT_PUBLIC_API_KEY,
   },
 };
 

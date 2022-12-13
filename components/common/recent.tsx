@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useAppStore } from 'rtk/store';
-
+import { useAppStore } from "@/rtk/store";
 
 /** 최근 본 상품 컴포넌트 마이페이지 전용  **/
 const Recent = () => {

@@ -7,11 +7,11 @@ import Head from "next/head";
 import { BehaviorSubject, mergeMap, from, map } from "rxjs";
 import { useObservable } from "@/components/common/searchBar";
 import { API_URL } from "../config/index";
-import { fetchByReservation } from "rtk/features/reservationSlice";
-import { fetchByReservationCancel } from "rtk/features/cancelSlice";
-import { useAppStore, useAppDispatch } from "../rtk/store";
+import { getPrice } from "./../config/price";
+import { fetchByReservation } from "@/rtk/features/reservationSlice";
+import { fetchByReservationCancel } from "@/rtk/features/cancelSlice";
+import { useAppStore, useAppDispatch } from "@/rtk/store";
 import { typeReservation, typeSearchData } from "../types/common";
-import { getPrice } from './../config/price';
 
 export const getReserveItem = async (ProductIds: number) => {
   const { data: products } = await axios.get(
@@ -57,7 +57,7 @@ const Mypage = () => {
       }
     })();
     return () => {};
-  }, [login.username]);
+  }, [dispatch]);
 
   const onCancel = async (path: number) => {
     try {

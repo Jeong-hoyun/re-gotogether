@@ -1,12 +1,12 @@
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { API_URL } from "../config/index";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useRouter } from "next/router";
 import { typeSignupData } from "../types/common";
+import { API_URL } from "./../config/index";
 
 const MySwal = withReactContent(Swal);
 /** 회원가입 페이지 **/

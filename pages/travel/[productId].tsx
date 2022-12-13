@@ -3,16 +3,15 @@ import axios from "axios";
 import Head from "next/head";
 import Angel from "@/components/Logo/angel";
 import PointLogo from "@/components/Logo/pointLogo";
-import { API_URL } from "../../config/index";
-import { useDispatch, useSelector } from "react-redux";
 import Maincarousel from "../../components/main/maincarousel";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { addRecent } from "rtk/features/recentSlice";
+import { addRecent } from "@/rtk/features/recentSlice";
+import { useAppDispatch, useAppStore } from "@/rtk/store";
 import { typeReservation, typeSearchData } from "../../types/common";
-import { useAppDispatch, useAppStore } from "./../../rtk/store";
+import { API_URL } from "./../../config/index";
 
 type typeParams = {
   params: {

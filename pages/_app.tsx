@@ -1,9 +1,8 @@
 import "../styles/style.css";
 import "../styles/slick/slick.css";
 import "../styles/slick/slick-theme.css";
-
 import Layout from "@/components/common/layout";
-import { store, persistor } from "../rtk/store";
+import { store, persistor } from "@/rtk/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import Head from "next/head";

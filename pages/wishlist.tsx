@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Recent from "./../components/common/recent";
-import { useAppStore } from "./../rtk/store";
+import { useAppStore } from "@/rtk/store";
 
 const Wishlist = () => {
   const wish = useAppStore((state) => state.wish.wish);
