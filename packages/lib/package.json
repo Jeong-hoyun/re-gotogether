@@ -1,0 +1,12 @@
+{
+  "name": "@jeong/lib",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc ./src/index.ts"
+  },
+  "main": "./src/index.ts",
+  "dependencies": {
+    "typescript": "^4.9.3"
+  }
+}
