@@ -1,15 +1,14 @@
 import content from "../../json/search.content.json";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import { API_URL } from "../../config/index";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
-import { addwish, delwish } from "rtk/features/wishSlice";
+import { addwish, delwish } from "@/rtk/features/wishSlice";
+import { useAppStore, useAppDispatch } from "@/rtk/store";
 import { useMemo } from "react";
 import { typeSearchData } from "../../types/common";
-import { useAppStore, useAppDispatch } from "./../../rtk/store";
-import { getPrice } from './../../config/price';
+import { getPrice } from "./../../config/price";
 
 type typeContext = {
   params: {
@@ -34,10 +33,9 @@ export function getStaticPaths() {
 
 export async function getStaticProps(context: typeContext) {
   const { keyword } = context.params;
-  const { data: searchData } = await axios({
-    method: "GET",
-    url: `${API_URL}/api/products/?keyword=${keyword}`,
-  });
+  const { data: searchData } = await axios.get(
+    "http://localhost:3000/api/products/"
+  );
   if (!searchData) {
     return {
       notFound: true,
@@ -57,7 +55,7 @@ const Keyword = ({ searchData }: typeProps) => {
       content.search
         .filter((e) => e.key === location.query.keyword)
         .map((e) => e.title)[0],
-    [],
+    []
   );
   const wish = useAppStore((state) => state.wish.wish);
   const dispatch = useAppDispatch();
@@ -81,7 +79,7 @@ const Keyword = ({ searchData }: typeProps) => {
           {searchData &&
             searchData.products.map((item: typeSearchData) => {
               const { title, productId } = item;
-              const price =getPrice(item.price)            
+              const price = getPrice(item.price);
 
               const image1 = item.images ? item.images[0] : "/img/untitled.jpg";
               return (
@@ -123,7 +121,7 @@ const Keyword = ({ searchData }: typeProps) => {
                                     id: productId,
                                     title: title,
                                     img: image1,
-                                  }),
+                                  })
                                 )
                         }
                       >

@@ -6,21 +6,19 @@ import axios from "axios";
 import Head from "next/head";
 import { BehaviorSubject, mergeMap, from, map } from "rxjs";
 import { useObservable } from "@/components/common/searchBar";
-import { API_URL } from "../config/index";
-import { fetchByReservation } from "rtk/features/reservationSlice";
-import { fetchByReservationCancel } from "rtk/features/cancelSlice";
-import { useAppStore, useAppDispatch } from "../rtk/store";
+
+import { fetchByReservation } from "@/rtk/features/reservationSlice";
+import { fetchByReservationCancel } from "@/rtk/features/cancelSlice";
+import { useAppStore, useAppDispatch } from "@/rtk/store";
 import { typeReservation, typeSearchData } from "../types/common";
-import { getPrice } from './../config/price';
+import { getPrice } from "./../config/price";
 
 export const getReserveItem = async (ProductIds: number) => {
-  const { data: products } = await axios.get(
-    `${API_URL}/api/products/?pageSize=100`,
-  );
+  const { data: products } = await axios.get(`/api/products/`);
   if (ProductIds) {
     const productsItems = products.products.map((item: typeSearchData) => item);
     const ReserveItem = productsItems.filter(
-      (e: typeSearchData) => ProductIds === e.productId,
+      (e: typeSearchData) => ProductIds === e.productId
     );
     return ReserveItem;
   } else {
@@ -31,7 +29,7 @@ export const getReserveItem = async (ProductIds: number) => {
 let Subject$ = new BehaviorSubject("");
 let ResultObservable = Subject$.pipe(
   map((val) => val),
-  mergeMap((val) => from(getReserveItem(Number(val)))),
+  mergeMap((val) => from(getReserveItem(Number(val))))
 );
 
 /** 마이페이지 **/
@@ -126,7 +124,7 @@ const Mypage = () => {
                             <th className="bg-blueGray-50 text-neutral-400 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal text-left">
                               {result &&
                                 result.map(({ title, productId }) =>
-                                  item.productId === productId ? title : null,
+                                  item.productId === productId ? title : null
                                 )}
                             </th>
                             <th className="pl-5 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">
@@ -137,7 +135,7 @@ const Mypage = () => {
                                 result.map(({ price, productId }) =>
                                   item.productId === productId
                                     ? getPrice(price)
-                                    : null,
+                                    : null
                                 )}
                             </th>
                             <th className="pr-2 text-neutral-400 align-middle border border-solid border-blueGray-100 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-normal">

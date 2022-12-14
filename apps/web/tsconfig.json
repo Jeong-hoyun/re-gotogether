@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/rtk/*": ["rtk/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

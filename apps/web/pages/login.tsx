@@ -34,7 +34,7 @@ const Login = () => {
       if (!res) {
         await MySwal.fire({
           didOpen: () => {
-            Swal.showLoading();
+            Swal.showLoading(Swal.getDenyButton());
           },
         });
       }

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { logout } from "rtk/features/loginSlice";
+import { logout } from "@/rtk/features/loginSlice";
 import Wishlist from "../HeaderLogo/wishlist";
 import Login from "../HeaderLogo/login";
 import SearchBar from "./searchBar";
 import Signup from "../HeaderLogo/signup";
-import { useAppDispatch, useAppStore } from "rtk/store";
+import { useAppDispatch, useAppStore } from "@/rtk/store";
 import Image from "next/image";
 /** 기본 레이아웃의 헤더 **/
 export default function Header() {
@@ -24,12 +24,12 @@ export default function Header() {
                 <div className="shrink-0 block mt-10px lg:mr-4">
                   <Link href="/">
                     <a>
-                    <Image
-                      height={50}
-                      width={200}
-                      src="/img/PageLogo.png"
-                      alt={"logo"}
-                    />
+                      <Image
+                        height={50}
+                        width={200}
+                        src="/img/PageLogo.png"
+                        alt={"logo"}
+                      />
                     </a>
                   </Link>
                 </div>

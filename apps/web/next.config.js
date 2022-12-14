@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    forceSwcTransforms: true,
+  },
   images: {
     domains: [
       "cdn.imweb.me",
@@ -9,6 +12,6 @@ const nextConfig = {
     ],
     // domains: ['images.unsplash.com']
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
