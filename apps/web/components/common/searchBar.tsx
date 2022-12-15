@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { API_URL } from "../../config/index";
 import { BehaviorSubject, from } from "rxjs";
 import {
   filter,
@@ -9,13 +8,15 @@ import {
   distinctUntilChanged,
 } from "rxjs/operators";
 import Link from "next/link";
-import type {typeSearchData} from "../../types/common"
+import type { typeSearchData } from "../../types/common";
 
-const getTravelByProducts = async (searchkeyword:string) => {
+const getTravelByProducts = async (searchkeyword: string) => {
   const { data: products } = await axios.get(
-    `${API_URL}/api/products/?pageSize=100`,
+    `http://localhost:3000/api/products/`
   );
-  return products.products.filter((item:typeSearchData) => item.title.includes(searchkeyword));
+  return products.products.filter((item: typeSearchData) =>
+    item.title.includes(searchkeyword)
+  );
 };
 
 let searchSubject$ = new BehaviorSubject("");
@@ -23,12 +24,12 @@ let SearchResultObservable = searchSubject$.pipe(
   filter((val) => val.length > 1),
   debounceTime(200),
   distinctUntilChanged(),
-  mergeMap((val) => from(getTravelByProducts(val))),
+  mergeMap((val) => from(getTravelByProducts(val)))
 );
 
-export const useObservable = (observable:any, setter:any) => {
+export const useObservable = (observable: any, setter: any) => {
   React.useEffect(() => {
-    let subscription = observable.subscribe((result:typeSearchData[]) => {
+    let subscription = observable.subscribe((result: typeSearchData[]) => {
       if (result) {
         setter(result);
       } else {
@@ -42,7 +43,7 @@ export const useObservable = (observable:any, setter:any) => {
 function SearchBar() {
   const [search, setSearch] = React.useState<string>();
   const [results, setResults] = React.useState([]);
-  const onSearch = (e:React.ChangeEvent<HTMLInputElement>) => {
+  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     setSearch(newValue);
     searchSubject$.next(newValue);
@@ -83,11 +84,11 @@ function SearchBar() {
           search ? "" : "hidden"
         }`}
       >
-        {results.map((item:typeSearchData) => {
+        {results.map((item: typeSearchData) => {
           return (
             <li
               className="text-center text-white bg-gray-400 z-30"
-              key={`${item.title}${Math.random()*10}`}
+              key={`${item.title}${Math.random() * 10}`}
             >
               <Link href={`/travel/${item.productId}`}>
                 <a>{item.title}</a>

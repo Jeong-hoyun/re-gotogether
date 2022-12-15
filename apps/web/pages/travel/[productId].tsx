@@ -4,7 +4,6 @@ import Head from "next/head";
 import Angel from "@/components/Logo/angel";
 import PointLogo from "@/components/Logo/pointLogo";
 import Maincarousel from "@/components/main/maincarousel";
-import { API_URL } from "../../config/index";
 import { useForm } from "react-hook-form";
 import { SetReservation } from "../../config/reservation";
 import { useRouter } from "next/router";
@@ -20,9 +19,9 @@ type typeParams = {
 };
 type typePosts = {
   post: {
-    title: number;
+    title: string;
     productId: number;
-    price: string;
+    price: number;
     images: string[];
     startDates: string[];
   };
@@ -65,7 +64,6 @@ const ProductId = ({ post }: typePosts) => {
   const router = useRouter();
   const [toggle, setToggle] = useState(true);
   const dispatch = useAppDispatch();
-  const detailPageData = post.reduce((_, cur) => cur, {});
 
   const { register, handleSubmit } = useForm<typeReservation>();
 
@@ -73,9 +71,9 @@ const ProductId = ({ post }: typePosts) => {
     if (!recent.map(({ title }) => title).includes(post.title)) {
       dispatch(
         addRecent({
-          title: detailPageData.title,
+          title: post.title,
           id: router.query.productId,
-          img: detailPageData.images[0],
+          img: post.images[0],
         })
       );
     }
@@ -84,8 +82,8 @@ const ProductId = ({ post }: typePosts) => {
   const number2 = new Intl.NumberFormat("ko", {
     style: "currency",
     currency: "krw",
-  }).format(detailPageData.price);
-  const HeroImage = detailPageData.images[0];
+  }).format(post.price);
+  const HeroImage = post.images[0];
 
   const submitForm = (data: typeReservation) => {
     try {
@@ -98,7 +96,7 @@ const ProductId = ({ post }: typePosts) => {
   return (
     <>
       <Head>
-        <title>{detailPageData.title}</title>
+        <title>{post.title}</title>
         <link rel="canonical" href={`/travel/${router.query.productId}`} />
       </Head>
 
@@ -113,14 +111,12 @@ const ProductId = ({ post }: typePosts) => {
             </div>
 
             <div className="font-semibold">
-              <h2 className="lg:text-3xl sm:text-2xl">
-                {detailPageData.title}
-              </h2>
+              <h2 className="lg:text-3xl sm:text-2xl">{post.title}</h2>
               <h3 className="lg:text-2xl text-number-color">{number2}</h3>
               <div className="absolute px-10 py-8 mt-10 text-sm rounded-2xl bg-zinc-100">
                 <div>
                   <PointLogo />
-                  {detailPageData.title} 여행
+                  {post.title} 여행
                 </div>
                 <div>
                   <PointLogo />한 번의 여행으로 나의 취향을 만끽하세요!
@@ -174,14 +170,14 @@ const ProductId = ({ post }: typePosts) => {
                       className="ml-5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-none"
                     >
                       <option value="">출발일(필수)</option>
-                      <option value={detailPageData.startDates[0]}>
-                        {detailPageData.startDates[0]}
+                      <option value={post.startDates[0]}>
+                        {post.startDates[0]}
                       </option>
-                      <option value={detailPageData.startDates[1]}>
-                        {detailPageData.startDates[1]}
+                      <option value={post.startDates[1]}>
+                        {post.startDates[1]}
                       </option>
-                      <option value={detailPageData.startDates[2]}>
-                        {detailPageData.startDates[2]}
+                      <option value={post.startDates[2]}>
+                        {post.startDates[2]}
                       </option>
                     </select>
                     {/* 드롭다운 2 */}

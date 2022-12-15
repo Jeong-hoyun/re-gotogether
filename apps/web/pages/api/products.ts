@@ -1,8 +1,7 @@
 import type { NextApiResponse, NextApiRequest } from "next";
-import { typeSearchData } from "../../types/common";
 
 let data = {
-  products: <typeSearchData[]>[
+  products: [
     {
       title: "와인 사랑인의 코카서스 3개국 18일",
       productId: 21,

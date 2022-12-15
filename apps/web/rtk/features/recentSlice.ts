@@ -1,17 +1,16 @@
 import { createSlice, current } from "@reduxjs/toolkit";
-
 export interface RecentStateType {
   recent: [
     {
-      title: number;
-      id: string;
+      id: number;
+      title: string;
       img: string;
-    },
+    }
   ];
 }
 
 const initialState: RecentStateType = {
-  recent: [{ title: 1, id: "", img: "" }],
+  recent: [{ id: 1, title: "", img: "" }],
 }; // 처음에는 빈 배열로 시작
 
 const recentSlice = createSlice({

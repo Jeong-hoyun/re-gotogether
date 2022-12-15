@@ -33,7 +33,7 @@ export default function Signup() {
     data.birth = data.birth.replace(/-/g, "");
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
-    const url = `${API_URL}/signUp`;
+    const url = `http://localhost:3000/api/signUp`;
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json;charset=UTF-8" },
