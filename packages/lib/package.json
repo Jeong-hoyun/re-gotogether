@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsc ./src/index.ts"
+    "dev": "tsc ./src/index.ts",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "main": "./src/index.ts",
   "dependencies": {

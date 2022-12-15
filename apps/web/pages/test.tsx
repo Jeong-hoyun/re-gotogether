@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactDOM, useState } from "react";
 import { useRouter } from "next/router";
 import { useMultistepForm } from "../components/tendency/useMultistepForm";
 import { ThreeForm } from "../components/tendency/threeform";
@@ -22,12 +22,12 @@ const INITIAL_DATA = {
   three: "",
 };
 
-const Test = ({ name }) => {
+const Test = ({ name }: { name: string }) => {
   const [data, setData] = useState(INITIAL_DATA);
   const [result, setResult] = useState<Array<typeSearchData>>();
   const loginUser = useAppStore((state) => state.login.login);
 
-  function onSubmit(e: Event) {
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!isLastStep) return next();
     if (data.one !== "" && data.two !== "" && data.three !== "") {
@@ -61,7 +61,7 @@ const Test = ({ name }) => {
       <TwoForm {...data} updateFields={updateFields} key={3} />,
       <ThreeForm {...data} updateFields={updateFields} key={4} />,
     ]);
-  function updateFields(fields) {
+  function updateFields(fields: React.SetStateAction<Object>) {
     setData((prev) => {
       return { ...prev, ...fields };
     });

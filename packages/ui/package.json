@@ -1,5 +1,8 @@
 {
   "name": "@jeong/ui",
+  "scripts": {
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
   "packageManager": "yarn@3.3.0",
   "devDependencies": {
     "@types/node": "^18.11.15",

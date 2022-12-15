@@ -1,4 +1,4 @@
-name: CI-wanted-app
+name: CI-jeong-app
 
 on:
   push:

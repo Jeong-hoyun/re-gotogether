@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Logo1 from "../NavbarLogo/travel1";
 
-export function Zeroform({ zero, updateFields, name }) {
+export function Zeroform({
+  zero,
+  updateFields,
+  name,
+}: {
+  zero?: String;
+  updateFields: any;
+  name: String;
+}) {
   return (
     <div className="relative">
       <Image
