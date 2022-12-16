@@ -3,7 +3,7 @@ name: CI-jeong-app
 on:
   push:
     branches:
-      - main
+      - dev
     paths:
       - "apps/web/**"
 
